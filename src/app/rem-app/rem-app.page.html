@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true" color="secondary">
+  <ion-slides #slides class="swiper-no-swiping">
+    <ion-slide class="options-container">
+      <div class="options-inner-container">
+        <ion-item lines="none" color="secondary">
+          <div class="option-wrapper">
+            <ion-label class="ion-text-wrap">Default pixel size:</ion-label>
+            <ion-input [(ngModel)]="defaultPxSize"></ion-input>
+          </div>
+        </ion-item>
+        <ion-item lines="none" color="secondary">
+          <div class="option-wrapper">
+            <ion-label class="ion-text-wrap">Starting pixels value:</ion-label>
+            <ion-input  [(ngModel)]="pxInitial"></ion-input>
+          </div>
+        </ion-item>
+        <ion-item lines="none" color="secondary">
+          <div class="option-wrapper">
+            <ion-label class="ion-text-wrap">Final pixels value:</ion-label>
+            <ion-input [(ngModel)]="pxEnd"></ion-input>
+          </div>
+        </ion-item>
+        <ion-item lines="none" color="secondary">
+          <div class="option-wrapper">
+            <ion-label class="ion-text-wrap">Digits after the decimal point:</ion-label>
+            <ion-input [(ngModel)]="decimalDigits"></ion-input>
+          </div>
+        </ion-item>
+        <ion-button color="secondary" (click)="generateRems(slides)">Generate rems</ion-button>
+      </div>
+    </ion-slide>
+    <ion-slide class="generated-table-container">
+      <div class="generated-table-inner-container">
+        <ion-button fill="clear" class="go-back-btn" (click)="goBack()">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </ion-button>
+        <h1>Your default pixel size is {{this.defaultPxSize}}</h1>
+        <ion-grid>
+          <ion-row *ngFor="let pixelsValue of pixels; let i = index">
+            <ion-col>{{pixelsValue}}px</ion-col>
+            <ion-col>{{this.rem[i]}}rem</ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-slide>
+    <ion-slide>
+
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,70 @@
+<ion-content [fullscreen]="true" color="tertiary" mode="ios">
+  <div class="blur-container" *ngIf="popoverIsOn"></div>
+  <main>
+    <div class="glass">
+
+      <h1>Add new task:</h1>
+      <section class="add-new-task-section">
+
+        <form class="flex-container">
+          <ion-item lines="none">
+            <ion-label position="stacked">The task to complete</ion-label>
+            <ion-input placeholder="task name goes here" name='newTask' [(ngModel)]="newTask"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="stacked">List to add to</ion-label>
+            <ion-select multiple="true" cancelText="Cancel" okText="Ok" [ngModel]="selectedList" (ionChange)="onChange($event, 'list')" name="bla">
+              <ion-select-option *ngFor="let list of lists" [value]=list.name >{{list.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="stacked">Change priority</ion-label>
+            <ion-select [value]="selectedPriority" cancelText="Cancel" okText="Ok" class="priority-selection" (ionChange)="onChange($event, 'priority')" name="blabla">
+              <ion-select-option value='default'>Default</ion-select-option>
+              <ion-select-option value='high'>High</ion-select-option>
+              <ion-select-option value='low'>Low</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-button class="add-btn" (click)="addNewTask(newTask)">Add</ion-button>
+        </form>
+      </section>
+
+
+      <section class="list-result">
+        <h1>Select the list to view tasks from it:</h1>
+        <div class="switcher-container">
+          <ion-segment [(ngModel)]="listToDisplay" scrollable="true">
+            <ion-segment-button *ngFor="let list of lists" [value]="list.name">{{list.name}}</ion-segment-button>
+            <ion-button class="add-new-list-btn" fill="clear" (click)="openCreateNewListPopover()">
+              <ion-icon name="add-outline"></ion-icon>
+            </ion-button>
+          </ion-segment>
+        </div>
+
+        <div class="list-content-container">
+          <div [ngSwitch]="listToDisplay" *ngFor="let list of lists; let i = index" class="current-list-container">
+            <div class="current-list" *ngSwitchCase="list.name">
+              <h1>Your tasks from "{{list.name}}" list:</h1>
+              <ol>
+                <li *ngFor="let task of list.tasks">
+                  <ion-item button detail="false" lines="none" class="list-item" [ngClass]="{'high-priority': task.priority === 'high', 'low-priority': task.priority === 'low'}">
+                    <div class="list-item-flex-container">
+                      <p class="list-item-text">{{task.taskName}}</p>
+                      <ion-button fill="clear" size="small" (click)="deleteTask(i, task)" class="remove-btn">
+                        <ion-icon name="trash-outline"></ion-icon>
+                      </ion-button>
+                    </div>
+                  </ion-item>
+                </li>
+              </ol>
+              <ion-button fill="clear" class="delete-all-tasks-btn" (click)="clearList(i)" *ngIf="list.tasks.length > 3"><ion-icon name="trash-outline"></ion-icon></ion-button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+</ion-content>

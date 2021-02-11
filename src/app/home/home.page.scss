@@ -1,0 +1,32 @@
+main{
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 0.78rem;
+  align-items: center;
+  .main-text{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    max-height: 400px;
+    max-width: 500px;
+     ion-item{
+       --background: transparent;
+       box-shadow: 0 0 6px 1px rgb(0 0 0 / 10%);
+       margin-bottom: 10px;
+     }
+   }
+}
+
+@media (min-width: 600px){
+  main{
+    .main-text{
+      ion-item{
+        min-height: 45px;
+      }
+    }
+  }
+}
