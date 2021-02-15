@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Navigate</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-menu-toggle auto-hide="true">
+      <ion-item [routerLink]="pages.url" routerDirection="forward" *ngFor="let pages of navigate">
+        <ion-icon [name]="pages.icon" slot="start"></ion-icon>
+        {{pages.title}}
+      </ion-item>
+    </ion-menu-toggle>
+</ion-content>

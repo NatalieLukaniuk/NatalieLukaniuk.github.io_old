@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -6,10 +6,14 @@ import {Router} from '@angular/router';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
+color = 'light';
+  intViewportWidth = window.innerWidth;
+  constructor(private readonly router: Router, ) {}
 
-  constructor(private readonly router: Router,) {}
-
+  ngOnInit() {
+console.log(this.intViewportWidth);
+  }
   goRemApp(){
     this.router.navigate(['rem-app']);
   }

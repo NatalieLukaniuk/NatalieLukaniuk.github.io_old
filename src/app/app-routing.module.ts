@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'to-do-list-app',
     loadChildren: () => import('./to-do-list-app/to-do-list-app.module').then( m => m.ToDoListAppPageModule)
   },
+  {
+    path: 'rem-converter',
+    loadChildren: () => import('./rem-converter/rem-converter.module').then( m => m.RemConverterPageModule)
+  },
 ];
 
 @NgModule({

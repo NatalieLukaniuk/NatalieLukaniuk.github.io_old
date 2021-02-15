@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RemAppPageRoutingModule } from './rem-app-routing.module';
+import { RemConverterPageRoutingModule } from './rem-converter-routing.module';
 
-import { RemAppPage } from './rem-app.page';
+import { RemConverterPage } from './rem-converter.page';
 import {HeaderComponent} from '../components/header/header.component';
 
 @NgModule({
@@ -14,8 +14,8 @@ import {HeaderComponent} from '../components/header/header.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    RemAppPageRoutingModule
+    RemConverterPageRoutingModule
   ],
-  declarations: [RemAppPage, HeaderComponent]
+  declarations: [RemConverterPage, HeaderComponent]
 })
-export class RemAppPageModule {}
+export class RemConverterPageModule {}

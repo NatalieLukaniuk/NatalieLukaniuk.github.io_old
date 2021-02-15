@@ -1,3 +1,6 @@
+ion-header{
+  backdrop-filter: blur(0px);
+}
 ion-slides{
   height: 100%;
   .options-container{
@@ -43,7 +46,10 @@ ion-slides{
       ion-button{
         border: var(--ion-color-secondary-shade) 2px solid;
         --border-radius: 0;
-        margin-top: 7vh;
+        width: 70%;
+        &:first-of-type{
+          margin-top: 10px;
+        }
       }
     }
   }
@@ -81,11 +87,15 @@ ion-slides{
         ion-col{
           border: rgba(0,0,0,0.3) 1px solid;
           padding: 10px 0;
-          user-select: text;
+          user-select: all;
         }
       }
     }
   }
+}
+
+.display-none{
+  display: none;
 }
 
 @media (min-width: 600px) {
@@ -96,6 +106,7 @@ ion-slides{
           height: 70px;
           width: 40vw;
           font-size: 0.8rem;
+          max-width: 90%;
         }
       }
     }

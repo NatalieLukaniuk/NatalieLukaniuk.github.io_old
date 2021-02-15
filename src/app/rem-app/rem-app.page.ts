@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import { IonSlides } from '@ionic/angular';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-rem-app',
@@ -16,16 +17,14 @@ export class RemAppPage implements OnInit {
   pxInitial = 12;
   pxEnd = 40;
   decimalDigits = 2;
-
-  constructor() {
+  color = 'secondary';
+  intViewportWidth = window.innerWidth;
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
 
   }
-  // ionViewDidEnter() {
-  //   this.slides.onlyExternal = true;
-  // }
 
   generateRems(slides){
     let i = this.pxInitial;
@@ -48,4 +47,5 @@ export class RemAppPage implements OnInit {
   goBack(){
     this.slides.slideTo(0);
   }
+
 }

@@ -8,6 +8,7 @@ import { ToDoListAppPageRoutingModule } from './to-do-list-app-routing.module';
 
 import { ToDoListAppPage } from './to-do-list-app.page';
 import {NewListPopoverComponent} from '../components/new-list-popover/new-list-popover.component';
+import {HeaderComponent} from '../components/header/header.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import {NewListPopoverComponent} from '../components/new-list-popover/new-list-p
     IonicModule,
     ToDoListAppPageRoutingModule
   ],
-  declarations: [ToDoListAppPage, NewListPopoverComponent]
+  declarations: [ToDoListAppPage, NewListPopoverComponent, HeaderComponent]
 })
 export class ToDoListAppPageModule {}

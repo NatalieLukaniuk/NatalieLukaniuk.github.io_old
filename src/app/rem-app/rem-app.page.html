@@ -1,4 +1,14 @@
+<ion-header class="ion-no-border" translucent="true" color="secondary">
+  <app-header [useContainer]="true" [color]="color">
+    Rems generator
+  </app-header>
+</ion-header>
 <ion-content [fullscreen]="true" color="secondary">
+<!--  <ion-header class="ion-no-border" collapse="condense">-->
+<!--    <app-header [useContainer]="true" [color]="color">-->
+<!--      Rems generator-->
+<!--    </app-header>-->
+<!--  </ion-header>-->
   <ion-slides #slides class="swiper-no-swiping">
     <ion-slide class="options-container">
       <div class="options-inner-container">
@@ -31,9 +41,9 @@
     </ion-slide>
     <ion-slide class="generated-table-container">
       <div class="generated-table-inner-container">
-        <ion-button fill="clear" class="go-back-btn" (click)="goBack()">
-          <ion-icon name="chevron-back-outline"></ion-icon>
-        </ion-button>
+<!--        <ion-button fill="clear" class="go-back-btn" (click)="goBack()">-->
+<!--          <ion-icon name="chevron-back-outline"></ion-icon>-->
+<!--        </ion-button>-->
         <h1>Your default pixel size is {{this.defaultPxSize}}</h1>
         <ion-grid>
           <ion-row *ngFor="let pixelsValue of pixels; let i = index">

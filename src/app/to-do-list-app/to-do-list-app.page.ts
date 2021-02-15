@@ -20,7 +20,7 @@ export class ToDoListAppPage implements OnInit {
   listToDisplay = 'Today';
   private ev: Event;
   popoverIsOn = false;
-
+  color = 'tertiary';
   constructor(public popoverController: PopoverController) { }
 
   ngOnInit() {

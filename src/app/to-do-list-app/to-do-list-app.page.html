@@ -1,4 +1,14 @@
-<ion-content [fullscreen]="true" color="tertiary" mode="ios">
+<ion-header class="ion-no-border" translucent="true" color="tertiary">
+  <app-header [useContainer]="true" [color]="color">
+    To-do-list
+  </app-header>
+</ion-header>
+<ion-content [fullscreen]="true" color="tertiary">
+<!--  <ion-header class="ion-no-border" collapse="condense">-->
+<!--    <app-header [useContainer]="true" [color]="color">-->
+<!--      To-do-list-->
+<!--    </app-header>-->
+<!--  </ion-header>-->
   <div class="blur-container" *ngIf="popoverIsOn"></div>
   <main>
     <div class="glass">
