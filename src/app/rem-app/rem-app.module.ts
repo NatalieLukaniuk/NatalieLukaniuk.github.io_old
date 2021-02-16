@@ -7,15 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { RemAppPageRoutingModule } from './rem-app-routing.module';
 
 import { RemAppPage } from './rem-app.page';
-import {HeaderComponent} from '../components/header/header.component';
+import {AppSharedModule} from '../app-shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RemAppPageRoutingModule
+    RemAppPageRoutingModule,
+    AppSharedModule
   ],
-  declarations: [RemAppPage, HeaderComponent]
+  declarations: [RemAppPage]
 })
 export class RemAppPageModule {}

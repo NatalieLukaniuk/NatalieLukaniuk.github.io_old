@@ -9,10 +9,35 @@ import {Router} from '@angular/router';
 export class HeaderComponent implements OnInit {
   @Input() color: any;
   @Input() useContainer: boolean;
+  viewportWidth = window.innerWidth;
+  buttons = [
+    {
+      title : 'Home',
+      url   : 'home',
+      icon  : 'home',
+    },
+    {
+      title : 'Rem generator',
+      url   : 'rem-app',
+      icon  : 'calculator-outline',
+    },
+    {
+      title : 'Rem converter',
+      url   : 'rem-converter',
+      icon  : 'calculator-outline',
+    },
+    {
+      title : 'To-do list',
+      url   : 'to-do-list-app',
+      icon  : 'reader-outline'
+    },
+  ]
   constructor(private router: Router) { }
 
   ngOnInit() {
-    console.log(this.color);
+    console.log(this.viewportWidth);
   }
-
+  goTo(url){
+  this.router.navigate([url]);
+}
 }

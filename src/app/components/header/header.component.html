@@ -12,15 +12,17 @@
 
 <ng-template #headerBody>
   <ion-toolbar [color]="color">
-    <ion-title collapse="true" slot="start">
+    <ion-title slot="start">
       <ng-content></ng-content>
     </ion-title>
-    <ion-buttons collapse="true" slot="end">
+    <ion-buttons slot="end" *ngIf="viewportWidth <= 768">
       <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons collapse="true" slot="end" *ngIf="viewportWidth > 768">
+      <ion-button *ngFor="let button of buttons" fill="clear" (click)="goTo(button.url)" routerDirection="forward">{{button.title}}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ng-template>
-
 
 <!--<ng-template #headerBody>-->
 <!--  <ion-toolbar [color]="color">-->

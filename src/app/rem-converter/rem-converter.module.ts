@@ -7,15 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { RemConverterPageRoutingModule } from './rem-converter-routing.module';
 
 import { RemConverterPage } from './rem-converter.page';
-import {HeaderComponent} from '../components/header/header.component';
+import {AppSharedModule} from '../app-shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RemConverterPageRoutingModule
+    RemConverterPageRoutingModule,
+    AppSharedModule
   ],
-  declarations: [RemConverterPage, HeaderComponent]
+  declarations: [RemConverterPage]
 })
 export class RemConverterPageModule {}
