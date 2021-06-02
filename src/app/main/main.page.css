@@ -67,7 +67,7 @@
   justify-content: space-between;
 }
 :host ion-content main .wrapper .left-pane .social ion-icon {
-  font-size: 2.73rem;
+  font-size: 1.6rem;
 }
 :host ion-content main .wrapper .left-pane .social ion-label {
   width: 0;
@@ -75,6 +75,7 @@
   transform-origin: center;
   text-align: center;
   overflow: visible;
+  display: none;
 }
 :host ion-content main .wrapper .right-pane {
   flex-direction: column;
@@ -188,7 +189,7 @@
 }
 @media (max-width: 1020px) {
   :host ion-content main .wrapper .left-pane .social ion-icon {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 880px) {
