@@ -1,32 +1,439 @@
-main{
-  padding: 1.5rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  font-size: 0.78rem;
-  align-items: center;
-  .main-text{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    max-height: 400px;
-    max-width: 500px;
-     ion-item{
-       --background: transparent;
-       box-shadow: 0 0 6px 1px rgb(0 0 0 / 10%);
-       margin-bottom: 10px;
-     }
-   }
-}
+:host{
+  ion-header{
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    &.visible{
+      opacity: 1;
+    }
+  }
+  ion-content{
+    &::part(scroll){
+      overflow: hidden;
+    }
+    main{
+      overflow-y: auto;
+      height: 100vh;
+      .scroll-container{
+        height: 500vh;
+        flex-direction: column;
+        position: relative;
+        z-index: 20;
+        background: transparent;
+      }
+      p{
+        font-size: 4vw;
+        margin: 0;
+        line-height: 5vw;
+        max-width: 90%;
+      }
+      .decoration{
+        position: absolute;
+        top: 0;
+        padding: 8vh 2vh;
+      }
+      #greeting, .arrow-icon-wrapper, #first-block, #second-block, #third-block, #avatar, .frameworks-img, .fourth-block, #fifth-block, #contacts{
+        position: fixed;
+        z-index: 1;
+        padding: 3vw;
+      }
+      .hidden-header{
+        opacity: 1;
+        transition: opacity 500ms ease-out;
+        &.hide{
+          opacity: 0;
+        }
+      }
+      #greeting{
+        top: 40vh;
+        width: 100%;
+        text-align: center;
+        &.show{
+          &:before{
+            text-transform: uppercase;
+            font-size: 4vw;
+            font-weight: 600;
+            color: var(--ion-color-dark);
+          }
+          &.eng{
+            &:before{
+              content: 'Please scroll down';
+              animation: greeting 8s ease-in-out;
+            }
+          }
+          &.ukr{
+            &:before{
+              content: 'Щоб побачити більше, скрольте вниз';
+              animation: greeting-ukr 8s ease-in-out;
+            }
+          }
+          &.changed-content{
+            &.eng{
+              &:before{
+                content: 'Thanks for visiting :)';
+              }
+            }
+            &.ukr{
+              &:before{
+                content: 'Дякую що заглянули :)';
+              }
+            }
+          }
+        }
+      }
+      .arrow-icon-wrapper{
+        width: 100%;
+        top: 47vh;
+        justify-content: center;
+        #arrow-icon{
+          width: 3.5vh;
+          min-width: 3.5vw;
+          height: 3.5vh;
+          min-height: 3.5vw;
+          margin-top: 5vh;
+          path{
+            fill: transparent;
+            stroke-width: 16;
+            stroke: var(--ion-color-dark);
+            stroke-dasharray: 1850;
+            stroke-dashoffset: 1850;
+          }
+          &.visible{
+            path{
+              animation: animate-arrow 2s linear forwards;
+              stroke-dashoffset: 1850;
+            }
+          }
+        }
+      }
+      #first-block{
+        top: 40%;
+      }
+      #second-block{
+        font-size: 2vw;
+        ion-button{
+          height: 3.18rem;
+          ion-icon{
+            align-self: flex-start;
+            height: 2.27rem;
+            width: 2.27rem;
+          }
+        }
+        &.move-right{
+          z-index: 30;
+        }
+        &.move-left{
+          z-index: 1;
+        }
+      }
+      #third-block{
+        font-size: 2vw;
+        line-height: 3vw;
+      }
+      #avatar{
+        width: 23.44vw;
+        height: auto;
+        right: 5vw;
+        top: 33%;
+        opacity: 0;
+        transform: translateX(5vw);
+        transition: transform 500ms ease-in-out, opacity 300ms ease-in;
+        &.move-left{
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      .frameworks-img{
+        width: auto;
+        height: 9.5vw;
+        opacity: 0;
+        transition: opacity 400ms ease-in;
+        top: 72%;
+        z-index: 1;
+        &.show{
+          opacity: 1;
+        }
+        &.angular{
+          left: 25%;
+        }
+        &.ionic{
+          right: 25%;
+        }
+      }
+      .fourth-block{
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 200ms ease-in-out;
+        font-size: 2vw;
+        line-height: 3vw;
+        &.show{
+          opacity: 1;
+          transform: scale(1);
+          transition: all 500ms ease-in-out;
+          &:nth-child(2){
+            transition-delay: 600ms;
+          }
+        }
+        &:first-child{
+          top: 30%;
+        }
+        &:nth-child(2){
+          top: 40%;
 
-@media (min-width: 600px){
-  main{
-    .main-text{
-      ion-item{
-        min-height: 45px;
+        }
+      }
+      #fifth-block{
+        opacity: 0;
+        top: 58%;
+        font-size: 2vw;
+        line-height: 3vw;
+        transform: scale(0);
+        &.show{
+          transform: scale(1);
+          transition: all 500ms ease-in-out;
+          opacity: 1;
+          transition-delay: 1200ms;
+        }
+        &.transform{
+          opacity: 1;
+          transform: translateY(-50vh);
+          font-size: 1vw;
+        }
+        &.hide{
+          opacity: 0;
+        }
+      }
+      #contacts{
+        top: 30%;
+        left: 25%;
+        opacity: 0;
+        transform: scale(0.5);
+        transition: opacity 500ms ease-in-out, transform 600ms ease-in-out;
+        max-width: 50%;
+        //width: 100%;
+        //height: 80vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        &.show{
+          opacity: 1;
+          transform: scale(1);
+          z-index: 30;
+        }
+        h3{
+          font-size: 2.5vw;
+          text-align: center;
+        }
+        ion-button{
+          width: 7vw;
+          height: 7vw;
+          ion-icon,{
+            width: 7vw;
+            height: 7vw;
+          }
+        }
+      }
+      #second-block, #third-block{
+        top: 50%;
+      }
+      #first-block, #second-block, #third-block {
+        transform: translateX(-5vw);
+        opacity: 0;
+        transition: transform 500ms ease-in-out, opacity 400ms ease-in;
+        &.move-right{
+          transform: translateX(0);
+          opacity: 1;
+        }
+        &.move-left{
+          transform: translateX(5vw);
+          opacity: 0;
+        }
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    ion-content{
+      main{
+        .greeting{
+          &:before{
+            font-size: 6vw;
+          }
+        }
+        #first-block{
+          top: 30%;
+          font-size: 6vw;
+        }
+        #second-block{
+          top: 78%;
+          font-size: 4vw;
+          ion-button{
+            display: block;
+          }
+        }
+        #third-block{
+          font-size: 6vw;
+          line-height: 10vw;
+          top: 40%;
+        }
+        .fourth-block{
+          font-size: 6vw;
+          line-height: 9vw;
+          &:first-child{
+            top: 24%;
+          }
+        }
+        #fifth-block{
+          font-size: 6vw;
+          line-height: 10vw;
+          &.transform{
+            font-size: 0px;
+          }
+        }
+        .frameworks-img{
+          height: 3.5rem;
+          left: 7vw;
+          right: auto;
+          &.angular{
+            left: 5vw;
+            top: 60%;
+          }
+        }
+        #avatar{
+          height: 40vh;
+          width: auto;
+          left: 5vw;
+          top: 36%;
+        }
+        #contacts{
+          left: 5%;
+          max-width: 90%;
+          & > ion-row{
+            width: 80%;
+            justify-content: space-evenly;
+          }
+          h3{
+            font-size: 7vw;
+          }
+          ion-button{
+            width: 20vw;
+            height: 20vw;
+            ion-icon{
+              width: 20vw;
+              height: 20vw;
+            }
+          }
+        }
       }
     }
   }
 }
+
+@keyframes greeting {
+  0% {
+    content: '';
+    opacity: 0;
+  }
+  10%{
+    content: 'Hello there';
+    opacity: 0;
+  }
+  30% {
+    content: 'Hello there';
+    opacity: 1;
+  }
+  40%{
+    content: 'Hello there';
+    opacity: 0;
+  }
+  41%{
+    content: 'Welcome to my website';
+    opacity: 0;
+  }
+  60% {
+    content: 'Welcome to my website';
+    opacity: 1;
+  }
+  70%{
+    content: 'Welcome to my website';
+    opacity: 0;
+  }
+  71%{
+    content: 'Please scroll down';
+    opacity: 0;
+  }
+  85%{
+    content: 'Please scroll down';
+    opacity: 1;
+  }
+  90%{
+    content: 'Please scroll down';
+    opacity: 0.2;
+  }
+  100%{
+    content: 'Please scroll down';
+    opacity: 1;
+  }
+}
+@keyframes greeting-ukr {
+  0% {
+    content: '';
+    opacity: 0;
+  }
+  10%{
+    content: 'Привіт';
+    opacity: 0;
+  }
+  30% {
+    content: 'Привіт';
+    opacity: 1;
+  }
+  40%{
+    content: 'Привіт';
+    opacity: 0;
+  }
+  41%{
+    content: 'Вітаю на моєму сайті';
+    opacity: 0;
+  }
+  60% {
+    content: 'Вітаю на моєму сайті';
+    opacity: 1;
+  }
+  70%{
+    content: 'Вітаю на моєму сайті';
+    opacity: 0;
+  }
+  71%{
+    content: 'Щоб побачити більше, скрольте вниз';
+    opacity: 0;
+  }
+  85%{
+    content: 'Щоб побачити більше, скрольте вниз';
+    opacity: 1;
+  }
+  90%{
+    content: 'Щоб побачити більше, скрольте вниз';
+    opacity: 0.2;
+  }
+  100%{
+    content: 'Щоб побачити більше, скрольте вниз';
+    opacity: 1;
+  }
+}
+@keyframes animate-arrow {
+  0% {
+    stroke-dashoffset: 2200;
+    opacity: 0;
+  }
+  70% {
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+    fill: transparent;
+  }
+  100%{
+    stroke-dashoffset: 0;
+    fill: var(--ion-color-dark);
+    opacity: 1;
+  }
+}
+
+

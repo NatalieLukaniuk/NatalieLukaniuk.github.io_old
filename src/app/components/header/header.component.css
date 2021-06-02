@@ -1,0 +1,35 @@
+:host ion-toolbar {
+  padding-top: 0.5rem;
+}
+:host ion-toolbar ion-buttons ion-title svg-icon svg {
+  height: 45px;
+}
+:host ion-toolbar ion-buttons ion-button {
+  --background-hover: none;
+  --ripple-color: transparent;
+}
+:host ion-toolbar ion-buttons ion-button span:after {
+  content: "";
+  width: 0px;
+  height: 1px;
+  background: var(--ion-color-primary);
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  transition: all 300ms ease-in-out;
+}
+:host ion-toolbar ion-buttons ion-button:hover span:after {
+  right: 100%;
+  width: 100%;
+}
+:host ion-toolbar ion-buttons ion-button.active-button {
+  --background: var(--ion-color-light);
+}
+@media (min-width: 900px) {
+  :host ion-buttons ion-button {
+    margin-left: 1rem;
+  }
+}
+
+/*# sourceMappingURL=header.component.css.map */

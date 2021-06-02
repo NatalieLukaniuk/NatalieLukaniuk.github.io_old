@@ -1,5 +1,19 @@
 <footer>
-  <ion-button class="check-btn" (click)="checkpopover()">Check</ion-button>
-  <p>copyright © 2021 all rights reserved</p>
-  <p>Powered by <a href="https://www.facebook.com/natalia.lukaniuk">Natalie Lukaniuk</a></p>
+  <p *ngIf="intViewportWidth > 660">Powered by Natalie Lukaniuk</p>
+  <p *ngIf="intViewportWidth > 660">copyright © 2021 all rights reserved</p>
+
+  <ion-row class="ion-nowrap">
+    <ion-button fill="clear" href="mailto:natalie.lukaniuk@gmail.com" target="_blank">
+      <ion-icon name="mail-outline"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" href="https://www.facebook.com/natalia.lukaniuk/" target="_blank">
+      <ion-icon name="logo-facebook"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" href="https://t.me/Redhead_nata" target="_blank">
+      <svg-icon src="/assets/svg/telegram.svg" style="margin-top: 3px;"></svg-icon>
+    </ion-button>
+  </ion-row>
+  <ion-row *ngIf="intViewportWidth <= 660">
+    <p>2021 © Natalie Lukaniuk</p>
+  </ion-row>
 </footer>

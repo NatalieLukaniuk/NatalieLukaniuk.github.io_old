@@ -1,0 +1,50 @@
+:host{
+  ion-header{
+    height: 3.55rem;
+  }
+  main{
+    height: calc(100vh - 8rem);
+    ion-segment{
+      flex-direction: row;
+      margin: 2rem 1rem;
+      --ripple-color: white;
+      align-items: center;
+      ion-segment-button{
+        --indicator-color: none;
+        &::part(indicator){
+          height: 100%;
+          background: rgba(255, 255, 255, 0.3);
+          box-shadow: rgb(183 232 201 / 50%) 0px 1px 10px 2px;
+          border: 1px rgb(183 232 201/ 67%) solid;
+        }
+      }
+    }
+    .stuff-select{
+      width: 95%;
+      max-width: 15.91rem;
+      margin: 0.5rem auto;
+      &::part(placeholder), &::part(text){
+          font-size: 0.73rem;
+        }
+    }
+    ion-slides{
+      height: calc(100% - 1.9rem - 20px);
+      ion-slide{
+        padding: 0 1rem;
+        align-items: flex-start;
+      }
+    }
+  }
+
+
+  @media (min-width: 1000px) {
+    main{
+      height: calc(100vh - 10rem);
+      ion-slides{
+        height: calc(100% - 4rem - 48px);
+      }
+    }
+  }
+}
+
+

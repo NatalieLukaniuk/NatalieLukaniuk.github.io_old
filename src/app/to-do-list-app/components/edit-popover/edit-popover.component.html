@@ -1,0 +1,13 @@
+<ion-row class="wrapper">
+  <ion-item class="full-width" [color]="color">
+    <ion-label position="stacked">New name for this list:</ion-label>
+    <ion-input [(ngModel)]="newName"></ion-input>
+  </ion-item>
+  <ion-row class="confirmation-block">
+    <ion-button
+      [disabled]="newName.length <= 0"
+      (click)="changeListName(newName)"
+      color="success">Apply</ion-button>
+    <ion-button (click)="cancel()" color="danger">Cancel</ion-button>
+  </ion-row>
+</ion-row>

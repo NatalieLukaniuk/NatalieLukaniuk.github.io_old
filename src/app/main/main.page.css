@@ -1,0 +1,283 @@
+:host ion-content main {
+  display: flex;
+  justify-content: center;
+  height: 92vh;
+  align-items: center;
+}
+:host ion-content main .wrapper {
+  display: flex;
+  max-width: 56.82rem;
+  margin: 0 auto;
+  background: white;
+  justify-content: space-between;
+  color: var(--ion-color-secondary-contrast);
+  box-shadow: #abeac2 0 0 4px 3px;
+  height: 85vh;
+  overflow: hidden;
+}
+:host ion-content main .wrapper .left-pane {
+  width: 34%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--ion-color-secondary);
+  position: sticky;
+  top: 0;
+  flex-wrap: nowrap;
+  padding: 1vw;
+}
+:host ion-content main .wrapper .left-pane ion-row {
+  flex-direction: column;
+  align-items: center;
+  border-bottom: #98969b 1px solid;
+  padding-bottom: 4vh;
+  padding-top: 4vh;
+}
+:host ion-content main .wrapper .left-pane ion-row:last-child {
+  border-bottom: none;
+}
+:host ion-content main .wrapper .left-pane .header h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.45rem;
+  order: 2;
+  margin-top: 1.36rem;
+  margin-bottom: 0;
+}
+:host ion-content main .wrapper .left-pane .header h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+  order: 3;
+  font-size: 0.91rem;
+}
+:host ion-content main .wrapper .left-pane .header img {
+  border-radius: 50%;
+  width: 70%;
+  order: 1;
+  max-width: 22.16vh;
+}
+:host ion-content main .wrapper .left-pane .contacts a {
+  text-decoration: none;
+}
+:host ion-content main .wrapper .left-pane .contacts a:first-child {
+  margin-bottom: 0.68rem;
+}
+:host ion-content main .wrapper .left-pane .social {
+  flex-direction: row;
+  justify-content: space-between;
+}
+:host ion-content main .wrapper .left-pane .social ion-icon {
+  font-size: 2.73rem;
+}
+:host ion-content main .wrapper .left-pane .social ion-label {
+  width: 0;
+  min-width: 100%;
+  transform-origin: center;
+  text-align: center;
+  overflow: visible;
+}
+:host ion-content main .wrapper .right-pane {
+  flex-direction: column;
+  width: 63%;
+  padding-right: 1.36rem;
+  flex-wrap: nowrap;
+  margin-top: 1.36rem;
+  overflow-y: auto;
+  margin-bottom: 0.45rem;
+}
+:host ion-content main .wrapper .right-pane > ion-row {
+  flex-direction: column;
+  padding-top: 0.45rem;
+  padding-bottom: 0.23rem;
+}
+:host ion-content main .wrapper .right-pane > ion-row ion-item {
+  cursor: default;
+}
+:host ion-content main .wrapper .right-pane > ion-row > ion-item {
+  border-bottom: #98969b 1px solid;
+  border-top: white 1px solid;
+  cursor: pointer;
+}
+:host ion-content main .wrapper .right-pane > ion-row > ion-item:hover {
+  background: #fcfcfd;
+  transition: background-color 200ms ease-in-out;
+  border-radius: 5px;
+  border: #f7f7f7 1px solid;
+}
+:host ion-content main .wrapper .right-pane > ion-row h3 {
+  padding-bottom: 0.55rem;
+  width: 100%;
+}
+:host ion-content main .wrapper .right-pane .opening-container {
+  position: relative;
+  align-content: baseline;
+}
+:host ion-content main .wrapper .right-pane .opening-container .hoverable-container {
+  width: auto;
+}
+:host ion-content main .wrapper .right-pane .opening-container .hoverable-container ion-chip {
+  margin: 0.45rem;
+}
+:host ion-content main .wrapper .right-pane .opening-container .hoverable-container ul {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+  font-size: 0.64rem;
+  width: 100%;
+  bottom: -20px;
+  z-index: -5;
+  padding: 0.45rem 0.45rem 0.45rem 1.36rem;
+}
+:host ion-content main .wrapper .right-pane .opening-container .hoverable-container:hover ul {
+  opacity: 1;
+  background: white;
+  z-index: 1;
+}
+:host ion-content main .wrapper .right-pane .intro p {
+  padding-left: 0.73rem;
+  padding-right: 0.55rem;
+  line-height: 1.36rem;
+}
+:host ion-content main .wrapper .right-pane .experience .opening-container {
+  height: 9.77rem;
+}
+:host ion-content main .wrapper .right-pane .portfolio .opening-container {
+  max-width: 100%;
+}
+:host ion-content main .wrapper .right-pane .portfolio .opening-container ion-list {
+  max-width: 100%;
+}
+:host ion-content main .wrapper .right-pane .portfolio .opening-container ion-list ion-label {
+  white-space: normal;
+}
+:host ion-content main .wrapper .right-pane .portfolio .opening-container ion-list ion-label a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--ion-color-secondary-contrast);
+  text-transform: capitalize;
+}
+:host ion-content main .wrapper .right-pane .portfolio .opening-container ion-list ion-label a:hover {
+  text-decoration: underline;
+  color: black;
+}
+:host ion-content main .wrapper .right-pane .tools .opening-container {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+:host ion-content main .wrapper .right-pane .tools .opening-container ion-item {
+  margin: 0.91rem;
+}
+:host ion-content main .wrapper .right-pane .tools .opening-container ion-item img {
+  height: 3.64rem;
+  width: auto;
+}
+:host ion-content main .wrapper .right-pane .tools .opening-container ion-item ion-label {
+  transform-origin: center top;
+  width: 0;
+  min-width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: all 300ms ease-in;
+}
+:host ion-content main .wrapper .right-pane .tools .opening-container ion-item:hover ion-label {
+  opacity: 1;
+}
+:host ion-content main .wrapper .right-pane .soft-skills .opening-container {
+  height: 4.32rem;
+}
+@media (max-width: 1020px) {
+  :host ion-content main .wrapper .left-pane .social ion-icon {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 880px) {
+  :host ion-content main {
+    align-items: flex-start;
+  }
+  :host ion-content main .wrapper {
+    flex-direction: column;
+    height: calc(100vh - 78px);
+    overflow: auto;
+    justify-content: flex-start;
+  }
+  :host ion-content main .wrapper .left-pane {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: static;
+  }
+  :host ion-content main .wrapper .left-pane > ion-row {
+    border-bottom: none;
+  }
+  :host ion-content main .wrapper .left-pane > ion-row:last-child {
+    height: 90%;
+    justify-content: space-evenly;
+  }
+  :host ion-content main .wrapper .left-pane ion-row {
+    padding: 1vh;
+  }
+  :host ion-content main .wrapper .right-pane {
+    width: 100%;
+    overflow-y: initial;
+  }
+  :host ion-content main .wrapper .right-pane .opening-container .hoverable-container ion-chip {
+    padding: 30px 20px;
+  }
+  :host ion-content main .wrapper .right-pane .experience .opening-container {
+    height: 13.77rem;
+  }
+  :host ion-content main .wrapper .right-pane .soft-skills .opening-container {
+    height: 6rem;
+  }
+}
+@media (max-width: 768px) {
+  :host ion-content main .wrapper {
+    height: calc(100vh - 74px);
+  }
+}
+@media (max-width: 665px) {
+  :host ion-content main .wrapper .right-pane .experience .opening-container {
+    height: 19.77rem;
+  }
+  :host ion-content main .wrapper .right-pane .soft-skills .opening-container {
+    height: 11rem;
+  }
+}
+@media (max-width: 525px) {
+  :host ion-content main .wrapper .left-pane {
+    flex-direction: column;
+  }
+  :host ion-content main .wrapper .right-pane .experience .opening-container {
+    height: 23.77rem;
+  }
+}
+@media (max-width: 500px) {
+  :host ion-content main .wrapper .right-pane .experience .opening-container {
+    height: 26.77rem;
+  }
+}
+@media (max-width: 430px) {
+  :host ion-content main .wrapper .right-pane .experience .opening-container, :host ion-content main .wrapper .right-pane .soft-skills .opening-container {
+    height: auto;
+  }
+  :host ion-content main .wrapper .right-pane .experience .opening-container .hoverable-container, :host ion-content main .wrapper .right-pane .soft-skills .opening-container .hoverable-container {
+    width: 100%;
+  }
+  :host ion-content main .wrapper .right-pane .experience .opening-container .hoverable-container ion-chip, :host ion-content main .wrapper .right-pane .soft-skills .opening-container .hoverable-container ion-chip {
+    width: 100%;
+    padding: 0 15px;
+    --background: var(--ion-color-light);
+    border-radius: 1px;
+  }
+  :host ion-content main .wrapper .right-pane .experience .opening-container .hoverable-container ul, :host ion-content main .wrapper .right-pane .soft-skills .opening-container .hoverable-container ul {
+    position: static;
+    opacity: 1;
+    z-index: 1;
+  }
+  :host ion-content main .wrapper .right-pane .tools .opening-container ion-item {
+    margin: 0.4rem;
+  }
+}
+
+/*# sourceMappingURL=main.page.css.map */

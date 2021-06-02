@@ -1,5 +1,23 @@
 :host{
+  ion-header{
+    ion-toolbar{
+      --background: var(--ion-color-light);
+    }
+  }
   ion-content{
-    height: 90vw;
+    height: 100vh;
+    --background: var(--ion-color-light);
+    .active{
+      --ion-text-color: var(--ion-color-success)
+    }
+    .active-parent{
+      font-weight: bolder;
+    }
+    ion-list{
+      background: transparent;
+      .sub-item{
+        padding-left: 1rem;
+      }
+    }
   }
 }

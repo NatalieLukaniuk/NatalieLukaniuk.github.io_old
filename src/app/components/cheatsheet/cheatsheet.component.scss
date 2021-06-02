@@ -1,0 +1,33 @@
+:host{
+  width: 100%;
+  height: 100%;
+  ion-grid{
+    width: 100%;
+    height: 100%;
+    max-width: 520px;
+    overflow-y: auto;
+    ion-row{
+      //height: 2rem;
+      ion-col{
+        border: var(--ion-color-light) 1px solid;
+        padding: 0.3rem;
+        p{
+          font-size: 0.82rem;
+        }
+        &:first-child{
+          text-align: left;
+          padding-left: 0.7rem;
+        }
+      }
+      &:first-child{
+        font-weight: bolder;
+        text-transform: uppercase;
+        ion-col{
+          text-align: center;
+          border: none;
+          padding-left: 0.3rem;
+        }
+      }
+    }
+  }
+}

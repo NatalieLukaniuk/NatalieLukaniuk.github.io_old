@@ -1,5 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -9,15 +8,14 @@ import {Router} from '@angular/router';
 })
 export class RemAppPage implements OnInit {
 
-  @ViewChild('slides', { static: false }) slides: IonSlides;
-
   pixels = [];
   rem = [];
   defaultPxSize = 18;
   pxInitial = 12;
   pxEnd = 40;
   decimalDigits = 2;
-  color = 'secondary';
+  valuesGenerated = false;
+  color = 'tertiary';
   intViewportWidth = window.innerWidth;
   constructor(private router: Router) {
   }
@@ -26,7 +24,7 @@ export class RemAppPage implements OnInit {
 
   }
 
-  generateRems(slides){
+  generateRems(){
     let i = this.pxInitial;
     while (i <= this.pxEnd){
       this.pixels.push(i);
@@ -40,12 +38,18 @@ export class RemAppPage implements OnInit {
       roundedRem = rems.toFixed(this.decimalDigits);
       this.rem.push(roundedRem);
     }
-    slides.slideTo(1);
-    console.log('hi');
+    this.valuesGenerated = true;
+  }
+  recalculate(){
+    this.pixels.splice(0);
+    this.rem.splice(0);
+    this.generateRems();
   }
 
-  goBack(){
-    this.slides.slideTo(0);
+  goEnterValues(){
+    this.pixels.splice(0);
+    this.rem.splice(0);
+    this.valuesGenerated = false;
   }
 
 }

@@ -1,0 +1,11 @@
+:host main > ion-row {
+  height: 80vh;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+}
+:host main > ion-row p {
+  font-size: 3vw;
+}
+
+/*# sourceMappingURL=about-me.page.css.map */

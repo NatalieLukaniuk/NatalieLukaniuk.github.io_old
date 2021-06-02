@@ -1,0 +1,17 @@
+<ion-row class="wrapper">
+  <ion-item>
+    <ion-label>Include all lists?</ion-label>
+    <ion-checkbox slot="end" checked [(ngModel)]="printAllLists"></ion-checkbox>
+  </ion-item>
+  <ion-list *ngIf="printAllLists === false">
+    <ion-list-header>Select lists to include</ion-list-header>
+    <ion-item *ngFor="let list of this.tasksService.lists">
+      <ion-checkbox slot="start" [(ngModel)]="list.isChecked"></ion-checkbox>
+      <ion-label>{{list.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-row class="confirmation-block">
+    <ion-button color="danger" (click)="close()">Cancel</ion-button>
+    <ion-button color="success" (click)="goPrintPreview()">Apply</ion-button>
+  </ion-row>
+</ion-row>

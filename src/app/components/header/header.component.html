@@ -12,42 +12,33 @@
 
 <ng-template #headerBody>
   <ion-toolbar [color]="color">
-    <ion-title slot="start">
-      <ng-content></ng-content>
-    </ion-title>
+    <!-- <ion-title class="ion-text-uppercase">
+ <ng-content></ng-content>
+      <svg-icon src="/assets/svg/logo.svg"></svg-icon>
+    </ion-title> -->
     <ion-buttons slot="end" *ngIf="viewportWidth <= 768">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-buttons collapse="true" slot="end" *ngIf="viewportWidth > 768">
-      <ion-button *ngFor="let button of buttons" fill="clear" (click)="goTo(button.url)" routerDirection="forward">{{button.title}}</ion-button>
+      <ion-row class="ion-align-items-end">
+        <ion-col *ngIf="printable"><ng-content select="ion-button"></ng-content></ion-col>
+        <ion-col *ngFor="let button of this.nav.navigation">
+          <ion-row *ngIf="button.url">
+            <ion-button
+              (click)="goTo(button.url)"
+              fill="clear"
+              routerDirection="forward"
+              routerLinkActive="active-button">
+              <span>{{button.title}}</span></ion-button>
+          </ion-row>
+          <ion-row *ngIf="button.children?.length > 0">
+            <ion-button
+              fill="clear"
+              (click)="openSubmenu(button, $event)"><span>{{button.title}}</span></ion-button>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
     </ion-buttons>
   </ion-toolbar>
 </ng-template>
-
-<!--<ng-template #headerBody>-->
-<!--  <ion-toolbar [color]="color">-->
-<!--    <ion-title collapse="true" slot="start">-->
-<!--      <ng-content></ng-content>-->
-<!--    </ion-title>-->
-<!--    <ion-buttons collapse="true" slot="end">-->
-<!--      <ion-button [fill]="getButtonFill('bracket')" (click)="goToBracket()" color="tertiary">-->
-<!--        <svg-icon src="/assets/svg/hut.svg" class="ion-margin-end"></svg-icon>-->
-<!--        <span>Bracket</span>-->
-<!--      </ion-button>-->
-<!--      <ion-button [fill]="getButtonFill('your-bets')"  (click)="goToYourBets()" color="tertiary">-->
-<!--        <svg-icon src="/assets/svg/your-bets-outline.svg" class="ion-margin-end"></svg-icon>-->
-<!--        <span>Your Bets</span>-->
-<!--      </ion-button>-->
-<!--      <ion-button [fill]="getButtonFill('leaderboard')" (click)="goToLeaderBoard()" color="tertiary">-->
-<!--        <svg-icon src="/assets/svg/goblet.svg" class="ion-margin-end"></svg-icon>-->
-<!--        <span>Leaderboard</span></ion-button>-->
-<!--      <ion-button [fill]="getButtonFill('invite')" (click)="goToInvite()" color="tertiary">-->
-<!--        <svg-icon src="/assets/svg/arrow.svg" class="ion-margin-end"></svg-icon>-->
-<!--        <span>Invite friends</span>-->
-<!--      </ion-button>-->
-<!--      <ion-button fill="outline" color="tertiary"-->
-<!--                  *ngIf="(authService.isAuthenticated$ | async) === true"-->
-<!--                  (click)="logout()" class="login-button">Logout</ion-button>-->
-<!--    </ion-buttons>-->
-<!--  </ion-toolbar>-->
-<!--</ng-template>-->

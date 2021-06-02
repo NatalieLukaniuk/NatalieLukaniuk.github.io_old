@@ -1,0 +1,10 @@
+<ion-grid class="my-scroll">
+  <ion-row *ngFor="let item of this.data">
+    <ion-col>
+      <p>{{item.name}}</p>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <p>{{item.value}}</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>

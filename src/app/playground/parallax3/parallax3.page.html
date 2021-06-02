@@ -1,0 +1,66 @@
+<ion-header class="ion-no-border" translucent="true" color="tertiary">
+  <app-header [useContainer]="true" [color]="color">
+  </app-header>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="tertiary">
+  <main appTextAppearingOnScroll>
+    <ion-row class="scroll-container">
+      <div id="marker"></div>
+    </ion-row>
+    <div class="hidden-header greeting"></div>
+    <ion-row class="arrow-icon-wrapper">
+      <svg-icon id="arrow-icon" class="hidden-header" src="/assets/images/playground/down-arrow.svg"></svg-icon>
+    </ion-row>
+    <p id="first-block">My name is Natalie Lukaniuk</p>
+    <img id="avatar" src="/assets/images/avatar.jpg">
+    <p id="second-block">For more information about me click here</p>
+    <p id="third-block">I'm a junior frontend developer working with Angular and Ionic Frameworks.</p>
+    <img class="frameworks-img angular" src="assets/svg/angular-3.svg">
+    <img class="frameworks-img ionic" src="assets/svg/ionic.png">
+    <ion-row>
+      <p class="fourth-block">Coding is not just my job, but passion as well.</p>
+      <p class="fourth-block">Thus, when I'm not busy working, I strive to learn new stuff and polish my skills.</p>
+      <p id="fifth-block" class="fourth-block">Some results can be found at this website:</p>
+    </ion-row>
+    <ion-slides>
+      <ion-slide>
+        <ion-row>
+          <h3>Rem generator</h3>
+                <p>Here you can generate a table with pixel values converted to rem based on your default font-size. </p>
+                <p>Can be useful if you prefer pixels when writing code and then need to convert it to rems for better responsiveness.</p>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+
+
+
+
+
+
+
+
+
+<!--  <ion-row class="fade-in-content">-->
+<!--    <p>Rem generator</p>-->
+<!--    <p>Here you can generate a table with pixel values converted to rem based on your default font-size. Can be useful if you prefer pixels when writing code and then need to convert it to rems for better responsiveness</p>-->
+<!--  </ion-row>-->
+<!--  <ion-row class="fade-in-content">-->
+<!--    <p>Px to rem, vh and vw converter</p>-->
+<!--    <p>Converts pixels to the respective units basing on your default font-size, viewport height and width</p>-->
+<!--  </ion-row>-->
+<!--  <ion-row class="fade-in-content">-->
+<!--    <p>To do list</p>-->
+<!--    <p>I wrote it to master a range of Angular peculiarities: interaction between components, services, etc. However, it's a finished app and can be used to make a custom to-do list, which then can be printed or saved as a screenshot with minimalistic styling.</p>-->
+<!--  </ion-row>-->
+<!--  <ion-row class="fade-in-content">-->
+<!--    <p>Playground</p>-->
+<!--    <p>Here I try various techniques, e.g. parallax effects, in html/css/js and showcase the results.</p>-->
+<!--  </ion-row>-->
+<!--  <ion-row class="fade-in-content">-->
+<!--    <p>Cheatsheets</p>-->
+<!--    <p>This section of the website is primarily for my own use. Here I store in one place the data that is often used and not yet memorized.</p>-->
+<!--  </ion-row>-->
+</main>
+  <app-footer></app-footer>
+</ion-content>

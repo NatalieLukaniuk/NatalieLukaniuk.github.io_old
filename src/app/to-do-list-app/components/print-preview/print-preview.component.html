@@ -1,0 +1,59 @@
+<ion-list>
+  <ion-row>
+    <ion-button fill="clear" (click)="close()">
+    <ion-icon name="close-outline"></ion-icon>
+  </ion-button>
+  </ion-row>
+
+  <ng-container *ngIf="printAllLists === true">
+    <ion-list *ngFor="let list of this.tasksService.lists">
+      <h1 *ngIf="list.highPriorityTasks.length >= 1 || list.regularPriorityTasks.length >= 1 || list.lowPriorityTasks.length >= 1">{{list.name}}</h1>
+      <ng-container *ngIf="list.highPriorityTasks.length >= 1">
+        <h2>High priority</h2>
+        <ion-item *ngFor="let item of list.highPriorityTasks">
+          <ion-label class="ion-text-wrap">{{item.taskName}}</ion-label>
+        </ion-item>
+      </ng-container>
+      <ng-container *ngIf="list.regularPriorityTasks.length >= 1">
+        <h2>Regular priority</h2>
+        <ion-item *ngFor="let item of list.regularPriorityTasks">
+          <ion-label class="ion-text-wrap">{{item.taskName}}</ion-label>
+        </ion-item>
+      </ng-container>
+      <ng-container *ngIf="list.lowPriorityTasks.length >= 1">
+        <h2>Low priority</h2>
+        <ion-item *ngFor="let item of list.lowPriorityTasks">
+          <ion-label class="ion-text-wrap">{{item.taskName}}</ion-label>
+        </ion-item>
+      </ng-container>
+    </ion-list>
+  </ng-container>
+  <ng-container *ngIf="printAllLists === false">
+    <ion-list *ngFor="let list of this.tasksService.lists">
+      <ng-container *ngIf="list.isChecked === true">
+        <h1 *ngIf="list.highPriorityTasks.length >= 1 || list.regularPriorityTasks.length >= 1 || list.lowPriorityTasks.length >= 1">{{list.name}}</h1>
+        <ng-container *ngIf="list.highPriorityTasks.length >= 1">
+          <h2>High priority</h2>
+          <ion-item *ngFor="let item of list.highPriorityTasks">
+            <ion-label class="ion-text-wrap">{{item.taskName}}</ion-label>
+          </ion-item>
+        </ng-container>
+        <ng-container *ngIf="list.regularPriorityTasks.length >= 1">
+          <h2>Regular priority</h2>
+          <ion-item *ngFor="let item of list.regularPriorityTasks">
+            <ion-label class="ion-text-wrap">{{item.taskName}}</ion-label>
+          </ion-item>
+        </ng-container>
+        <ng-container *ngIf="list.lowPriorityTasks.length >= 1">
+          <h2>Low priority</h2>
+          <ion-item *ngFor="let item of list.lowPriorityTasks">
+            <ion-label class="ion-text-wrap">{{item.taskName}}</ion-label>
+          </ion-item>
+        </ng-container>
+      </ng-container>
+    </ion-list>
+  </ng-container>
+
+</ion-list>
+
+

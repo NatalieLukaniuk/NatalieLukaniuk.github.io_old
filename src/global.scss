@@ -25,14 +25,236 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+//my custom css
+@import "theme/typography";
+
+
 @media (min-width: 500px) {
   :root{
     font-size: 18px;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 660px) {
   :root{
     font-size: 22px;
+  }
+}
+@media (min-width: 1000px) {
+    :root{
+        font-size: 20px;
+    }
+}
+
+.my-scroll{
+  &::-webkit-scrollbar-track {
+    //background-color: #081426;
+    //border-radius: 0.44rem;
+    border: var(--ion-color-secondary-tint) 3px solid;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.53rem;
+    //border-radius: 0.44rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0.44rem;
+    background-color: var(--ion-color-secondary);
+    border: var(--ion-color-secondary) 3px solid;
+    background-clip: content-box;
+  }
+}
+
+
+ion-item{
+  --background: transparent;
+  --highlight-background: transparent;
+  margin-bottom: 0.5rem;
+  --border-color: transparent;
+  &::part(native){
+    border: none;
+  }
+  ion-label.label-stacked{
+    margin-bottom: 0.36rem !important;
+    font-size: 0.73rem !important;
+  }
+  &.full-width {
+    &::part(native){
+      padding-inline-start: 0;
+      padding-inline-end: 0;
+      --inner-padding-end: 0;
+    }
+  }
+}
+
+
+ion-input{
+  border-radius: 2px;
+  box-shadow: inset 0 0 2px 2px rgba(0,0,0,0.07);
+  --padding-start: 0.45rem !important;
+  .native-input{
+    font-size: 0.73rem;
+    &:focus{
+      background: rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.4);
+    }
+  }
+}
+
+ion-button{
+  --border-radius: 1px;
+  &::part(native){
+    font-size: 0.64rem;
+  }
+}
+
+.list-menu-popover{
+  --width: max-content;
+}
+
+.edit-popover{
+  .popover-content{
+    --min-width: 15.91rem;
+  }
+}
+
+.new-list-popover{
+  .popover-content{
+    --min-width: 15.91rem;
+    --background: var(--ion-color-tertiary);
+  }
+}
+
+.single-selection-popover{
+  --width: 99%;
+
+  .popover-content{
+    background: var(--ion-color-tertiary);
+    width: 92%;
+    max-width: 400px;
+    left: 1rem;
+    max-height: 400px;
+    height: fit-content;
+    overflow-y: auto;
+    box-shadow: 2px 1px 4px 3px rgb(173 216 189 / 50%);
+    ion-list{
+      background: transparent;
+    }
+    .select-interface-option{
+      --background: var(--ion-color-tertiary);
+      &::part(native){
+        --border-color: transparent;
+      }
+    }
+  }
+}
+
+.submenu-popover{
+  .popover-content{
+    width: max-content;
+  }
+}
+
+.print-settings-popover{
+  .popover-content{
+    width: max-content;
+  }
+}
+
+.print-preview-modal{
+  .modal-wrapper{
+    height: 100vh;
+    width: 70vh;
+  }
+}
+.task-add-selection-alert{
+  .alert-wrapper{
+    background: var(--ion-color-tertiary);
+    .alert-head{
+      .alert-title {
+        color: var(--ion-color-tertiary-contrast);
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+    .alert-button-group {
+      justify-content: space-between;
+      .alert-button{
+        width: 48%;
+        color: white;
+        margin-right: 0;
+        .alert-button-inner{
+          justify-content: center;
+        }
+        &:first-child{
+          background: var(--ion-color-danger);
+        }
+        &:last-child{
+          background: var(--ion-color-success);
+        }
+      }
+    }
+  }
+}
+
+.delete-alert{
+  .alert-wrapper{
+    background: var(--ion-color-warning);
+    .alert-head{
+      .alert-title {
+        color: var(--ion-color-warning-contrast);
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+      }
+      .alert-sub-title {
+        color: var(--ion-color-danger);
+        font-size: 0.64rem;
+        font-weight: 400;
+        margin-top: 0.64rem;
+      }
+    }
+    .alert-button-group {
+      justify-content: space-between;
+      .alert-button{
+        width: 48%;
+        color: white;
+        margin-right: 0;
+        .alert-button-inner{
+          justify-content: center;
+        }
+        &.delete-btn{
+          background: var(--ion-color-danger);
+        }
+        &.cancel-btn{
+          background: var(--ion-color-success);
+        }
+      }
+    }
+  }
+}
+
+
+.full-width{
+  width: 100%;
+}
+.outset{
+  box-shadow: 2px 1px 4px 2px rgba(173, 216, 189, 0.5);
+}
+
+@media (max-width: 900px) {
+  .outset{
+    box-shadow: none;
+  }
+}
+
+ion-row.confirmation-block{
+  justify-content: space-between;
+  width: 100%;
+  ion-button{
+    width: 45%;
   }
 }

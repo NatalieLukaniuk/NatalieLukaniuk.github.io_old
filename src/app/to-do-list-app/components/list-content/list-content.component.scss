@@ -1,0 +1,30 @@
+:host{
+  width: 100%;
+  .current-list{
+    flex-direction: column;
+    .wrapper{
+      background: transparent;
+      h2{
+        margin-top: 20px;
+        font-size: 1.2rem;
+        text-align: center;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+      ion-item{
+        .remove-btn{
+          display: none;
+          ion-icon{
+            width: 27px;
+            height: 20px;
+          }
+        }
+        &:hover{
+          .remove-btn{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

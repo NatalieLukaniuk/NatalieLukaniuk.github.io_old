@@ -1,0 +1,289 @@
+<ion-header class="ion-no-border" translucent="true" color="tertiary" id="header">
+    <app-header [useContainer]="true" [color]="color">
+    </app-header>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="tertiary">
+    <main>
+        <section class="wrapper">
+            <ion-row class="left-pane">
+                <ion-row class="header">
+                    <h1>Natalie Lukaniuk</h1>
+                    <h2>Frontend developer</h2>
+                    <img src="/assets/images/avatar.jpg" alt="Natalie Lukaniuk avatar">
+                </ion-row>
+                <ion-row>
+                    <ion-row class="contacts">
+                        <a href="tel:+380950500317">095-050-0317</a>
+                        <a href="mailto:natalie.lukaniuk@gmail.com">natalie.lukaniuk@gmail.com</a>
+                    </ion-row>
+                    <ion-row class="social">
+                        <ion-item href="https://t.me/Natalie_Lukaniuk" target="_blank">
+                            <ion-icon name="navigate-circle-outline"></ion-icon>
+                            <ion-label position="stacked">Telegram</ion-label>
+                        </ion-item>
+                        <ion-item href="viber://chat?number=380950500317" target="_blank">
+                            <ion-icon name="logo-whatsapp"></ion-icon>
+                            <ion-label position="stacked">Viber</ion-label>
+                        </ion-item>
+                        <ion-item href="https://join.skype.com/invite/KtKYnDhfcz6A" target="_blank">
+                            <ion-icon name="logo-skype"></ion-icon>
+                            <ion-label position="stacked">Skype</ion-label>
+                        </ion-item>
+
+                    </ion-row>
+                </ion-row>
+
+            </ion-row>
+            <ion-row class="right-pane my-scroll">
+                <ion-row class="intro">
+                    <p>Hello and welcome to my website. I am a junior frontend developer currently open to long-term offers and new challenges. To learn more about my experience and skills,
+                        please browse the tabs below.</p>
+                </ion-row>
+                <ion-row class="experience">
+                    <ion-item (click)="toggleContainer('experienceDetails')">
+                        <h3>Technology stack</h3>
+                        <ion-icon *ngIf="!containers.experienceDetails" name="chevron-forward-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="containers.experienceDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                    </ion-item>
+                    <ion-row *ngIf="containers.experienceDetails" class="opening-container">
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Ionic/Angular</ion-chip>
+                            <ul>
+                                <li>the main set of frameworks I've been working with</li>
+                                <li>this website and many projects included in my portfolio have been powered by this combo</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>SCSS</ion-chip>
+                            <ul>
+                                <li>widely used extension of the syntax of CSS, part of my daily coding routine</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Wordpress</ion-chip>
+                            <ul>
+                                <li>automatic and manual installation/update of plugins; their integration with the website</li>
+                                <li>adding cutom fields to admin panel pages, output of their content to the website</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Amazon Alexa</ion-chip>
+                            <ul>
+                                <li>adding new pages and Alexa skills</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>SVG</ion-chip>
+                            <ul>
+                                <li>color and size changes</li>
+                                <li>simple animation</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>REST API</ion-chip>
+                            <ul>
+                                <li>sending requests to the server and processing the response</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>LocalStorage</ion-chip>
+                            <ul>
+                                <li>saving and utilizing information about the user for better UX</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Node Modules</ion-chip>
+                            <ul>
+                                <li>installation of Node packages and utilizing their features in the projects</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Responsiveness</ion-chip>
+                            <ul>
+                                <li>elements display and concealment basing on the viewport dimensions</li>
+                                <li>adjustments of the elements' size, position, etc. using flexbox and media-queries</li>
+                                <li>familiar with the concepts of mobile first and graceful degradation approaches</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Animations and transformations</ion-chip>
+                            <ul>
+                                <li>Animations and transformations in response to user events (mouse movements, clicks, etc)</li>
+                                <li>using pure CSS, or in combination with JS</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Parallax effects</ion-chip>
+                            <ul>
+                                <li>a web site trend where the background content (i.e. an image) is moved at a different speed than the
+                                    foreground content while scrolling.</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>UI/UX basic principles</ion-chip>
+                            <ul>
+                                <li>even though UI/UX are in the scope of the designer's responsibility, as practice shows,
+                                    it is good for a coder to be aware of their principles as well. </li>
+                            </ul>
+                        </ion-row>
+                    </ion-row>
+                </ion-row>
+                <ion-row class="portfolio">
+                    <ion-item (click)="toggleContainer('portfolio')">
+                        <h3>Portfolio</h3>
+                        <ion-icon *ngIf="!containers.portfolio" name="chevron-forward-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="containers.portfolio" name="chevron-down-outline" slot="end"></ion-icon>
+                    </ion-item>
+                    <ion-row *ngIf="containers.portfolio"  class="opening-container">
+                        <ion-list>
+                            <ion-item>
+                                <ion-label>
+                                    <a href="https://bracketfanatics.com/" target="_blank">
+                                        Website and web app for BracketFanatics
+                                        <ion-icon name="open-outline"></ion-icon>
+                                    </a>
+                                    <ul>
+                                        <li>Framework: Ionic/Angular</li>
+                                        <li>Developed in a team</li>
+                                        <li>Pages written by me: landing, FAQ, podcasts, and several others that
+                                            can be seen only by registered users.</li>
+                                        <li>There is also a web app for registered users, ½ of the pages for it were
+                                            also written by me.</li>
+                                    </ul>
+                                </ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>
+                                    <a href="https://lukaniuknatalie.github.io/" target="_blank">
+                                        Prototype of a website for Legion Visual Studio
+                                        <ion-icon name="open-outline"></ion-icon>
+                                    </a>
+                                    <ul>
+                                        <li>Framework: Ionic/Angular</li>
+                                        <li>Developed on my own</li>
+                                        <li>Challenges dealt with in the process of development:</li>
+                                        <ul>
+                                            <li>Crossbrowser and crossplatform automatic background video playback at the main page</li>
+                                            <li>Page load optimization. The website is very rich in high-quality graphic assets. In cooperation with the client, we succeeded in achieving a suitable balance between their quality and compression for faster page loads.</li>
+                                        </ul>
+                                    </ul>
+                                </ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </ion-row>
+                </ion-row>
+                <ion-row class="tools">
+                    <ion-item (click)="toggleContainer('toolsDetails')">
+                        <h3>Tools I work with</h3>
+                        <ion-icon *ngIf="!containers.toolsDetails" name="chevron-forward-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="containers.toolsDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                    </ion-item>
+                    <ion-row *ngIf="containers.toolsDetails" class="opening-container">
+                        <ion-item>
+                            <img src="/assets/images/tools/xdadobe.png" alt="">
+                            <ion-label position="stacked">XD Adobe</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <img src="/assets/images/tools/figma.png" alt="">
+                            <ion-label position="stacked">Figma</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <img src="/assets/images/tools/phpstorm.png" alt="">
+                            <ion-label position="stacked">PhPstorm</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <img src="/assets/images/tools/vscode.png" alt="">
+                            <ion-label position="stacked">VSCode</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <img src="/assets/images/tools/github.png" alt="">
+                            <ion-label position="stacked">Github</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <img src="/assets/images/tools/bitbucket.png" alt="">
+                            <ion-label position="stacked">Bitbucket</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <img src="/assets/images/tools/jira.png" alt="">
+                            <ion-label position="stacked">Jira</ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                            <img src="/assets/images/tools/putty.png" alt="">
+                            <ion-label position="stacked">Putty</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <img src="/assets/images/tools/xampp.png" alt="">
+                            <ion-label position="stacked">XAMPP</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <img src="/assets/images/tools/photoshop.png" alt="">
+                            <ion-label position="stacked">Photoshop</ion-label>
+                        </ion-item>
+                    </ion-row>
+                </ion-row>
+                <ion-row class="soft-skills">
+                    <ion-item (click)="toggleContainer('softSkillsDetails')">
+                        <h3>Soft skills</h3>
+                        <ion-icon *ngIf="!containers.softSkillsDetails" name="chevron-forward-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="containers.softSkillsDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                    </ion-item>
+                    <ion-row *ngIf="containers.softSkillsDetails"  class="opening-container">
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Flexible</ion-chip>
+                            <ul>
+                                <li>If a problem can't be solved in one way, I come up with several alternative ideas on how to do it</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Reliable</ion-chip>
+                            <ul>
+                                <li>I do not drop tasks or postpone their delivery unless there is a really good reason for that. In case I do have to, the client gets to know about it as soon as possible.</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Punctual</ion-chip>
+                            <ul>
+                                <li>Time is the most valuable asset in this rapid world. Thus, I highly appreciate working with people who treat it wisely and don't waste neither their time, nor mine.</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Easy to reach</ion-chip>
+                            <ul>
+                                <li>I usually respond to messages in Telegram, Skype and Viber within an hour between 9am and 10pm Kyiv time (+3UTC). However I do appreciate receiving only really urgent messages after 6pm.</li>
+                            </ul>
+                        </ion-row>
+                        <ion-row class="hoverable-container">
+                            <ion-chip>Communicable</ion-chip>
+                            <ul>
+                                <li>I'm not a fan of small talks and chutters. However, I do appreciate informative and polite communication with my colleagues and clients.</li>
+                            </ul>
+                        </ion-row>
+                    </ion-row>
+                </ion-row>
+                <ion-row class="learning">
+                    <ion-item (click)="toggleContainer('learningDetails')">
+                        <h3>Currently learning</h3>
+                        <ion-icon *ngIf="!containers.learningDetails" name="chevron-forward-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="containers.learningDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                    </ion-item>
+                    <ion-row *ngIf="containers.learningDetails"  class="opening-container">
+                        <ion-item>
+                            <ion-chip>PHP</ion-chip>
+                        </ion-item>
+                        <ion-item>
+                            <ion-chip>React JS</ion-chip>
+                        </ion-item>
+                        <ion-item>
+                            <ion-chip>Hybrid apps</ion-chip>
+                        </ion-item>
+                    </ion-row>
+                </ion-row>
+
+            </ion-row>
+        </section>
+    </main>
+
+
+</ion-content>

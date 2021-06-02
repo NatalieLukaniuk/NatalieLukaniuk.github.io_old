@@ -1,0 +1,72 @@
+:host ion-content::part(scroll) {
+  overflow: hidden;
+}
+:host ion-content main {
+  background: #0a2a43;
+  overflow-y: auto;
+  height: 100vh;
+}
+:host ion-content main.my-scroll-dark::-webkit-scrollbar-track {
+  border-radius: 0.44rem;
+  border: #0b3352 3px solid;
+}
+:host ion-content main.my-scroll-dark::-webkit-scrollbar {
+  width: 0.53rem;
+  border-radius: 0.44rem;
+}
+:host ion-content main.my-scroll-dark::-webkit-scrollbar-thumb {
+  border-radius: 0.44rem;
+  background-color: #0b3352;
+  border: #0b3352 3px solid;
+  background-clip: content-box;
+}
+:host ion-content main .header {
+  height: 56vw;
+  flex-direction: column;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  width: 100%;
+  position: relative;
+}
+:host ion-content main .header:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #0a2a43, transparent);
+  z-index: 10000;
+}
+:host ion-content main .header:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a2a43;
+  z-index: 10000;
+  mix-blend-mode: color;
+}
+:host ion-content main .header ion-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  pointer-events: none;
+}
+:host ion-content main .header #text {
+  position: relative;
+  color: white;
+  font-size: 11.46vw;
+}
+:host ion-content main .rest {
+  padding: 2rem 1rem;
+}
+:host ion-content main .rest h1 {
+  color: white;
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=parallax1.page.css.map */

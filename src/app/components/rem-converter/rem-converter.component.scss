@@ -1,0 +1,34 @@
+:host{
+  width: 100%;
+  overflow-y: auto;
+  height: 100%;
+  .wrapper{
+    max-width: 950px;
+    margin: 0 auto;
+  }
+  .converted-data{
+    flex-direction: column;
+    ion-item, p{
+      user-select: all;
+      font-size: 0.73rem;
+    }
+  }
+  @media (min-width: 450px) {
+    display: flex;
+    align-items: center;
+    .wrapper{
+      width: 100%;
+      .initial-data{
+        max-width: 150px;
+      }
+    }
+  }
+  @media (max-width: 450px){
+    .wrapper{
+      .converted-data{
+        flex-direction: row;
+        width: 100%;
+      }
+    }
+  }
+}

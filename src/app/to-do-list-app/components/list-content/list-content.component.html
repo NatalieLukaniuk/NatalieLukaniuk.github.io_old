@@ -1,0 +1,42 @@
+<ion-row class="current-list">
+  <ion-list class="wrapper" lines="none">
+    <h2 *ngIf="this.tasksService.lists[i].highPriorityTasks.length > 0">Important tasks</h2>
+    <ion-item *ngFor="let task of this.tasksService.lists[i].highPriorityTasks" class="full-width">
+      <ion-label>{{task.taskName}}</ion-label>
+            <ion-button
+              fill="clear"
+              size="small"
+              (click)="deleteTask(this.task, 'high')"
+              class="remove-btn">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+    </ion-item>
+    <h2 *ngIf="this.tasksService.lists[i].regularPriorityTasks.length > 0">Medium priority tasks</h2>
+    <ion-item *ngFor="let task of this.tasksService.lists[i].regularPriorityTasks" class="full-width">
+      <ion-label>{{task.taskName}}</ion-label>
+      <ion-button
+        fill="clear"
+        size="small"
+        (click)="deleteTask(this.task, 'default')"
+        class="remove-btn">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <h2 *ngIf="this.tasksService.lists[i].lowPriorityTasks.length > 0">Low priority tasks</h2>
+    <ion-item *ngFor="let task of this.tasksService.lists[i].lowPriorityTasks" class="full-width">
+      <ion-label>{{task.taskName}}</ion-label>
+      <ion-button
+        fill="clear"
+        size="small"
+        (click)="deleteTask(this.task, 'low')"
+        class="remove-btn">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item class="full-width"
+              *ngIf="this.tasksService.lists[i].highPriorityTasks.length < 1 && this.tasksService.lists[i].regularPriorityTasks.length < 1 && this.tasksService.lists[i].lowPriorityTasks.length < 1"  >
+      You don't have any tasks in this list yet
+    </ion-item>
+
+  </ion-list>
+</ion-row>

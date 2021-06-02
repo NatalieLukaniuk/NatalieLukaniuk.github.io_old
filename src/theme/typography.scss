@@ -1,0 +1,79 @@
+$font-path: "/assets/fonts" !default;
+
+//Cabin
+//$CabinRegular: $font-path+"/cabin";
+//$PoppinsRegular_eot: $PoppinsRegular+"/Poppins-Regular.eot";
+//$PoppinsRegular_woff2: $PoppinsRegular+"/Poppins-Regular.woff2";
+//$PoppinsRegular_woff: $PoppinsRegular+"/Poppins-Regular.woff";
+//$CabinRegular_ttf: $CabinRegular+"/Cabin-Regular.ttf";
+//$PoppinsRegular_svg: $PoppinsRegular+"/Poppins-Regular.svg";
+
+//Cairo
+$CairoBold: $font-path+"/cairo/bold";
+$CairoBold_ttf: $CairoBold+"/Cairo-Bold.ttf";
+$CairoBold_eot: $CairoBold+"/Cairo-Bold.eot";
+$CairoBold_woff: $CairoBold+"/Cairo-Bold.woff";
+$CairoBold_svg: $CairoBold+"/Cairo-Bold.svg";
+
+//Cairo-SemiBold
+$CairoSemiBold: $font-path+"/cairo/semibold";
+$CairoSemiBold_ttf: $CairoSemiBold+"/Cairo-SemiBold.ttf";
+$CairoSemiBold_eot: $CairoSemiBold+"/Cairo-SemiBold.eot";
+$CairoSemiBold_woff: $CairoSemiBold+"/Cairo-SemiBold.woff";
+$CairoSemiBold_svg: $CairoSemiBold+"/Cairo-SemiBold.svg";
+
+//Montserrat-Regular
+$MontserratRegular: $font-path+"/source_sans/regular";
+$MontserratRegular_ttf: $MontserratRegular+"/Montserrat-Regular.ttf";
+$MontserratRegular_eot: $MontserratRegular+"/Montserrat-Regular.eot";
+$MontserratRegular_woff: $MontserratRegular+"/Montserrat-Regular.woff";
+$MontserratRegular_svg: $MontserratRegular+"/Montserrat-Regular.svg";
+
+//----------------------------------------------Cairo-----------------------------------------//
+
+@font-face {
+  font-family: 'Cairo';
+  src: url($CairoBold_eot);                    /* IE9 Compat Modes */
+  src: url($CairoBold_woff) format('woff'),    /* Pretty Modern Browsers */
+  url($CairoBold_ttf)  format('truetype'),     /* Safari, Android, iOS */
+  url($CairoBold_svg) format('svg');           /* Legacy iOS */
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url($CairoSemiBold_eot);                    /* IE9 Compat Modes */
+  src: url($CairoSemiBold_woff) format('woff'),    /* Pretty Modern Browsers */
+  url($CairoSemiBold_ttf)  format('truetype'),     /* Safari, Android, iOS */
+  url($CairoSemiBold_svg) format('svg');           /* Legacy iOS */
+  font-weight: 600;
+  font-style: normal;
+}
+
+//----------------------------------------------Montserrat-Regular-----------------------------------------//
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url($MontserratRegular_eot);                    /* IE9 Compat Modes */
+  src: url($MontserratRegular_woff) format('woff'),    /* Pretty Modern Browsers */
+  url($MontserratRegular_ttf)  format('truetype'),     /* Safari, Android, iOS */
+  url($MontserratRegular_svg) format('svg');           /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+h1{
+  font-size: 1.18rem;
+  //font-family: 'Cairo';
+}
+h2{
+  font-size: 1.09rem;
+  //font-family: 'Cairo';
+}
+
+h3{
+  //font-family: 'Cairo';
+  font-weight: 600;
+}

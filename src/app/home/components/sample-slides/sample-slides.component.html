@@ -1,0 +1,135 @@
+<ion-row class="main">
+  <ion-row class="slide" id="slide-1">
+    <h3>
+      <ng-container *ngIf="this.lang.lang === 'eng'">Rem generator</ng-container>
+      <ng-container *ngIf="this.lang.lang === 'ukr'">Генератор значень в rem</ng-container>
+    </h3>
+    <ion-row>
+      <ion-row>
+        <p class="ion-text-wrap">
+          <ng-container *ngIf="this.lang.lang === 'eng'">Here you can generate a table with pixel values converted to rem
+            based on your default font-size. </ng-container>
+          <ng-container *ngIf="this.lang.lang === 'ukr'">З його допомогою можна згенерувати табличку зі значеннями,
+            зконвертованими з пікселів в rem. </ng-container>
+        </p>
+        <p class="ion-text-wrap">
+          <ng-container *ngIf="this.lang.lang === 'eng'">Can be useful if you prefer pixels when writing code and then
+            need to convert it to rems for better responsiveness.</ng-container>
+          <ng-container *ngIf="this.lang.lang === 'ukr'">Може стати в нагоді для розробників, які при верстці з макету
+            віддають перевагу одиницями в пікселях і потім потребують їх конвертації в rem задля респонсивності сайту
+            чи додатку.</ng-container>
+        </p>
+      </ion-row>
+      <ion-row>
+        <ion-img src="/assets/images/screens/rg-d.png"></ion-img>
+        <ion-img src="/assets/images/screens/rg-m.png"></ion-img>
+      </ion-row>
+    </ion-row>
+  </ion-row>
+  <ion-button id="slide-1-btn" (click)="goTo('rem-generator')">
+    <ng-container *ngIf="this.lang.lang === 'eng'">Go to the app</ng-container>
+    <ng-container *ngIf="this.lang.lang === 'ukr'">Відкрити додаток</ng-container>
+  </ion-button>
+  <ion-row class="slide" id="slide-2">
+    <h3>
+      <ng-container *ngIf="this.lang.lang === 'eng'">Px to rem, vh and vw converter</ng-container>
+      <ng-container *ngIf="this.lang.lang === 'ukr'">Конвертер px в rem, vh та vw</ng-container>
+    </h3>
+    <ion-row>
+      <ion-row>
+        <p>
+          <ng-container *ngIf="this.lang.lang === 'eng'">Converts pixels to the respective units basing on your default
+            font-size, viewport height and width</ng-container>
+          <ng-container *ngIf="this.lang.lang === 'ukr'">Додаток для конвертації значень в пікселях в інші одиниці вимірювання
+            на основі таких параметрів: розмір шрифта на сайті по замовчування, висота та ширина вікна перегляду</ng-container>
+        </p>
+      </ion-row>
+      <ion-row>
+        <ion-img src="/assets/images/screens/rc-d.png"></ion-img>
+        <ion-img src="/assets/images/screens/rc-m.png"></ion-img>
+      </ion-row>
+    </ion-row>
+  </ion-row>
+  <ion-button id="slide-2-btn" (click)="goTo('converter')">
+    <ng-container *ngIf="this.lang.lang === 'eng'">Go to the app</ng-container>
+    <ng-container *ngIf="this.lang.lang === 'ukr'">Відкрити додаток</ng-container>
+  </ion-button>
+  <ion-row class="slide" id="slide-3">
+    <h3>
+      <ng-container *ngIf="this.lang.lang === 'eng'">To do list</ng-container>
+      <ng-container *ngIf="this.lang.lang === 'ukr'">Додаток для формування списку справ</ng-container>
+    </h3>
+    <ion-row>
+      <ion-row>
+        <p>
+          <ng-container *ngIf="this.lang.lang === 'eng'">I wrote it to master a range of Angular peculiarities:
+            interaction between components, services, etc. However, it's a finished app and can be used to make a custom
+            to-do list, which then can be printed or saved as a screenshot with minimalistic styling.</ng-container>
+          <ng-container *ngIf="this.lang.lang === 'ukr'">Писала я його з метою розібратись в компонентах, сервісах та
+            інших особливостях фреймворку Angular. Однак, натхнення вистачило щоб довести до цілком функціональної робочої форми.
+            В додатку можна створити список запланованих справ, який потім можна роздрукувати або ж зберегти як скріншот
+            в спрощеному вигляді, без зайвих стилів.
+          </ng-container>
+        </p>
+      </ion-row>
+      <ion-row>
+        <ion-img src="/assets/images/screens/td-d.png"></ion-img>
+        <ion-img src="/assets/images/screens/td-m.png"></ion-img>
+      </ion-row>
+    </ion-row>
+  </ion-row>
+  <ion-button id="slide-3-btn" (click)="goTo('to-do-list')">
+    <ng-container *ngIf="this.lang.lang === 'eng'">Go to the app</ng-container>
+    <ng-container *ngIf="this.lang.lang === 'ukr'">Відкрити додаток</ng-container>
+  </ion-button>
+  <ion-row class="slide" id="slide-4">
+    <h3>
+      <ng-container *ngIf="this.lang.lang === 'eng'">Playground</ng-container>
+      <ng-container *ngIf="this.lang.lang === 'ukr'">Пісочниця</ng-container>
+    </h3>
+    <ion-row>
+      <ion-row>
+        <p>
+          <ng-container *ngIf="this.lang.lang === 'eng'">Here I try various techniques, e.g. parallax effects,
+            in html/css/js and showcase the results.</ng-container>
+          <ng-container *ngIf="this.lang.lang === 'ukr'">Це плацдарм, на якому я випробовую різні цікаві техніки
+            (наприклад, паралакс, анімації, тощо) і потім хвалюсь результатом, якщо він вдалий.</ng-container>
+        </p>
+      </ion-row>
+      <ion-row>
+        <ion-img src="/assets/images/screens/pl-d.png"></ion-img>
+        <ion-img src="/assets/images/screens/pl-m.png"></ion-img>
+      </ion-row>
+    </ion-row>
+  </ion-row>
+  <ion-button id="slide-4-btn" (click)="goTo('playground')">
+    <ng-container *ngIf="this.lang.lang === 'eng'">Go to the page</ng-container>
+    <ng-container *ngIf="this.lang.lang === 'ukr'">Перейти в пісочницю</ng-container>
+  </ion-button>
+  <ion-row class="slide" id="slide-5">
+    <h3>
+      <ng-container *ngIf="this.lang.lang === 'eng'">Cheatsheets</ng-container>
+      <ng-container *ngIf="this.lang.lang === 'ukr'">Шпаргалки</ng-container>
+    </h3>
+    <ion-row>
+      <ion-row>
+        <p>
+          <ng-container *ngIf="this.lang.lang === 'eng'">This section of the website is primarily for my own use.
+            Here I store in one place the data that is often used and not yet memorized.</ng-container>
+          <ng-container *ngIf="this.lang.lang === 'ukr'">В цьому розділі сайту я зберігаю інформацію, яку часто використовую,
+          але ще не запам'ятала настільки, щоб не треба було часом підглядати і освіжати її в голові. Мені зручніше тримати таке тут,
+            щоб не шукати по закладках браузера і нотатках.
+          </ng-container>
+        </p>
+      </ion-row>
+      <ion-row>
+        <ion-img src="/assets/images/screens/cs-d.png"></ion-img>
+        <ion-img src="/assets/images/screens/cs-m.png"></ion-img>
+      </ion-row>
+    </ion-row>
+  </ion-row>
+  <ion-button id="slide-5-btn" (click)="goTo('cheetsheats')">
+    <ng-container *ngIf="this.lang.lang === 'eng'">Go to the page</ng-container>
+    <ng-container *ngIf="this.lang.lang === 'ukr'">Подивитись</ng-container>
+  </ion-button>
+</ion-row>

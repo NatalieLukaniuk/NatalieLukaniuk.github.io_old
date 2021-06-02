@@ -1,0 +1,263 @@
+:host{
+  ion-content{
+    &::part(scroll){
+      overflow: hidden;
+    }
+    main{
+      overflow-y: auto;
+      height: 100vh;
+      .scroll-container{
+        height: 300vh;
+        flex-direction: column;
+        position: relative;
+        z-index: 20;
+        background: transparent;
+      }
+      p{
+        font-size: 4vw;
+        margin: 0;
+        line-height: 5vw;
+        max-width: 90%;
+      }
+      .greeting, .arrow-icon-wrapper, #first-block, #second-block, #third-block, #avatar, .frameworks-img, .fourth-block{
+        position: fixed;
+        z-index: 1;
+        padding: 3vw;
+      }
+      .hidden-header{
+          opacity: 1;
+          transition: opacity 500ms ease-out;
+          &.hide{
+            opacity: 0;
+          }
+        }
+      .greeting{
+          top: 40vh;
+          width: 100%;
+          text-align: center;
+          &:before{
+            content: 'Please scroll down';
+            animation: greeting 8s ease-in-out;
+            text-transform: uppercase;
+            font-size: 4vw;
+            font-weight: 600;
+            color: var(--ion-color-dark);
+          }
+        }
+      .arrow-icon-wrapper{
+        width: 100%;
+        top: 47vh;
+        justify-content: center;
+        #arrow-icon{
+          width: 3.5vh;
+          min-width: 3.5vw;
+          height: 3.5vh;
+          min-height: 3.5vw;
+          margin-top: 5vh;
+          path{
+            fill: transparent;
+            stroke-width: 16;
+            stroke: var(--ion-color-dark);
+            stroke-dasharray: 1850;
+            stroke-dashoffset: 1850;
+          }
+          &.visible{
+            path{
+              animation: animate-arrow 2s linear forwards;
+              stroke-dashoffset: 1850;
+            }
+          }
+        }
+      }
+      #first-block{
+          top: 40%;
+        }
+      #second-block{
+          font-size: 2vw;
+        }
+      #third-block{
+          font-size: 3vw;
+          line-height: 4vw;
+        }
+      #avatar{
+          width: 23.44vw;
+          height: auto;
+          right: 5vw;
+          top: 33%;
+          opacity: 0;
+          transform: translateX(5vw);
+          transition: transform 500ms ease-in-out, opacity 300ms ease-in;
+          &.move-left{
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+      .frameworks-img{
+          width: auto;
+          height: 9.5vw;
+          opacity: 0;
+          transition: opacity 400ms ease-in;
+          top: 72%;
+          z-index: 1;
+          &.show{
+            opacity: 1;
+          }
+          &.angular{
+            left: 25%;
+          }
+          &.ionic{
+            right: 25%;
+          }
+        }
+      .fourth-block{
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 200ms ease-in-out;
+        font-size: 3vw;
+        line-height: 4vw;
+        &:first-child{
+          top: 30%;
+        }
+        &:nth-child(2){
+          top: 40%;
+
+        }
+        &:nth-child(3){
+          top: 58%;
+
+        }
+        &.show{
+          opacity: 1;
+          transform: scale(1);
+          transition: all 500ms ease-in-out;
+          &:nth-child(2){
+            transition-delay: 600ms;
+          }
+          &:nth-child(3){
+            transition-delay: 1200ms;
+          }
+        }
+      }
+      #second-block, #third-block{
+          top: 50%;
+        }
+      #first-block, #second-block, #third-block {
+        transform: translateX(-5vw);
+        opacity: 0;
+        transition: transform 500ms ease-in-out, opacity 400ms ease-in;
+        &.move-right{
+          transform: translateX(0);
+          opacity: 1;
+        }
+        &.move-left{
+          transform: translateX(5vw);
+          opacity: 0;
+        }
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    ion-content{
+      main{
+        .greeting{
+          &:before{
+            font-size: 6vw;
+          }
+        }
+        #first-block{
+          top: 30%;
+          font-size: 6vw;
+        }
+        #second-block{
+          top: 78%;
+          font-size: 4vw;
+        }
+        #third-block{
+          font-size: 6vw;
+          line-height: 10vw;
+          top: 40%;
+        }
+        .frameworks-img{
+          height: 3.5rem;
+          left: 7vw;
+          right: auto;
+          &.angular{
+            left: 5vw;
+            top: 60%;
+          }
+        }
+        #avatar{
+          height: 40vh;
+          width: auto;
+          left: 5vw;
+          top: 36%;
+        }
+      }
+    }
+  }
+}
+
+@keyframes greeting {
+  0% {
+    content: '';
+    opacity: 0;
+  }
+  10%{
+    content: 'Hello there';
+    opacity: 0;
+  }
+  30% {
+    content: 'Hello there';
+    opacity: 1;
+  }
+  40%{
+    content: 'Hello there';
+    opacity: 0;
+  }
+  41%{
+    content: 'Welcome to my website';
+    opacity: 0;
+  }
+  60% {
+    content: 'Welcome to my website';
+    opacity: 1;
+  }
+  70%{
+    content: 'Welcome to my website';
+    opacity: 0;
+  }
+  71%{
+    content: 'Please scroll down';
+    opacity: 0;
+  }
+  85%{
+    content: 'Please scroll down';
+    opacity: 1;
+  }
+  90%{
+    content: 'Please scroll down';
+    opacity: 0.2;
+  }
+  100%{
+    content: 'Please scroll down';
+    opacity: 1;
+  }
+}
+@keyframes animate-arrow {
+  0% {
+    stroke-dashoffset: 2200;
+    opacity: 0;
+  }
+  70% {
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+    fill: transparent;
+  }
+  100%{
+    stroke-dashoffset: 0;
+    fill: var(--ion-color-dark);
+    opacity: 1;
+  }
+}
+
+

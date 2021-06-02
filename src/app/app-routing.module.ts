@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'main',
     pathMatch: 'full'
   },
   {
@@ -20,9 +20,27 @@ const routes: Routes = [
     loadChildren: () => import('./to-do-list-app/to-do-list-app.module').then( m => m.ToDoListAppPageModule)
   },
   {
-    path: 'rem-converter',
-    loadChildren: () => import('./rem-converter/rem-converter.module').then( m => m.RemConverterPageModule)
+    path: 'useful-information',
+    loadChildren: () => import('./useful-information/useful-information.module').then( m => m.UsefulInformationPageModule)
   },
+  {
+    path: 'converter',
+    loadChildren: () => import('./converter/converter.module').then( m => m.ConverterPageModule)
+  },
+  {
+    path: 'playground',
+    loadChildren: () => import('./playground/playground.module').then( m => m.PlaygroundPageModule)
+  },
+  {
+    path: 'about-me',
+    loadChildren: () => import('./about-me/about-me.module').then( m => m.AboutMePageModule)
+  },
+  {
+    path: 'main',
+    loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
+  },
+
+
 ];
 
 @NgModule({

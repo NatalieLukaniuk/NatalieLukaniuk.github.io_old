@@ -1,0 +1,59 @@
+:host ion-header ion-button {
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+}
+:host main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 8.56rem);
+}
+:host main .background-container {
+  justify-content: space-evenly;
+  padding: 3vw;
+  width: 100%;
+  max-width: 1500px;
+  height: 100%;
+  overflow-y: auto;
+}
+:host main .background-container .add-new-task-section {
+  height: max-content;
+  width: 100%;
+  max-width: 400px;
+}
+:host main .background-container .right-pane {
+  flex-direction: column;
+}
+:host main .background-container .right-pane .list-selection-section {
+  padding: 0 1rem 2rem;
+}
+:host main .background-container .right-pane .list-selection-section ion-select::part(placeholder) {
+  opacity: 1;
+  font-size: 0.8rem;
+}
+:host main .background-container .right-pane .list-selection-section .add-new-list-btn ion-icon {
+  margin-right: 5px;
+  height: 16px;
+  width: 16px;
+}
+:host main .background-container .right-pane .list-display-section {
+  padding: 0 1rem;
+  position: relative;
+  width: calc(100% + 3vw);
+  flex-direction: column;
+  border: 2px solid;
+  max-width: 90vw;
+  box-shadow: 0 0 5px 4px rgba(173, 216, 189, 0.6);
+}
+:host main .background-container .right-pane .list-display-section .list-menu-btn {
+  position: absolute;
+  right: -8px;
+  top: -6px;
+}
+@media (min-width: 768px) {
+  :host main {
+    height: calc(100vh - 7.56rem);
+  }
+}
+
+/*# sourceMappingURL=to-do-list-app.page.css.map */

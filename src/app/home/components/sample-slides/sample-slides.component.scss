@@ -1,0 +1,119 @@
+:host{
+  width: 100%;
+  .main{
+    height: 100%;
+    .slide{
+      z-index: 1;
+      top: 15%;
+      width: 100%;
+      padding: 2vw;
+      flex-direction: column;
+      position: fixed;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: opacity 500ms ease-in-out, transform 600ms ease-in-out;
+      h3{
+        font-size: 4vw;
+        text-align: center;
+      }
+      & > ion-row{
+        //flex-direction: column;
+        text-align: left;
+        justify-content: space-evenly;
+        flex-direction: row-reverse;
+        ion-row{
+          p{
+            font-size: 1rem;
+            line-height: 1.7rem;
+          }
+          &:first-child{
+            flex-direction: column;
+            width: 35%;
+            justify-content: center;
+          }
+          &:last-child{
+            width: 55%;
+            flex-wrap: nowrap;
+            align-items: center;
+            max-height: 60vh;
+            ion-img{
+              //height: 46vh;
+              &:first-child{
+                //width: 66vh;
+              }
+              &:last-child{
+                height: 72%;
+              }
+            }
+          }
+        }
+      }
+      &.slide-in{
+        transform: translateX(0);
+        opacity: 1;
+      }
+      &.slide-out{
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+    ion-button{
+      opacity: 0;
+      position: absolute;
+      top: 15%;
+      right: 10%;
+      transform: translateX(0);
+      //transition: opacity 800ms ease-in-out, transform 600ms ease-in-out;
+      z-index: 1;
+      &.show{
+        opacity: 1;
+        z-index: 10000;
+        transition: opacity 800ms ease-in-out;
+      }
+      &.change{
+        opacity: 1;
+        z-index: 10000;
+      }
+      &.slide-out{
+        transform: translateX(-200%);
+        opacity: 0;
+        z-index: 1;
+        transition: transform 600ms ease-in-out;
+      }
+      &.hide{
+        opacity: 0;
+        z-index: 1;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .main{
+      .slide{
+        h3{
+          font-size: 8vw;
+        }
+        & > ion-row{
+          flex-direction: column;
+          ion-row{
+            p{
+              font-size: 1rem;
+              line-height: 1.3rem;
+            }
+            &:first-child, &:last-child{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    .main{
+      ion-button{
+        top: 10%;
+      }
+    }
+  }
+}
+
+

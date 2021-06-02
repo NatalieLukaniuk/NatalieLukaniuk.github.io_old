@@ -1,0 +1,12 @@
+<ion-row class="wrapper">
+  <ion-item class="full-width">
+    <ion-input placeholder="name for your new list" [(ngModel)]="newListName"></ion-input>
+  </ion-item>
+  <ion-row class="confirmation-block">
+    <ion-button
+      color="success"
+      [disabled]="newListName.length <= 0"
+      (click)="addNewListName(newListName)">Add</ion-button>
+    <ion-button color="danger" (click)="cancel()">Cancel</ion-button>
+  </ion-row>
+</ion-row>

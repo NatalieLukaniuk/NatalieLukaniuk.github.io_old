@@ -1,0 +1,11 @@
+:host{
+  --background: transparent;
+  width: 100%;
+  .task-add-wrapper{
+    flex-direction: column;
+    padding: 0 1rem 2rem;
+    .wrapper{
+      background: transparent;
+    }
+  }
+}

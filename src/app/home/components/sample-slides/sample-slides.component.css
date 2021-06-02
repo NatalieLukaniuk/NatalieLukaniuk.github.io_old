@@ -1,0 +1,101 @@
+:host {
+  width: 100%;
+}
+:host .main {
+  height: 100%;
+}
+:host .main .slide {
+  z-index: 1;
+  top: 15%;
+  width: 100%;
+  padding: 2vw;
+  flex-direction: column;
+  position: fixed;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 500ms ease-in-out, transform 600ms ease-in-out;
+}
+:host .main .slide h3 {
+  font-size: 4vw;
+  text-align: center;
+}
+:host .main .slide > ion-row {
+  text-align: left;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+}
+:host .main .slide > ion-row ion-row p {
+  font-size: 1rem;
+  line-height: 1.7rem;
+}
+:host .main .slide > ion-row ion-row:first-child {
+  flex-direction: column;
+  width: 35%;
+  justify-content: center;
+}
+:host .main .slide > ion-row ion-row:last-child {
+  width: 55%;
+  flex-wrap: nowrap;
+  align-items: center;
+  max-height: 60vh;
+}
+:host .main .slide > ion-row ion-row:last-child ion-img:last-child {
+  height: 72%;
+}
+:host .main .slide.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+:host .main .slide.slide-out {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+:host .main ion-button {
+  opacity: 0;
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  transform: translateX(0);
+  z-index: 1;
+}
+:host .main ion-button.show {
+  opacity: 1;
+  z-index: 10000;
+  transition: opacity 800ms ease-in-out;
+}
+:host .main ion-button.change {
+  opacity: 1;
+  z-index: 10000;
+}
+:host .main ion-button.slide-out {
+  transform: translateX(-200%);
+  opacity: 0;
+  z-index: 1;
+  transition: transform 600ms ease-in-out;
+}
+:host .main ion-button.hide {
+  opacity: 0;
+  z-index: 1;
+}
+@media (max-width: 600px) {
+  :host .main .slide h3 {
+    font-size: 8vw;
+  }
+  :host .main .slide > ion-row {
+    flex-direction: column;
+  }
+  :host .main .slide > ion-row ion-row p {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+  :host .main .slide > ion-row ion-row:first-child, :host .main .slide > ion-row ion-row:last-child {
+    width: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  :host .main ion-button {
+    top: 10%;
+  }
+}
+
+/*# sourceMappingURL=sample-slides.component.css.map */

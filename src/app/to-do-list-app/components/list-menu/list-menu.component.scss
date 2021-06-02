@@ -1,0 +1,9 @@
+:host{
+  ion-list{
+    background: var(--ion-color-tertiary);
+    padding: 1rem;
+    ion-item{
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<ion-row class="task-add-wrapper">
+    <ion-list class="wrapper ion-justify-content-evenly ion-align-items-start">
+      <ion-item class="full-width">
+        <ion-label position="stacked">The task to complete</ion-label>
+        <ion-input placeholder="task name goes here" name='newTask' [(ngModel)]="newTask"></ion-input>
+      </ion-item>
+      <ion-item class="full-width">
+        <ion-label position="stacked">List to add to</ion-label>
+        <ion-select
+          multiple="true"
+          [interfaceOptions]="selectionOptions"
+          cancelText="Cancel" okText="Apply"
+          [(ngModel)]="selectedList"
+          (ionChange)="onChange($event, 'list')">
+          <ion-select-option *ngFor="let list of this.tasksService.lists" [value]=list.name >{{list.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="full-width">
+        <ion-label position="stacked">Change priority</ion-label>
+        <ion-select
+          [value]="selectedPriority"
+          [interfaceOptions]="selectionOptions"
+          cancelText="Cancel" okText="Apply"
+          (ionChange)="onChange($event, 'priority')">
+          <ion-select-option value='default'>Default</ion-select-option>
+          <ion-select-option value='high'>High</ion-select-option>
+          <ion-select-option value='low'>Low</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button
+        class="add-btn full-width"
+        [disabled]="newTask.length <= 0"
+        (click)="addNewTask(newTask, this.selectedList, this.selectedPriority)">Add</ion-button>
+    </ion-list>
+</ion-row>

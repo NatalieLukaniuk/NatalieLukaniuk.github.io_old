@@ -1,0 +1,120 @@
+:host ion-content::part(scroll) {
+  overflow: hidden;
+}
+:host ion-content main {
+  overflow-y: auto;
+  height: 100vh;
+}
+:host ion-content main h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+:host ion-content main .info-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 2.2rem;
+  width: 2.2rem;
+}
+:host ion-content main .info-icon:hover {
+  contain: none;
+}
+:host ion-content main .info-icon:hover:before {
+  position: absolute;
+  width: max-content;
+  right: 0;
+  top: 2.5rem;
+  content: "";
+  font-size: 0.8rem;
+}
+:host ion-content main .header {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+:host ion-content main .header ion-item {
+  max-width: 70%;
+  font-size: 1.2rem;
+}
+:host ion-content main .header ion-item ion-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1rem;
+}
+:host ion-content main .paintings-gallery {
+  background: #007f9b;
+  min-height: 100vh;
+  position: relative;
+  flex-direction: column;
+}
+:host ion-content main .paintings-gallery h1 {
+  color: white;
+}
+:host ion-content main .paintings-gallery .cards-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  width: 100%;
+}
+:host ion-content main .paintings-gallery .cards-container > ion-row {
+  transition: transform 1s ease;
+}
+:host ion-content main .paintings-gallery .cards-container > ion-row img {
+  height: 58vw;
+  max-height: 300px;
+  width: auto;
+}
+:host ion-content main .text-appearing-on-scroll {
+  position: relative;
+  flex-direction: column;
+  min-height: 70vh;
+  justify-content: center;
+  padding: 5vw;
+}
+:host ion-content main .text-appearing-on-scroll .info-icon:hover:before {
+  content: "the text for mobile devices should be short for the effect to look good";
+}
+:host ion-content main .text-appearing-on-scroll h1 {
+  transform: scale(1);
+  transition: transform 1s ease;
+}
+:host ion-content main .text-appearing-on-scroll > ion-row {
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  opacity: 0;
+  transform: scale(0.1);
+  transition: all 1s ease-out;
+}
+:host ion-content main .text-appearing-on-scroll > ion-row.active {
+  opacity: 1;
+  transform: scale(1);
+}
+:host ion-content main .text-appearing-on-scroll > ion-row > ion-row {
+  width: 48%;
+}
+:host ion-content main .text-appearing-on-scroll > ion-row p {
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+:host ion-content main .animated-svg {
+  min-height: 100vh;
+  justify-content: center;
+  align-content: center;
+  background: #0a2a43;
+  position: relative;
+}
+:host ion-content main .footer {
+  height: 100vh;
+  background: #007f9b;
+}
+@media (max-width: 800px) {
+  :host ion-content main .paintings-gallery {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=parallax4.page.css.map */

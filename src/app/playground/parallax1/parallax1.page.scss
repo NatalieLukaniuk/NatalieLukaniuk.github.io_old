@@ -1,0 +1,91 @@
+:host{
+  ion-content{
+    &::part(scroll){
+      overflow: hidden;
+    }
+    main{
+      background: #0a2a43;
+      //min-height: 1500px;
+      overflow-y: auto;
+      height: 100vh;
+      &.my-scroll-dark{
+        &::-webkit-scrollbar-track {
+          border-radius: 0.44rem;
+          border: #0b3352 3px solid;
+        }
+
+        &::-webkit-scrollbar {
+          width: 0.53rem;
+          border-radius: 0.44rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 0.44rem;
+          background-color: #0b3352;
+          border: #0b3352 3px solid;
+          background-clip: content-box;
+        }
+      }
+      .header{
+        height: 56vw;
+        flex-direction: column;
+        overflow: hidden;
+        flex-wrap: nowrap;
+        width: 100%;
+        position: relative;
+        &:before{
+          content: '';
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 100px;
+          background: linear-gradient(to top, #0a2a43, transparent);
+          z-index: 10000;
+        }
+        &:after{
+          content: '';
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          background: #0a2a43;
+          z-index: 10000;
+          mix-blend-mode: color;
+        }
+        ion-img{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          pointer-events: none;
+        }
+        #text{
+          position: relative;
+          color: white;
+          font-size: 11.46vw;
+
+        }
+      }
+      .rest{
+        padding: 2rem 1rem;
+        h1{
+          color: white;
+          font-size: 1rem;
+        }
+      }
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+

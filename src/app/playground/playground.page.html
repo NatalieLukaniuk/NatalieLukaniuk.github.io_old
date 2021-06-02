@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border" translucent="true" color="tertiary">
+  <app-header [useContainer]="true" [color]="color">
+
+  </app-header>
+</ion-header>
+<ion-content [fullscreen]="true" color="tertiary">
+  <main>
+<h1 class="ion-text-center">Collection of parallax samples</h1>
+    <ion-row class="ion-justify-content-evenly">
+      <ion-card (click)="goSample1()">
+        <ion-card-title>Parallaxing header images</ion-card-title>
+        <ion-card-content class="ion-no-padding">
+          <ion-row class="ion-justify-content-between ion-margin-top ion-margin-bottom">
+            <ion-img src="/assets/images/playground/c2.png"></ion-img>
+            <ion-img src="/assets/images/playground/s2.png"></ion-img>
+          </ion-row>
+          <p>On user scroll moon moves to the left, mountain goes up, sky background and the text go down.</p>
+        </ion-card-content>
+      </ion-card>
+      <ion-card (click)="goSample2()">
+        <ion-card-title>Parallax: background moving slower than foreground</ion-card-title>
+        <ion-card-content class="ion-no-padding">
+          <ion-row class="ion-justify-content-between ion-margin-top ion-margin-bottom">
+            <ion-img src="/assets/images/playground/c1.png"></ion-img>
+            <ion-img src="/assets/images/playground/s1.png"></ion-img>
+          </ion-row>
+          <p>On user scroll first block with background image moves slower than the next block; the second block with background image doesn't move at all.</p>
+        </ion-card-content>
+      </ion-card>
+      <ion-card (click)="goSample3()" *ngIf="intViewportWidth > 800">
+        <ion-card-title>Collection of different animation effects</ion-card-title>
+        <ion-card-content class="ion-no-padding">
+          <ion-row class="ion-justify-content-between ion-margin-top ion-margin-bottom">
+            <ion-img src="/assets/images/playground/parallax4.png"></ion-img>
+          </ion-row>
+          <p>Pictures tilt on hover, text appears on scroll, icons and text get animated on hover.</p>
+        </ion-card-content>
+      </ion-card>
+<!--      <ion-card (click)="goSample4()">-->
+<!--        <ion-card-title>Prototype of new main page</ion-card-title>-->
+<!--      </ion-card>-->
+    </ion-row>
+  </main>
+
+<app-footer></app-footer>
+</ion-content>

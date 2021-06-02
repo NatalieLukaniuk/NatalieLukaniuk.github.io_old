@@ -1,0 +1,45 @@
+<ion-row class="ion-justify-content-evenly wrapper">
+  <ion-row class="converted-data ion-align-items-baseline ion-justify-content-evenly" *ngIf="intViewportWidth <= 450 && this.converter.pixels">
+    <h2>Your values:</h2>
+    <p>{{this.converter.rems}}rem</p>
+    <p>{{this.converter.vh}}vh</p>
+    <p>{{this.converter.vw}}vw</p>
+  </ion-row>
+  <ion-row class="initial-data">
+    <ion-item class="full-width">
+      <ion-label class="ion-text-wrap" position="stacked">Pixels:</ion-label>
+      <ion-input
+        [(ngModel)]="this.converter.pixels"
+        (ngModelChange)="calculate()"
+        placeholder="Pixels value"></ion-input>
+    </ion-item>
+    <ion-item class="full-width">
+      <ion-label class="ion-text-wrap" position="stacked">Default pixel size:</ion-label>
+      <ion-input
+        [(ngModel)]="this.converter.defaultPxSize"
+        (ngModelChange)="calculate()"></ion-input>
+    </ion-item>
+    <ion-item class="full-width">
+      <ion-label class="ion-text-wrap" position="stacked">Mockup's width:</ion-label>
+      <ion-input
+        [(ngModel)]="this.converter.mockupWidth"
+        (ngModelChange)="calculate()"></ion-input>
+    </ion-item>
+    <ion-item class="full-width">
+      <ion-label class="ion-text-wrap" position="stacked">Mockup's height:</ion-label>
+      <ion-input [(ngModel)]="this.converter.mockupHeight" (ngModelChange)="calculate()"></ion-input>
+    </ion-item>
+    <ion-item class="full-width">
+      <ion-label class="ion-text-wrap" position="stacked">Digits after the decimal point:</ion-label>
+      <ion-input
+        [(ngModel)]="this.converter.decimalDigits"
+        (ngModelChange)="calculate()"></ion-input>
+    </ion-item>
+  </ion-row>
+  <ion-row class="converted-data" *ngIf="intViewportWidth > 450 && this.converter.pixels">
+      <h2>Your values:</h2>
+      <ion-item class="full-width">{{this.converter.rems}}rem</ion-item>
+      <ion-item class="full-width">{{this.converter.vh}}vh</ion-item>
+      <ion-item class="full-width">{{this.converter.vw}}vw</ion-item>
+  </ion-row>
+</ion-row>

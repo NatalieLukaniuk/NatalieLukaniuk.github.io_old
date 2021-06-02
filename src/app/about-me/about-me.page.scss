@@ -1,0 +1,13 @@
+:host{
+  main{
+    & > ion-row{
+      height: 80vh;
+      width: 100%;
+      justify-content: center;
+      align-content: center;
+      p{
+        font-size: 3vw;
+      }
+    }
+  }
+}

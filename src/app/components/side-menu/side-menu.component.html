@@ -1,13 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Navigate</ion-title>
+    <ion-title>Navigation</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-    <ion-menu-toggle auto-hide="true">
-      <ion-item [routerLink]="pages.url" routerDirection="forward" *ngFor="let pages of navigate">
-        <ion-icon [name]="pages.icon" slot="start"></ion-icon>
-        {{pages.title}}
-      </ion-item>
+  <div *ngFor="let page of this.nav.navigation">
+    <ion-menu-toggle *ngIf="page.url">
+            <ion-item [routerLink]="page.url" routerDirection="forward" routerLinkActive="active">
+              <ion-icon [name]="page.icon" slot="start"></ion-icon>
+              {{page.title}}
+            </ion-item>
     </ion-menu-toggle>
+    <ion-item button
+              *ngIf="page.children?.length > 0"
+              detail="false"
+              (click)="page.open = !page.open"
+    [class.active-parent]="page.open">
+      <ion-icon name="arrow-forward" slot="start" *ngIf="!page.open"></ion-icon>
+      <ion-icon name="arrow-down" slot="start" *ngIf="page.open"></ion-icon>
+      {{page.title}}
+    </ion-item>
+    <ion-list *ngIf="page.open">
+      <ion-menu-toggle>
+        <ion-item class="sub-item" *ngFor="let sub of page.children" [routerLink]="sub.url" routerDirection="forward" routerLinkActive="active">
+          <ion-icon [name]="sub.icon" slot="start"></ion-icon>
+          {{sub.title}}
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </div>
 </ion-content>

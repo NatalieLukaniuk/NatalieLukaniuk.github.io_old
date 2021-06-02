@@ -1,0 +1,38 @@
+:host{
+  ion-content{
+    main{
+      overflow-y: auto;
+      height: calc(100vh - 7.56rem);
+      ion-card{
+        padding: 1rem;
+        background: var(--ion-color-light);
+        cursor: pointer;
+        ion-img{
+          height: auto;
+          &:first-child{
+            width: 71%;
+            max-width: 400px;
+          }
+          &:nth-child(2){
+            width: 25%;
+            max-width: 140px;
+          }
+        }
+        p{
+          width: 0;
+          min-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+<ion-content>
+  <main appTextAppearingOnScroll appTextTransformationsOnScroll>
+<!--    <ng-container *ngIf="prod">-->
+
+
+    <ion-row class="header" *ngIf="intViewportWidth > 800">
+      <ion-item>
+        <p>You will see the following icons in the top right corner for some effects presentations.</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="alert-circle-sharp" color="warning"></ion-icon>
+        <ion-label class="ion-text-wrap">This effect looks good on desktops, but may look not so good on mobile devices. Hover your mouse over the icon for more information.</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="close-circle-sharp" color="danger"></ion-icon>
+        <ion-label class="ion-text-wrap">This effect works only for desktops due to technical limitations of mobile devices (e.g. absence of mouse controller and hence the ability to hover its cursor over an element)</ion-label>
+      </ion-item>
+
+    </ion-row>
+      <ion-row class="paintings-gallery ion-align-items-center ion-justify-content-evenly">
+        <ion-icon name="close-circle-sharp" color="danger" class="info-icon"></ion-icon>
+        <h1>Hover the mouse cursor over the paintings</h1>
+        <ion-row class="cards-container ion-align-items-center ion-justify-content-around">
+          <ion-row id="card1" appRotateCards [card]="card1">
+            <ion-row class="card-item">
+              <img src="assets/images/playground/starry_night_full.jpg">
+            </ion-row>
+          </ion-row>
+          <ion-row id="card2" appRotateCards [card]="card2">
+            <ion-row class="card-item">
+              <img src="assets/images/playground/The-Persistence-of-Memory-1931-Salvador-Dali.jpg">
+            </ion-row>
+          </ion-row>
+          <ion-row id="card3" appRotateCards [card]="card3">
+            <ion-row class="card-item">
+              <img src="assets/images/playground/The-Scream-Edvard-Munch.jpg">
+            </ion-row>
+          </ion-row>
+        </ion-row>
+
+      </ion-row>
+
+    <ion-row class="text-appearing-on-scroll">
+      <ion-icon *ngIf="intViewportWidth > 800" name="alert-circle-sharp" color="warning" class="info-icon"></ion-icon>
+      <h1 id="title">Scroll down</h1>
+      <ion-row id="row">
+        <ion-row class="col">
+          <p *ngIf="intViewportWidth > 800">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p *ngIf="intViewportWidth <= 800">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </ion-row>
+        <ion-row class="col">
+          <p *ngIf="intViewportWidth > 800">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p *ngIf="intViewportWidth <= 800">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </ion-row>
+      </ion-row>
+    </ion-row>
+
+<!--    <ion-row class="text-transformations-on-scroll">-->
+<!--      <h1 id="title2">Keep scrolling</h1>-->
+<!--&lt;!&ndash;      <ion-row id="text-from-right">&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>Text that will come from the right</p>&ndash;&gt;-->
+<!--&lt;!&ndash;      </ion-row>&ndash;&gt;-->
+<!--&lt;!&ndash;      <ion-row id="text-from-left">&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>Text that will come from the left</p>&ndash;&gt;-->
+<!--&lt;!&ndash;      </ion-row>&ndash;&gt;-->
+<!--&lt;!&ndash;      <ion-row id="text-flips-backwards">&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>Text that flips backwards</p>&ndash;&gt;-->
+<!--&lt;!&ndash;      </ion-row>&ndash;&gt;-->
+<!--      <ion-row id="opacity">-->
+<!--        <p>Text fading in</p>-->
+<!--      </ion-row>-->
+<!--    </ion-row>-->
+
+    <ion-row class="animated-svg" *ngIf="intViewportWidth > 800">
+      <ion-icon name="close-circle-sharp" color="danger" class="info-icon"></ion-icon>
+      <app-animated-icons></app-animated-icons>
+    </ion-row>
+<!--    </ng-container>-->
+
+<!--    <ion-row class="footer"></ion-row>-->
+  </main>
+
+</ion-content>

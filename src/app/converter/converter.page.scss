@@ -1,0 +1,16 @@
+:host{
+  ion-content{
+    & > ion-row{
+      padding: 1rem;
+      height: calc(100vh - 8.56rem);
+    }
+  }
+  @media (min-width: 768px) {
+    ion-content{
+      & > ion-row{
+        height: calc(100vh - 7.56rem);
+
+      }
+    }
+  }
+}

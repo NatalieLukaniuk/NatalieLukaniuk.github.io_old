@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Router} from '@angular/router';
+import {WebsiteNavigationService} from '../../services/website-navigation.service';
+import {PopoverController} from '@ionic/angular';
+import {SubmenuPopoverComponent} from './submenu-popover/submenu-popover.component';
 
 @Component({
   selector: 'app-header',
@@ -9,35 +12,29 @@ import {Router} from '@angular/router';
 export class HeaderComponent implements OnInit {
   @Input() color: any;
   @Input() useContainer: boolean;
+  @Input() printable: boolean;
   viewportWidth = window.innerWidth;
-  buttons = [
-    {
-      title : 'Home',
-      url   : 'home',
-      icon  : 'home',
-    },
-    {
-      title : 'Rem generator',
-      url   : 'rem-app',
-      icon  : 'calculator-outline',
-    },
-    {
-      title : 'Rem converter',
-      url   : 'rem-converter',
-      icon  : 'calculator-outline',
-    },
-    {
-      title : 'To-do list',
-      url   : 'to-do-list-app',
-      icon  : 'reader-outline'
-    },
-  ]
-  constructor(private router: Router) { }
+
+  constructor(private router: Router,
+              public nav: WebsiteNavigationService,
+              public popoverController: PopoverController) { }
 
   ngOnInit() {
-    console.log(this.viewportWidth);
   }
   goTo(url){
   this.router.navigate([url]);
 }
+  async openSubmenu(button, ev){
+    const popover = await this.popoverController.create({
+      component: SubmenuPopoverComponent,
+      cssClass: 'submenu-popover',
+      event: ev,
+      translucent: true,
+      showBackdrop: false,
+      componentProps: {
+        children: button.children,
+      },
+    });
+    return await popover.present();
+  }
 }

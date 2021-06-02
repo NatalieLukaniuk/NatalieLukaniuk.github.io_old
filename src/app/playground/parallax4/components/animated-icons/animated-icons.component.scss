@@ -1,0 +1,182 @@
+:host{
+  .text{
+    font: bold 30px sans-serif;
+    fill: transparent;
+    width: 100%;
+    stroke-width: 1;
+    stroke: #08cbf6;
+    stroke-dasharray: 120;
+    stroke-dashoffset: 0;
+    &:hover{
+      animation: animate-text 2s linear forwards;
+    }
+  }
+  .container{
+    position: relative;
+    min-width: 80vw;
+    justify-content: space-between;
+    align-content: center;
+    .icon{
+      width: 200px;
+      path{
+        fill: transparent;
+        stroke-width: 10;
+        stroke: #08cbf6;
+      }
+      &.moon{
+        path{
+          stroke-dasharray: 1200;
+          stroke-dashoffset: 0;
+        }
+        &:hover{
+          path{
+            animation: animate-moon 2s linear forwards;
+          }
+        }
+      }
+      &.star{
+        path{
+          stroke-width: 13;
+          stroke-dasharray: 1800;
+          stroke-dashoffset: 0;
+        }
+        &:hover{
+          path{
+            animation: animate-star 2s linear forwards;
+          }
+        }
+      }
+      &.bin{
+        path{
+          stroke-dasharray: 1300;
+          stroke-dashoffset: 0;
+        }
+        &:hover{
+          path{
+            animation: animate-bin 2s linear forwards;
+          }
+        }
+      }
+      &.home{
+        width: 240px;
+        path{
+          stroke-dasharray: 1400;
+          stroke-dashoffset: 0;
+        }
+        &:hover{
+          path{
+            animation: animate-home 2s linear forwards;
+          }
+        }
+      }
+      &.thumbs{
+        path{
+          stroke-width: 11;
+          stroke-dasharray: 1600;
+          stroke-dashoffset: 0;
+        }
+        &:hover{
+          path{
+            animation: animate-thumbs 2s linear forwards;
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes animate-moon {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 1200;
+  }
+  80% {
+    stroke-dashoffset: 2400;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 2400;
+    fill: #08cbf6;
+  }
+}
+@keyframes animate-star {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 1800;
+  }
+  80% {
+    stroke-dashoffset: 3600;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 3600;
+    fill: #08cbf6;
+  }
+}
+@keyframes animate-bin {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 1300;
+  }
+  80% {
+    stroke-dashoffset: 2600;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 2600;
+    fill: #08cbf6;
+  }
+}
+@keyframes animate-home {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 1400;
+  }
+  80% {
+    stroke-dashoffset: 2800;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 2800;
+    fill: #08cbf6;
+  }
+}
+@keyframes animate-thumbs {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 1600;
+  }
+  80% {
+    stroke-dashoffset: 3200;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 3200;
+    fill: #08cbf6;
+  }
+}
+@keyframes animate-text {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 120;
+  }
+  80% {
+    stroke-dashoffset: 240;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 240;
+    fill: #08cbf6;
+  }
+}

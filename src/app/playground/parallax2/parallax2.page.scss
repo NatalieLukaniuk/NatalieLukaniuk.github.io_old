@@ -1,0 +1,47 @@
+:host{
+  ion-content{
+    &::part(scroll){
+      overflow: hidden;
+    }
+    main{
+      overflow-y: auto;
+      height: 100vh;
+      & > ion-row{
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        h2{
+          font-size: 9vw;
+          background: rgba(0, 128, 0, 0.6);
+          padding: 2vw 5vw;
+          border-radius: 16px;
+        }
+        &:first-child{
+          background: url("/assets/images/playground/landscape1.jpg");
+          background-size: cover;
+        }
+        &:nth-child(2){
+          background: #004700;
+          h2{
+            background: none;
+            color: white;
+          }
+        }
+        &:nth-child(3){
+          background: url("/assets/images/playground/landscape2.jpg");
+          height: 500px;
+          background-size: cover;
+          background-attachment: fixed;//the background image gets fixed, thus parallax effect
+        }
+        &:nth-child(4){
+          background: #004700;
+          h2{
+            background: none;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

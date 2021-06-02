@@ -1,0 +1,249 @@
+:host ion-content::part(scroll) {
+  overflow: hidden;
+}
+:host ion-content main {
+  overflow-y: auto;
+  height: 100vh;
+}
+:host ion-content main .scroll-container {
+  height: 300vh;
+  flex-direction: column;
+  position: relative;
+  z-index: 20;
+  background: transparent;
+}
+:host ion-content main p {
+  font-size: 4vw;
+  margin: 0;
+  line-height: 5vw;
+  max-width: 90%;
+}
+:host ion-content main .greeting, :host ion-content main .arrow-icon-wrapper, :host ion-content main #first-block, :host ion-content main #second-block, :host ion-content main #third-block, :host ion-content main #avatar, :host ion-content main .frameworks-img, :host ion-content main .fourth-block {
+  position: fixed;
+  z-index: 1;
+  padding: 3vw;
+}
+:host ion-content main .hidden-header {
+  opacity: 1;
+  transition: opacity 500ms ease-out;
+}
+:host ion-content main .hidden-header.hide {
+  opacity: 0;
+}
+:host ion-content main .greeting {
+  top: 40vh;
+  width: 100%;
+  text-align: center;
+}
+:host ion-content main .greeting:before {
+  content: "Please scroll down";
+  animation: greeting 8s ease-in-out;
+  text-transform: uppercase;
+  font-size: 4vw;
+  font-weight: 600;
+  color: var(--ion-color-dark);
+}
+:host ion-content main .arrow-icon-wrapper {
+  width: 100%;
+  top: 47vh;
+  justify-content: center;
+}
+:host ion-content main .arrow-icon-wrapper #arrow-icon {
+  width: 3.5vh;
+  min-width: 3.5vw;
+  height: 3.5vh;
+  min-height: 3.5vw;
+  margin-top: 5vh;
+}
+:host ion-content main .arrow-icon-wrapper #arrow-icon path {
+  fill: transparent;
+  stroke-width: 16;
+  stroke: var(--ion-color-dark);
+  stroke-dasharray: 1850;
+  stroke-dashoffset: 1850;
+}
+:host ion-content main .arrow-icon-wrapper #arrow-icon.visible path {
+  animation: animate-arrow 2s linear forwards;
+  stroke-dashoffset: 1850;
+}
+:host ion-content main #first-block {
+  top: 40%;
+}
+:host ion-content main #second-block {
+  font-size: 2vw;
+}
+:host ion-content main #third-block {
+  font-size: 3vw;
+  line-height: 4vw;
+}
+:host ion-content main #avatar {
+  width: 23.44vw;
+  height: auto;
+  right: 5vw;
+  top: 33%;
+  opacity: 0;
+  transform: translateX(5vw);
+  transition: transform 500ms ease-in-out, opacity 300ms ease-in;
+}
+:host ion-content main #avatar.move-left {
+  transform: translateX(0);
+  opacity: 1;
+}
+:host ion-content main .frameworks-img {
+  width: auto;
+  height: 9.5vw;
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+  top: 72%;
+  z-index: 1;
+}
+:host ion-content main .frameworks-img.show {
+  opacity: 1;
+}
+:host ion-content main .frameworks-img.angular {
+  left: 25%;
+}
+:host ion-content main .frameworks-img.ionic {
+  right: 25%;
+}
+:host ion-content main .fourth-block {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 200ms ease-in-out;
+  font-size: 3vw;
+  line-height: 4vw;
+}
+:host ion-content main .fourth-block:first-child {
+  top: 30%;
+}
+:host ion-content main .fourth-block:nth-child(2) {
+  top: 40%;
+}
+:host ion-content main .fourth-block:nth-child(3) {
+  top: 58%;
+}
+:host ion-content main .fourth-block.show {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 500ms ease-in-out;
+}
+:host ion-content main .fourth-block.show:nth-child(2) {
+  transition-delay: 600ms;
+}
+:host ion-content main .fourth-block.show:nth-child(3) {
+  transition-delay: 1200ms;
+}
+:host ion-content main #second-block, :host ion-content main #third-block {
+  top: 50%;
+}
+:host ion-content main #first-block, :host ion-content main #second-block, :host ion-content main #third-block {
+  transform: translateX(-5vw);
+  opacity: 0;
+  transition: transform 500ms ease-in-out, opacity 400ms ease-in;
+}
+:host ion-content main #first-block.move-right, :host ion-content main #second-block.move-right, :host ion-content main #third-block.move-right {
+  transform: translateX(0);
+  opacity: 1;
+}
+:host ion-content main #first-block.move-left, :host ion-content main #second-block.move-left, :host ion-content main #third-block.move-left {
+  transform: translateX(5vw);
+  opacity: 0;
+}
+@media (max-width: 800px) {
+  :host ion-content main .greeting:before {
+    font-size: 6vw;
+  }
+  :host ion-content main #first-block {
+    top: 30%;
+    font-size: 6vw;
+  }
+  :host ion-content main #second-block {
+    top: 78%;
+    font-size: 4vw;
+  }
+  :host ion-content main #third-block {
+    font-size: 6vw;
+    line-height: 10vw;
+    top: 40%;
+  }
+  :host ion-content main .frameworks-img {
+    height: 3.5rem;
+    left: 7vw;
+    right: auto;
+  }
+  :host ion-content main .frameworks-img.angular {
+    left: 5vw;
+    top: 60%;
+  }
+  :host ion-content main #avatar {
+    height: 40vh;
+    width: auto;
+    left: 5vw;
+    top: 36%;
+  }
+}
+
+@keyframes greeting {
+  0% {
+    content: "";
+    opacity: 0;
+  }
+  10% {
+    content: "Hello there";
+    opacity: 0;
+  }
+  30% {
+    content: "Hello there";
+    opacity: 1;
+  }
+  40% {
+    content: "Hello there";
+    opacity: 0;
+  }
+  41% {
+    content: "Welcome to my website";
+    opacity: 0;
+  }
+  60% {
+    content: "Welcome to my website";
+    opacity: 1;
+  }
+  70% {
+    content: "Welcome to my website";
+    opacity: 0;
+  }
+  71% {
+    content: "Please scroll down";
+    opacity: 0;
+  }
+  85% {
+    content: "Please scroll down";
+    opacity: 1;
+  }
+  90% {
+    content: "Please scroll down";
+    opacity: 0.2;
+  }
+  100% {
+    content: "Please scroll down";
+    opacity: 1;
+  }
+}
+@keyframes animate-arrow {
+  0% {
+    stroke-dashoffset: 2200;
+    opacity: 0;
+  }
+  70% {
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: var(--ion-color-dark);
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=parallax3.page.css.map */

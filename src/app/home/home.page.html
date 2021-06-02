@@ -1,22 +1,74 @@
-<ion-header class="ion-no-border" translucent="true" color="light">
+<ion-header class="ion-no-border" translucent="true" color="tertiary" id="header">
   <app-header [useContainer]="true" [color]="color">
-    Welcome
   </app-header>
 </ion-header>
-<ion-content [fullscreen]="true" color="light">
-<!--  <ion-header class="ion-no-border" collapse="condense">-->
-<!--    <app-header [useContainer]="true" [color]="color">-->
-<!--      Welcome-->
-<!--    </app-header>-->
-<!--  </ion-header>-->
-  <main>
-    <div class="main-text">
-      <p>My name is Natalie Lukaniuk.</p>
-      <p>I'm a junior frontend developer working with Angular and Ionic Frameworks.</p>
-      <p>As any decent web-developer, especially junior one, I do my best to polish and upgrade my skills. The key to that is definitely endless and restless coding.</p>
-      <p>Check one of my pet projects:</p>
-      <ion-item (click)="goRemApp()" lines="none">Pixels to rem converter</ion-item>
-      <ion-item (click)="goToDo()" lines="none">To-do list app</ion-item>
-    </div>
+
+<ion-content [fullscreen]="true" color="tertiary">
+  <main appParallax>
+    <ion-row class="scroll-container">
+      <div id="marker"></div>
+    </ion-row>
+    <div class="hidden-header" id="greeting"></div>
+    <ion-row class="arrow-icon-wrapper">
+      <svg-icon id="arrow-icon" class="hidden-header" src="/assets/images/playground/down-arrow.svg"></svg-icon>
+    </ion-row>
+    <ion-row class="decoration">
+      <svg-icon src="/assets/svg/line.svg"></svg-icon>
+    </ion-row>
+    <p id="first-block">
+      <ng-container *ngIf="this.lang.lang === 'eng'">My name is Natalie Lukaniuk</ng-container>
+      <ng-container *ngIf="this.lang.lang === 'ukr'">Мене звуть Наталя Луканюк</ng-container>
+    </p>
+    <img id="avatar" src="/assets/images/avatar.jpg">
+    <p id="second-block">
+      <ng-container *ngIf="this.lang.lang === 'eng'">For more information about me click here</ng-container>
+      <ng-container *ngIf="this.lang.lang === 'ukr'">Більше про мене можна почитати тут:</ng-container>
+      <ion-button fill="clear" (click)="goAboutMe()"><ion-icon name="arrow-forward-circle-outline"></ion-icon></ion-button></p>
+    <p id="third-block">
+      <ng-container *ngIf="this.lang.lang === 'eng'">I'm a junior frontend developer working with Angular and Ionic
+        Frameworks.</ng-container>
+      <ng-container *ngIf="this.lang.lang === 'ukr'">Я джуніор фронтенд-розробник. Працюю в основному з фреймворками
+        Angular та Ionic.</ng-container>
+    </p>
+    <img class="frameworks-img angular" src="assets/svg/angular-3.svg">
+    <img class="frameworks-img ionic" src="assets/svg/ionic.png">
+    <ion-row>
+      <p class="fourth-block">
+        <ng-container *ngIf="this.lang.lang === 'eng'">Coding is not just my job, but passion as well.</ng-container>
+        <ng-container *ngIf="this.lang.lang === 'ukr'">Веб-розробка для мене - не тільки робота, а й захоплення.</ng-container>
+      </p>
+      <p class="fourth-block">
+        <ng-container *ngIf="this.lang.lang === 'eng'">Thus, when I'm not busy working, I strive to learn new stuff and
+          polish my skills.</ng-container>
+        <ng-container *ngIf="this.lang.lang === 'ukr'">Тому вільний час я часто проводжу над кодом, відшліфовуючи свої
+          навички і здобуваючи нові.</ng-container>
+      </p>
+      <p id="fifth-block">
+        <ng-container *ngIf="this.lang.lang === 'eng'">Some examples of my coding pieces can be found at this website:</ng-container>
+        <ng-container *ngIf="this.lang.lang === 'ukr'">Декілька прикладів написаного мною можна знайти на цьому сайті:</ng-container>
+      </p>
+    </ion-row>
+    <ion-row>
+      <app-sample-slides></app-sample-slides>
+    </ion-row>
+    <ion-row id="contacts">
+      <h3>
+        <ng-container *ngIf="this.lang.lang === 'eng'">I'm open for questions and cooperation:</ng-container>
+        <ng-container *ngIf="this.lang.lang === 'ukr'">Якщо маєте питання або пропозиції, напишіть мені:</ng-container>
+      </h3>
+      <ion-row>
+        <ion-button fill="clear" href="mailto:natalie.lukaniuk@gmail.com" target="_blank">
+          <ion-icon name="mail-outline"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" href="https://www.facebook.com/natalia.lukaniuk/" target="_blank">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-button>
+<!--        <ion-button fill="clear" href="https://t.me/Redhead_nata" target="_blank">-->
+<!--          <svg-icon src="/assets/svg/telegram1.svg" style="margin-top: 3px;"></svg-icon>-->
+<!--        </ion-button>-->
+      </ion-row>
+    </ion-row>
+
   </main>
+  <app-footer></app-footer>
 </ion-content>

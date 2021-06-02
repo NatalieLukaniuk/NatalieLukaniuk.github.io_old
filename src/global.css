@@ -1,0 +1,261 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@font-face {
+  font-family: "Cairo";
+  src: url("/assets/fonts/cairo/bold/Cairo-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("/assets/fonts/cairo/bold/Cairo-Bold.woff") format("woff"), url("/assets/fonts/cairo/bold/Cairo-Bold.ttf") format("truetype"), url("/assets/fonts/cairo/bold/Cairo-Bold.svg") format("svg");
+  /* Legacy iOS */
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("/assets/fonts/cairo/semibold/Cairo-SemiBold.eot");
+  /* IE9 Compat Modes */
+  src: url("/assets/fonts/cairo/semibold/Cairo-SemiBold.woff") format("woff"), url("/assets/fonts/cairo/semibold/Cairo-SemiBold.ttf") format("truetype"), url("/assets/fonts/cairo/semibold/Cairo-SemiBold.svg") format("svg");
+  /* Legacy iOS */
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/source_sans/regular/Montserrat-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("/assets/fonts/source_sans/regular/Montserrat-Regular.woff") format("woff"), url("/assets/fonts/source_sans/regular/Montserrat-Regular.ttf") format("truetype"), url("/assets/fonts/source_sans/regular/Montserrat-Regular.svg") format("svg");
+  /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+h1 {
+  font-size: 1.18rem;
+}
+
+h2 {
+  font-size: 1.09rem;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+@media (min-width: 500px) {
+  :root {
+    font-size: 18px;
+  }
+}
+@media (min-width: 660px) {
+  :root {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1000px) {
+  :root {
+    font-size: 20px;
+  }
+}
+.my-scroll::-webkit-scrollbar-track {
+  border: var(--ion-color-secondary-tint) 3px solid;
+}
+.my-scroll::-webkit-scrollbar {
+  width: 0.53rem;
+}
+.my-scroll::-webkit-scrollbar-thumb {
+  border-radius: 0.44rem;
+  background-color: var(--ion-color-secondary);
+  border: var(--ion-color-secondary) 3px solid;
+  background-clip: content-box;
+}
+
+ion-item {
+  --background: transparent;
+  --highlight-background: transparent;
+  margin-bottom: 0.5rem;
+  --border-color: transparent;
+}
+ion-item::part(native) {
+  border: none;
+}
+ion-item ion-label.label-stacked {
+  margin-bottom: 0.36rem !important;
+  font-size: 0.73rem !important;
+}
+ion-item.full-width::part(native) {
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  --inner-padding-end: 0;
+}
+
+ion-input {
+  border-radius: 2px;
+  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.07);
+  --padding-start: 0.45rem !important;
+}
+ion-input .native-input {
+  font-size: 0.73rem;
+}
+ion-input .native-input:focus {
+  background: rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+ion-button {
+  --border-radius: 1px;
+}
+ion-button::part(native) {
+  font-size: 0.64rem;
+}
+
+.list-menu-popover {
+  --width: max-content;
+}
+
+.edit-popover .popover-content {
+  --min-width: 15.91rem;
+}
+
+.new-list-popover .popover-content {
+  --min-width: 15.91rem;
+  --background: var(--ion-color-tertiary);
+}
+
+.single-selection-popover {
+  --width: 99%;
+}
+.single-selection-popover .popover-content {
+  background: var(--ion-color-tertiary);
+  width: 92%;
+  max-width: 400px;
+  left: 1rem;
+  max-height: 400px;
+  height: fit-content;
+  overflow-y: auto;
+  box-shadow: 2px 1px 4px 3px rgba(173, 216, 189, 0.5);
+}
+.single-selection-popover .popover-content ion-list {
+  background: transparent;
+}
+.single-selection-popover .popover-content .select-interface-option {
+  --background: var(--ion-color-tertiary);
+}
+.single-selection-popover .popover-content .select-interface-option::part(native) {
+  --border-color: transparent;
+}
+
+.submenu-popover .popover-content {
+  width: max-content;
+}
+
+.print-settings-popover .popover-content {
+  width: max-content;
+}
+
+.print-preview-modal .modal-wrapper {
+  height: 100vh;
+  width: 70vh;
+}
+
+.task-add-selection-alert .alert-wrapper {
+  background: var(--ion-color-tertiary);
+}
+.task-add-selection-alert .alert-wrapper .alert-head .alert-title {
+  color: var(--ion-color-tertiary-contrast);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+.task-add-selection-alert .alert-wrapper .alert-button-group {
+  justify-content: space-between;
+}
+.task-add-selection-alert .alert-wrapper .alert-button-group .alert-button {
+  width: 48%;
+  color: white;
+  margin-right: 0;
+}
+.task-add-selection-alert .alert-wrapper .alert-button-group .alert-button .alert-button-inner {
+  justify-content: center;
+}
+.task-add-selection-alert .alert-wrapper .alert-button-group .alert-button:first-child {
+  background: var(--ion-color-danger);
+}
+.task-add-selection-alert .alert-wrapper .alert-button-group .alert-button:last-child {
+  background: var(--ion-color-success);
+}
+
+.delete-alert .alert-wrapper {
+  background: var(--ion-color-warning);
+}
+.delete-alert .alert-wrapper .alert-head .alert-title {
+  color: var(--ion-color-warning-contrast);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+.delete-alert .alert-wrapper .alert-head .alert-sub-title {
+  color: var(--ion-color-danger);
+  font-size: 0.64rem;
+  font-weight: 400;
+  margin-top: 0.64rem;
+}
+.delete-alert .alert-wrapper .alert-button-group {
+  justify-content: space-between;
+}
+.delete-alert .alert-wrapper .alert-button-group .alert-button {
+  width: 48%;
+  color: white;
+  margin-right: 0;
+}
+.delete-alert .alert-wrapper .alert-button-group .alert-button .alert-button-inner {
+  justify-content: center;
+}
+.delete-alert .alert-wrapper .alert-button-group .alert-button.delete-btn {
+  background: var(--ion-color-danger);
+}
+.delete-alert .alert-wrapper .alert-button-group .alert-button.cancel-btn {
+  background: var(--ion-color-success);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.outset {
+  box-shadow: 2px 1px 4px 2px rgba(173, 216, 189, 0.5);
+}
+
+@media (max-width: 900px) {
+  .outset {
+    box-shadow: none;
+  }
+}
+ion-row.confirmation-block {
+  justify-content: space-between;
+  width: 100%;
+}
+ion-row.confirmation-block ion-button {
+  width: 45%;
+}
+
+/*# sourceMappingURL=global.css.map */

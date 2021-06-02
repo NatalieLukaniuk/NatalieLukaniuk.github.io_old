@@ -1,0 +1,7 @@
+<ion-list>
+  <ion-item
+    (click)="close()"
+    *ngFor="let button of children"
+    [routerLink]="button.url"
+    >{{button.title}}</ion-item>
+</ion-list>

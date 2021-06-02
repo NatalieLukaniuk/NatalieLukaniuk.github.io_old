@@ -1,0 +1,9 @@
+:host{
+  ion-list{
+    background: var(--ion-color-tertiary);
+    ion-item{
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+  }
+}

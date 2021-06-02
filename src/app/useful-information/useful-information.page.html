@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border" translucent="true" color="tertiary">
+  <app-header [useContainer]="true" [color]=color>
+<ng-container *ngIf="intViewportWidth > 380">Cheatsheets</ng-container>
+  </app-header>
+</ion-header>
+<ion-content [fullscreen]="true" color="tertiary">
+  <main>
+    <ion-segment
+      (ionChange)="sheetSelected($event)"
+      scrollable="true"
+      *ngIf="intViewportWidth > 1000"
+    class="outset">
+      <ion-segment-button *ngFor="let button of buttons" [value]="button.value">{{button.title}}</ion-segment-button>
+    </ion-segment>
+    <ion-select
+      *ngIf="intViewportWidth <= 1000"
+      (ionChange)="sheetSelected($event)"
+      [interfaceOptions]="selectOptions"
+      placeholder="Select stuff to display"
+      interface="popover"
+      class="stuff-select ion-text-uppercase">
+      <ion-select-option *ngFor="let button of buttons" [value]="button.value">{{button.title}}</ion-select-option>
+    </ion-select>
+    <ion-slides #contentSlides class="swiper-no-swiping">
+      <ion-slide>
+        <app-cheatsheet [data]="this.cheatData.fontWeights"></app-cheatsheet>
+      </ion-slide>
+      <ion-slide>
+        <app-cheatsheet [data]="this.cheatData.domEvents.mouseEvents"></app-cheatsheet>
+      </ion-slide>
+      <ion-slide>
+        <app-cheatsheet [data]="this.cheatData.cssSelectors.attributeSelectors"></app-cheatsheet>
+      </ion-slide>
+      <ion-slide>
+        <app-cheatsheet [data]="this.cheatData.cssSelectors.selectors"></app-cheatsheet>
+      </ion-slide>
+      <ion-slide>
+        <app-cheatsheet [data]="this.cheatData.cssSelectors.pseudoSelectors"></app-cheatsheet>
+      </ion-slide>
+    </ion-slides>
+  </main>
+  <app-footer></app-footer>
+</ion-content>

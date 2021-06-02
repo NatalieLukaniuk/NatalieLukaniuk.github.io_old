@@ -1,0 +1,26 @@
+:host ion-content main {
+  overflow-y: auto;
+  height: calc(100vh - 7.56rem);
+}
+:host ion-content main ion-card {
+  padding: 1rem;
+  background: var(--ion-color-light);
+  cursor: pointer;
+}
+:host ion-content main ion-card ion-img {
+  height: auto;
+}
+:host ion-content main ion-card ion-img:first-child {
+  width: 71%;
+  max-width: 400px;
+}
+:host ion-content main ion-card ion-img:nth-child(2) {
+  width: 25%;
+  max-width: 140px;
+}
+:host ion-content main ion-card p {
+  width: 0;
+  min-width: 100%;
+}
+
+/*# sourceMappingURL=playground.page.css.map */
