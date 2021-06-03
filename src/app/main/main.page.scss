@@ -150,11 +150,6 @@
                             line-height: 1.36rem;
                         }
                     }
-                    .experience{
-                        .opening-container{
-                            height: 9.77rem;
-                        }
-                    }
                     .portfolio{
                         .opening-container{
                             max-width: 100%;
@@ -204,31 +199,11 @@
                             }
                         }
                     }
-                    .soft-skills{
-                        .opening-container{
-                            height: 4.32rem;
-                        }
-                    }
                 }
             }
         }
 
     }
-    //@media (max-width: 1020px) {
-    //    ion-content{
-    //        main{
-    //            .wrapper{
-    //                .left-pane{
-    //                    .social{
-    //                        ion-icon{
-    //                            font-size: 1rem;
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
-    //}
     @media (max-width: 880px){
         ion-content{
             main{
@@ -257,21 +232,12 @@
                     .right-pane{
                         width: 100%;
                         overflow-y: initial;
+                        padding-right: 0;
                         .opening-container{
                             .hoverable-container{
                                 ion-chip{
                                     padding: 30px 20px;
                                 }
-                            }
-                        }
-                        .experience{
-                            .opening-container{
-                                height: 13.77rem;
-                            }
-                        }
-                        .soft-skills{
-                            .opening-container{
-                                height: 6rem;
                             }
                         }
                     }
@@ -288,54 +254,12 @@
             }
         }
     }
-    @media (max-width: 665px){
-        ion-content{
-            main{
-                .wrapper{
-                    .right-pane{
-                        .experience{
-                            .opening-container{
-                                height: 19.77rem;
-                            }
-                        }
-                        .soft-skills{
-                            .opening-container{
-                                height: 11rem;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
     @media (max-width: 525px){
         ion-content{
             main{
                 .wrapper{
                     .left-pane{
                         flex-direction: column;
-                    }
-                    .right-pane{
-                        .experience{
-                            .opening-container{
-                                height: 23.77rem;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    @media (max-width: 500px){
-        ion-content{
-            main{
-                .wrapper{
-                    .right-pane{
-                        .experience{
-                            .opening-container{
-                                height: 26.77rem;
-                            }
-                        }
                     }
                 }
             }
@@ -346,25 +270,6 @@
             main{
                 .wrapper{
                     .right-pane{
-                        .experience, .soft-skills{
-                            .opening-container{
-                                height: auto;
-                                .hoverable-container{
-                                    width: 100%;
-                                    ion-chip{
-                                        width: 100%;
-                                        padding: 0 15px;
-                                        --background: var(--ion-color-light);
-                                        border-radius: 1px;
-                                    }
-                                    ul{
-                                        position: static;
-                                        opacity: 1;
-                                        z-index: 1;
-                                    }
-                                }
-                            }
-                        }
                         .tools{
                             .opening-container{
                                 ion-item{

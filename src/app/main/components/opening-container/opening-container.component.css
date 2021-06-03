@@ -1,0 +1,53 @@
+:host .opening-container {
+  position: relative;
+  align-content: baseline;
+  height: calc(100% + 60px);
+}
+:host .opening-container .hoverable-container {
+  width: auto;
+}
+:host .opening-container .hoverable-container ion-chip {
+  margin: 0.45rem;
+}
+:host .opening-container .hoverable-container ul {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+  font-size: 0.64rem;
+  width: 100%;
+  bottom: -20px;
+  z-index: -5;
+  padding: 0.45rem 0.45rem 0.45rem 1.36rem;
+}
+:host .opening-container .hoverable-container:hover ul {
+  opacity: 1;
+  background: white;
+  z-index: 1;
+}
+@media (max-width: 880px) {
+  :host .opening-container .hoverable-container ion-chip {
+    padding: 30px 20px;
+  }
+}
+@media (max-width: 430px) {
+  :host .opening-container {
+    height: auto;
+  }
+  :host .opening-container .hoverable-container {
+    width: 100%;
+  }
+  :host .opening-container .hoverable-container ion-chip {
+    width: 100%;
+    padding: 0 15px;
+    --background: var(--ion-color-light);
+    border-radius: 1px;
+  }
+  :host .opening-container .hoverable-container ul {
+    position: static;
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+/*# sourceMappingURL=opening-container.component.css.map */

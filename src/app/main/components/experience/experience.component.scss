@@ -1,0 +1,31 @@
+:host{
+    .opening-container{
+        position: relative;
+        align-content: baseline;
+        height: 9.77rem;
+        .hoverable-container{
+            width: auto;
+            ion-chip{
+                margin: 0.45rem;
+            }
+            ul{
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                transition: opacity 300ms ease-in;
+                font-size: 0.64rem;
+                width: 100%;
+                bottom: -20px;
+                z-index: -5;
+                padding: 0.45rem 0.45rem 0.45rem 1.36rem;
+            }
+            &:hover{
+                ul{
+                    opacity: 1;
+                    background: white;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

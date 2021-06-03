@@ -141,9 +141,6 @@
   padding-right: 0.55rem;
   line-height: 1.36rem;
 }
-:host ion-content main .wrapper .right-pane .experience .opening-container {
-  height: 9.77rem;
-}
 :host ion-content main .wrapper .right-pane .portfolio .opening-container {
   max-width: 100%;
 }
@@ -187,9 +184,6 @@
 :host ion-content main .wrapper .right-pane .tools .opening-container ion-item:hover ion-label {
   opacity: 1;
 }
-:host ion-content main .wrapper .right-pane .soft-skills .opening-container {
-  height: 4.32rem;
-}
 @media (max-width: 880px) {
   :host ion-content main {
     align-items: flex-start;
@@ -219,15 +213,10 @@
   :host ion-content main .wrapper .right-pane {
     width: 100%;
     overflow-y: initial;
+    padding-right: 0;
   }
   :host ion-content main .wrapper .right-pane .opening-container .hoverable-container ion-chip {
     padding: 30px 20px;
-  }
-  :host ion-content main .wrapper .right-pane .experience .opening-container {
-    height: 13.77rem;
-  }
-  :host ion-content main .wrapper .right-pane .soft-skills .opening-container {
-    height: 6rem;
   }
 }
 @media (max-width: 768px) {
@@ -235,45 +224,12 @@
     height: calc(100vh - 74px);
   }
 }
-@media (max-width: 665px) {
-  :host ion-content main .wrapper .right-pane .experience .opening-container {
-    height: 19.77rem;
-  }
-  :host ion-content main .wrapper .right-pane .soft-skills .opening-container {
-    height: 11rem;
-  }
-}
 @media (max-width: 525px) {
   :host ion-content main .wrapper .left-pane {
     flex-direction: column;
   }
-  :host ion-content main .wrapper .right-pane .experience .opening-container {
-    height: 23.77rem;
-  }
-}
-@media (max-width: 500px) {
-  :host ion-content main .wrapper .right-pane .experience .opening-container {
-    height: 26.77rem;
-  }
 }
 @media (max-width: 430px) {
-  :host ion-content main .wrapper .right-pane .experience .opening-container, :host ion-content main .wrapper .right-pane .soft-skills .opening-container {
-    height: auto;
-  }
-  :host ion-content main .wrapper .right-pane .experience .opening-container .hoverable-container, :host ion-content main .wrapper .right-pane .soft-skills .opening-container .hoverable-container {
-    width: 100%;
-  }
-  :host ion-content main .wrapper .right-pane .experience .opening-container .hoverable-container ion-chip, :host ion-content main .wrapper .right-pane .soft-skills .opening-container .hoverable-container ion-chip {
-    width: 100%;
-    padding: 0 15px;
-    --background: var(--ion-color-light);
-    border-radius: 1px;
-  }
-  :host ion-content main .wrapper .right-pane .experience .opening-container .hoverable-container ul, :host ion-content main .wrapper .right-pane .soft-skills .opening-container .hoverable-container ul {
-    position: static;
-    opacity: 1;
-    z-index: 1;
-  }
   :host ion-content main .wrapper .right-pane .tools .opening-container ion-item {
     margin: 0.4rem;
   }

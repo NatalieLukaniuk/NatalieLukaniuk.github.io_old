@@ -9,6 +9,8 @@ import {AppSharedModule} from '../app-shared.module';
 
 import { MainPage } from './main.page';
 import {AngularSvgIconModule} from 'angular-svg-icon';
+import {ContentService} from './content.service';
+import {OpeningContainerComponent} from './components/opening-container/opening-container.component';
 
 @NgModule({
   imports: [
@@ -19,6 +21,7 @@ import {AngularSvgIconModule} from 'angular-svg-icon';
     AppSharedModule,
       AngularSvgIconModule
   ],
-  declarations: [MainPage]
+  declarations: [MainPage, OpeningContainerComponent],
+    providers: [ContentService]
 })
 export class MainPageModule {}

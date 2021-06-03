@@ -1,0 +1,8 @@
+<ion-row class="opening-container">
+    <ion-row class="hoverable-container" *ngFor="let item of source">
+        <ion-chip>{{item.title}}</ion-chip>
+        <ul>
+            <li *ngFor="let item of item.details">{{item}}</li>
+        </ul>
+    </ion-row>
+</ion-row>
