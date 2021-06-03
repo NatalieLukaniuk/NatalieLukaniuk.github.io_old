@@ -8,6 +8,7 @@ import { MainPageRoutingModule } from './main-routing.module';
 import {AppSharedModule} from '../app-shared.module';
 
 import { MainPage } from './main.page';
+import {AngularSvgIconModule} from 'angular-svg-icon';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { MainPage } from './main.page';
     IonicModule,
     MainPageRoutingModule,
     AppSharedModule,
+      AngularSvgIconModule
   ],
   declarations: [MainPage]
 })

@@ -64,10 +64,11 @@
 }
 :host ion-content main .wrapper .left-pane .social {
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
-:host ion-content main .wrapper .left-pane .social ion-icon {
-  font-size: 1.6rem;
+:host ion-content main .wrapper .left-pane .social svg-icon {
+  height: auto;
+  width: 1.6rem;
 }
 :host ion-content main .wrapper .left-pane .social ion-label {
   width: 0;
@@ -152,11 +153,13 @@
 :host ion-content main .wrapper .right-pane .portfolio .opening-container ion-list ion-label {
   white-space: normal;
 }
-:host ion-content main .wrapper .right-pane .portfolio .opening-container ion-list ion-label a {
-  text-decoration: none;
+:host ion-content main .wrapper .right-pane .portfolio .opening-container ion-list ion-label > a {
   font-weight: 700;
   color: var(--ion-color-secondary-contrast);
   text-transform: capitalize;
+}
+:host ion-content main .wrapper .right-pane .portfolio .opening-container ion-list ion-label a {
+  text-decoration: none;
 }
 :host ion-content main .wrapper .right-pane .portfolio .opening-container ion-list ion-label a:hover {
   text-decoration: underline;
@@ -186,11 +189,6 @@
 }
 :host ion-content main .wrapper .right-pane .soft-skills .opening-container {
   height: 4.32rem;
-}
-@media (max-width: 1020px) {
-  :host ion-content main .wrapper .left-pane .social ion-icon {
-    font-size: 1rem;
-  }
 }
 @media (max-width: 880px) {
   :host ion-content main {

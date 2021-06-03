@@ -68,9 +68,10 @@
                     }
                     .social{
                         flex-direction: row;
-                        justify-content: space-between;
-                        ion-icon{
-                            font-size: 1.6rem;
+                        justify-content: space-evenly;
+                        svg-icon{
+                            height: auto;
+                            width: 1.6rem;
                         }
                         ion-label{
                             width: 0;
@@ -161,11 +162,13 @@
                                 max-width: 100%;
                                 ion-label{
                                     white-space: normal;
-                                    a{
-                                        text-decoration: none;
+                                    & > a {
                                         font-weight: 700;
                                         color: var(--ion-color-secondary-contrast);
                                         text-transform: capitalize;
+                                    }
+                                    a{
+                                        text-decoration: none;
                                         &:hover{
                                             text-decoration: underline;
                                             color: black;
@@ -211,21 +214,21 @@
         }
 
     }
-    @media (max-width: 1020px) {
-        ion-content{
-            main{
-                .wrapper{
-                    .left-pane{
-                        .social{
-                            ion-icon{
-                                font-size: 1rem;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+    //@media (max-width: 1020px) {
+    //    ion-content{
+    //        main{
+    //            .wrapper{
+    //                .left-pane{
+    //                    .social{
+    //                        ion-icon{
+    //                            font-size: 1rem;
+    //                        }
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+    //}
     @media (max-width: 880px){
         ion-content{
             main{
