@@ -2,12 +2,13 @@
   padding-top: 0.5rem;
 }
 :host ion-toolbar ion-buttons ion-fab {
-  left: -102%;
+  left: -140%;
 }
 :host ion-toolbar ion-buttons ion-fab ion-fab-button {
   --box-shadow: none;
   --background: transparent;
   --color: var(--ion-color-secondary-contrast);
+  --background-activated: none;
 }
 :host ion-toolbar ion-buttons ion-fab ion-fab-button svg-icon {
   height: auto;
@@ -15,6 +16,7 @@
 }
 :host ion-toolbar ion-buttons ion-fab ion-fab-button ion-icon {
   font-size: 1.5rem;
+  padding-bottom: 7px;
 }
 :host ion-toolbar ion-buttons ion-fab ion-fab-list {
   margin-right: 2.6rem;

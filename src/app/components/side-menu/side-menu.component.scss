@@ -2,6 +2,9 @@
   ion-header{
     ion-toolbar{
       --background: var(--ion-color-light);
+        ion-title{
+            width: max-content;
+        }
     }
   }
   ion-content{

@@ -1,0 +1,24 @@
+:host ion-header ion-toolbar {
+  --background: var(--ion-color-light);
+}
+:host ion-header ion-toolbar ion-title {
+  width: max-content;
+}
+:host ion-content {
+  height: 100vh;
+  --background: var(--ion-color-light);
+}
+:host ion-content .active {
+  --ion-text-color: var(--ion-color-success) ;
+}
+:host ion-content .active-parent {
+  font-weight: bolder;
+}
+:host ion-content ion-list {
+  background: transparent;
+}
+:host ion-content ion-list .sub-item {
+  padding-left: 1rem;
+}
+
+/*# sourceMappingURL=side-menu.component.css.map */
