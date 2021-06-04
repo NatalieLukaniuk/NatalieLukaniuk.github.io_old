@@ -46,7 +46,8 @@
                     <ion-item (click)="toggleContainer('experienceDetails')">
                         <h3>Technology stack</h3>
                         <ion-icon *ngIf="!containers.experienceDetails" name="chevron-forward-outline" slot="end"></ion-icon>
-                        <ion-icon *ngIf="containers.experienceDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth > 880 && containers.experienceDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth <= 880 && containers.experienceDetails" name="chevron-back-outline" slot="start"></ion-icon>
                     </ion-item>
                     <app-opening-container [topic]="'techStack'" *ngIf="containers.experienceDetails"></app-opening-container>
                 </ion-row>
@@ -54,7 +55,8 @@
                     <ion-item (click)="toggleContainer('portfolio')">
                         <h3>Portfolio</h3>
                         <ion-icon *ngIf="!containers.portfolio" name="chevron-forward-outline" slot="end"></ion-icon>
-                        <ion-icon *ngIf="containers.portfolio" name="chevron-down-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth > 880 && containers.portfolio" name="chevron-down-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth <= 880 && containers.portfolio" name="chevron-back-outline" slot="start"></ion-icon>
                     </ion-item>
                     <ion-row *ngIf="containers.portfolio"  class="opening-container">
                         <ion-list>
@@ -106,7 +108,8 @@
                     <ion-item (click)="toggleContainer('toolsDetails')">
                         <h3>Tools I work with</h3>
                         <ion-icon *ngIf="!containers.toolsDetails" name="chevron-forward-outline" slot="end"></ion-icon>
-                        <ion-icon *ngIf="containers.toolsDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth > 880 && containers.toolsDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth <= 880 && containers.toolsDetails" name="chevron-back-outline" slot="start"></ion-icon>
                     </ion-item>
                     <ion-row *ngIf="containers.toolsDetails" class="opening-container">
                         <ion-item>
@@ -156,7 +159,8 @@
                     <ion-item (click)="toggleContainer('softSkillsDetails')">
                         <h3>Soft skills</h3>
                         <ion-icon *ngIf="!containers.softSkillsDetails" name="chevron-forward-outline" slot="end"></ion-icon>
-                        <ion-icon *ngIf="containers.softSkillsDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth > 880 && containers.softSkillsDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth <= 880 && containers.softSkillsDetails" name="chevron-back-outline" slot="start"></ion-icon>
                     </ion-item>
                     <app-opening-container [topic]="'softSkills'" *ngIf="containers.softSkillsDetails"></app-opening-container>
                 </ion-row>
@@ -164,7 +168,8 @@
                     <ion-item (click)="toggleContainer('learningDetails')">
                         <h3>Currently learning</h3>
                         <ion-icon *ngIf="!containers.learningDetails" name="chevron-forward-outline" slot="end"></ion-icon>
-                        <ion-icon *ngIf="containers.learningDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth > 880 && containers.learningDetails" name="chevron-down-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth <= 880 && containers.learningDetails" name="chevron-back-outline" slot="start"></ion-icon>
                     </ion-item>
                     <ion-row *ngIf="containers.learningDetails"  class="opening-container">
                         <ion-item>
