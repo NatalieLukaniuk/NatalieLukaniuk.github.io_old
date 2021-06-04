@@ -1,8 +1,30 @@
 :host ion-toolbar {
   padding-top: 0.5rem;
 }
-:host ion-toolbar ion-buttons ion-title svg-icon svg {
-  height: 45px;
+:host ion-toolbar ion-buttons ion-fab {
+  left: -102%;
+}
+:host ion-toolbar ion-buttons ion-fab ion-fab-button {
+  --box-shadow: none;
+  --background: transparent;
+  --color: var(--ion-color-secondary-contrast);
+}
+:host ion-toolbar ion-buttons ion-fab ion-fab-button svg-icon {
+  height: auto;
+  width: 1.6rem;
+}
+:host ion-toolbar ion-buttons ion-fab ion-fab-button ion-icon {
+  font-size: 1.5rem;
+}
+:host ion-toolbar ion-buttons ion-fab ion-fab-list {
+  margin-right: 2.6rem;
+}
+:host ion-toolbar ion-buttons ion-fab ion-fab-list ion-fab-button {
+  margin: 0.3vw;
+}
+:host ion-toolbar ion-buttons ion-menu-button {
+  align-self: flex-start;
+  font-size: 1.5rem;
 }
 :host ion-toolbar ion-buttons ion-button {
   --background-hover: none;

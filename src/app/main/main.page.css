@@ -1,3 +1,6 @@
+:host ion-content::part(scroll) {
+  overflow-y: hidden;
+}
 :host ion-content main {
   display: flex;
   justify-content: center;

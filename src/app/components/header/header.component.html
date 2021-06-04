@@ -1,4 +1,4 @@
-<ion-toolbar  *ngIf="useContainer" [color]="color">
+<ion-toolbar  *ngIf="useContainer" [color]="headerColor">
   <ion-row class="ion-align-items-center ion-justify-content-center">
     <ion-col size="11" class="ion-no-padding">
       <ng-container *ngTemplateOutlet="headerBody"></ng-container>
@@ -11,12 +11,36 @@
 </ng-container>
 
 <ng-template #headerBody>
-  <ion-toolbar [color]="color">
-    <!-- <ion-title class="ion-text-uppercase">
- <ng-content></ng-content>
-      <svg-icon src="/assets/svg/logo.svg"></svg-icon>
-    </ion-title> -->
+  <ion-toolbar [color]="headerColor">
     <ion-buttons slot="end" *ngIf="viewportWidth <= 768">
+        <ion-fab vertical="center" horizontal="start">
+            <ion-fab-button closeIcon="close-outline">
+                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="start">
+                <ion-fab-button href="mailto:natalie.lukaniuk@gmail.com" target="_blank">
+                    <svg-icon src="/assets/svg/mail.svg"></svg-icon>
+                </ion-fab-button>
+                <ion-fab-button href="https://t.me/Natalie_Lukaniuk" target="_blank">
+                    <svg-icon src="/assets/svg/telegram-ion.svg"></svg-icon>
+                </ion-fab-button>
+                <ion-fab-button href="viber://chat?number=380950500317" target="_blank">
+                    <svg-icon src="/assets/svg/viber.svg"></svg-icon>
+                </ion-fab-button>
+                <ion-fab-button href="https://join.skype.com/invite/KtKYnDhfcz6A" target="_blank" *ngIf="viewportWidth > 330">
+                    <svg-icon src="/assets/svg/skype.svg"></svg-icon>
+                </ion-fab-button>
+                <ion-fab-button href="https://www.linkedin.com/in/natalie-lukaniuk-4158ba31/" target="_blank" *ngIf="viewportWidth > 370">
+                    <svg-icon src="/assets/svg/linkedin.svg"></svg-icon>
+                </ion-fab-button>
+                <ion-fab-button href="https://github.com/NatalieLukaniuk" target="_blank" *ngIf="viewportWidth > 400">
+                    <svg-icon src="/assets/svg/github.svg"></svg-icon>
+                </ion-fab-button>
+                <ion-fab-button href="tel:+380950500317" target="_blank">
+                    <svg-icon src="/assets/svg/call.svg"></svg-icon>
+                </ion-fab-button>
+            </ion-fab-list>
+        </ion-fab>
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-buttons collapse="true" slot="end" *ngIf="viewportWidth > 768">

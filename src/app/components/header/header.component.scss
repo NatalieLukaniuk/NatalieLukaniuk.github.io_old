@@ -2,13 +2,32 @@
   ion-toolbar{
     padding-top: 0.5rem;
     ion-buttons{
-      ion-title{
-        svg-icon{
-          svg{
-            height: 45px;
-          }
+        ion-fab{
+            left: -102%;
+            ion-fab-button{
+                --box-shadow: none;
+                --background: transparent;
+                --color: var(--ion-color-secondary-contrast);
+                svg-icon{
+                    height: auto;
+                    width: 1.6rem;
+                }
+                ion-icon{
+                    font-size: 1.5rem;
+                }
+            }
+            ion-fab-list{
+                margin-right: 2.6rem;
+                ion-fab-button{
+                    margin: 0.3vw;
+                }
+            }
         }
-      }
+
+        ion-menu-button{
+            align-self: flex-start;
+            font-size: 1.5rem;
+        }
       ion-button{
         --background-hover: none;
         --ripple-color: transparent;

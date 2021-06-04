@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
-  color = 'tertiary';
+  color = '';
   intViewportWidth = window.innerWidth;
   containers = {
     allTabs: true,
@@ -18,9 +18,15 @@ export class MainPage implements OnInit {
   };
 
   constructor() {
+      if (this.intViewportWidth > 768){
+          this.color = 'tertiary';
+      } else {
+          this.color = 'secondary';
+      }
   }
 
   ngOnInit() {
+      document.getElementById('header').style.backgroundColor = 'var(--ion-color-' + this.color + ')';
   }
 
   toggleContainer(containerId) {

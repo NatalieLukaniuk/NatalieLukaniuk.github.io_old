@@ -14,12 +14,13 @@ export class HeaderComponent implements OnInit {
   @Input() useContainer: boolean;
   @Input() printable: boolean;
   viewportWidth = window.innerWidth;
-
+headerColor: string;
   constructor(private router: Router,
               public nav: WebsiteNavigationService,
               public popoverController: PopoverController) { }
 
   ngOnInit() {
+      this.headerColor = this.color;
   }
   goTo(url){
   this.router.navigate([url]);
