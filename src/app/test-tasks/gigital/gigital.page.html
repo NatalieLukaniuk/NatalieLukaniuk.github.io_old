@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-toolbar color="gigit">
+        <ion-title>gigital</ion-title>
+        <ion-buttons slot="end">
+            <ion-button fill="solid" color="bluishGray" (click)="changeDataSource()">Load hardcoded version</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="gigit">
+    <main>
+        <section class="left-pane ion-padding">
+            <ion-row class="filter">
+                <h3>Price range</h3>
+                <ion-range color="bluishGray"
+                           dualKnobs min="700" max="200900" step="1000" snaps
+                           [(ngModel)]="artistsService.priceRange">
+                    <ion-label slot="start">{{artistsService.priceRange.lower}} SEK</ion-label>
+                    <ion-label slot="end">{{artistsService.priceRange.upper}} SEK</ion-label>
+                </ion-range>
+                <ion-button color="bluishGray" (click)="artistsService.filterByPrice()">apply price filter</ion-button>
+            </ion-row>
+            <ion-row class="filter">
+                <h3>Tag filter</h3>
+                <ion-row class="tags-breadcrumbs">
+                    <ion-chip *ngFor="let tag of artistsService.tags" (click)="artistsService.filterByTag(tag)" [ngClass]="{selected: artistsService.selectedTags.includes(tag)}">{{tag}}</ion-chip>
+                </ion-row>
+            </ion-row>
+        </section>
+        <section class="right-pane ion-padding">
+            <ion-row class="sorting-area">
+                <ion-select placeholder="Sort by price" [(ngModel)]="artistsService.sortMethod" interface="popover" (ionChange)="artistsService.sortByPrice($event)">
+                    <ion-select-option value="priceDescending">Price high to low</ion-select-option>
+                    <ion-select-option value="priceAscending">Price low to high</ion-select-option>
+                </ion-select>
+            </ion-row>
+            <ion-row class="presentation-area">
+                <ion-card color="gigit" *ngFor="let artist of artistsService.artistsToDisplay">
+                    <ion-card-content>
+                        <ion-row class="illustration">
+                            <img [src]="artist.picture" [alt]="artist.name">
+                        </ion-row>
+                        <ion-row class="information ion-padding">
+                            <h1>
+                                <ng-container *ngFor="let tag of artist.tags">
+                                    <span *ngIf="tag.group == 0">
+                                        {{tag.name}}
+                                    </span>
+                                </ng-container>
+                                {{artist.name}}
+                            </h1>
+                            <h2>{{artist.price}} SEK</h2>
+                            <ion-row class="tags">
+                                <ng-container *ngFor="let tag of artist.tags">
+                                    <ion-chip color="bluishGray" *ngIf="tag.group == 1">
+                                        {{tag.name}}
+                                    </ion-chip>
+                                </ng-container>
+                            </ion-row>
+                        </ion-row>
+                    </ion-card-content>
+                </ion-card>
+            </ion-row>
+        </section>
+    </main>
+</ion-content>

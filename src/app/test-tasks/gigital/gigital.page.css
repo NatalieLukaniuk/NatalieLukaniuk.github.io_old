@@ -1,0 +1,89 @@
+:host ion-header ion-title {
+  text-transform: uppercase;
+}
+:host ion-header ion-buttons ion-button {
+  margin-right: 2vw;
+}
+:host ion-content main {
+  display: flex;
+  justify-content: space-between;
+}
+:host ion-content main .left-pane {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  min-width: 350px;
+}
+:host ion-content main .left-pane .filter {
+  flex-direction: column;
+  margin-top: 30px;
+  position: sticky;
+}
+:host ion-content main .left-pane .filter:first-child {
+  top: 10px;
+}
+:host ion-content main .left-pane .filter:nth-child(2) {
+  top: 200px;
+}
+:host ion-content main .left-pane .filter ion-chip {
+  --background: var(--ion-color-bluishGray-shade);
+  --color: var(--ion-color-bluishGray-contrast);
+}
+:host ion-content main .left-pane .filter ion-chip.selected {
+  --background: #72b0d3;
+}
+:host ion-content main .right-pane {
+  width: 77%;
+}
+:host ion-content main .right-pane .presentation-area {
+  display: flex;
+}
+:host ion-content main .right-pane .presentation-area ion-card {
+  width: 47%;
+}
+:host ion-content main .right-pane .presentation-area ion-card ion-card-content {
+  display: flex;
+}
+:host ion-content main .right-pane .presentation-area ion-card ion-card-content .illustration {
+  min-width: 100px;
+}
+:host ion-content main .right-pane .presentation-area ion-card ion-card-content .illustration img {
+  width: 300px;
+  max-width: 19vw;
+  min-width: 100px;
+  height: auto;
+}
+:host ion-content main .right-pane .presentation-area ion-card ion-card-content .information {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+:host ion-content main .right-pane .presentation-area ion-card ion-card-content .information h1 span {
+  color: var(--ion-color-bluishGray);
+}
+@media (max-width: 1190px) {
+  :host ion-content main .right-pane .presentation-area ion-card {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  :host ion-content main {
+    flex-direction: column;
+  }
+  :host ion-content main .left-pane {
+    width: 100%;
+  }
+  :host ion-content main .left-pane .filter {
+    position: static;
+  }
+  :host ion-content main .right-pane {
+    width: 100%;
+  }
+  :host ion-content main .right-pane .presentation-area ion-card {
+    width: 100%;
+  }
+  :host ion-content main .right-pane .presentation-area ion-card ion-card-content .illustration img {
+    object-fit: contain;
+  }
+}
+
+/*# sourceMappingURL=gigital.page.css.map */

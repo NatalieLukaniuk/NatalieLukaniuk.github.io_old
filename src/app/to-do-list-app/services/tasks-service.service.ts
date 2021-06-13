@@ -52,6 +52,7 @@ export class TasksServiceService {
     }
   }
 
+
   deleteList(listIndex){
     this.lists.splice(listIndex, 1);
   }

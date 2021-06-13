@@ -38,7 +38,11 @@ const routes: Routes = [
   {
     path: 'main',
     loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
+  },  {
+    path: 'gigital',
+    loadChildren: () => import('./test-tasks/gigital/gigital.module').then( m => m.GigitalPageModule)
   },
+
 
 
 ];
