@@ -46,6 +46,7 @@
 }
 :host ion-content main .right-pane .presentation-area ion-card ion-card-content .illustration {
   min-width: 100px;
+  flex-shrink: 0;
 }
 :host ion-content main .right-pane .presentation-area ion-card ion-card-content .illustration img {
   width: 300px;
