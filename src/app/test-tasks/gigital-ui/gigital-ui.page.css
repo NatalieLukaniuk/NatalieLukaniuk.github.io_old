@@ -1,0 +1,175 @@
+:host {
+  --very-light-gray: #FAFAFA;
+  --gray-light: #485460;
+  --gray-dark: #1E272E;
+  --sizzling-red: #F53B57;
+  --chrome-yellow: #FFA801;
+  --ion-font-family: "Open Sans", sans-serif;
+  --ion-text-color: var(--gray-light);
+  font-size: 16px;
+}
+:host h1 {
+  font-size: 48px;
+  color: var(--gray-dark);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+:host h2 {
+  font-size: 34px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+:host h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 19.07px;
+}
+:host h4 {
+  font-size: 10px;
+  color: var(--sizzling-red);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+:host h5 {
+  font-size: 24px;
+  line-height: 29.26px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+:host p {
+  line-height: 27.24px;
+}
+:host .highlighted {
+  color: var(--sizzling-red);
+}
+:host .bold {
+  font-weight: 600;
+}
+:host header, :host section, :host footer {
+  padding-right: 8.33vw;
+  padding-left: 8.33vw;
+}
+:host header {
+  padding-top: 32px;
+}
+:host header .logo {
+  position: relative;
+}
+:host header .logo img:last-child {
+  position: absolute;
+  left: 28%;
+  top: 24%;
+}
+:host header ion-chip {
+  --background: var(--sizzling-red);
+  --color: white;
+  font-size: 10px;
+  height: fit-content;
+  text-transform: uppercase;
+}
+:host header h3 {
+  color: var(--chrome-yellow);
+}
+:host header > ion-row:first-child {
+  align-items: center;
+}
+:host .information {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+:host .information > ion-row {
+  flex-direction: column;
+}
+:host .information > ion-row:first-child {
+  width: 59.5%;
+}
+:host .information .details {
+  flex-direction: column;
+  background: var(--very-light-gray);
+  width: 31.7%;
+  padding: 13px 32px;
+  justify-content: space-evenly;
+}
+:host .information .details > ion-row {
+  flex-direction: column;
+}
+:host .information .details > ion-row h4, :host .information .details > ion-row p {
+  margin: 0;
+}
+:host .highlights {
+  display: flex;
+  padding-top: 32px;
+  background: var(--very-light-gray);
+  padding-bottom: 32px;
+}
+:host .highlights > ion-row {
+  flex-direction: column;
+  margin-right: 46px;
+}
+:host .highlights > ion-row h3 {
+  color: var(--sizzling-red);
+  margin: 0;
+}
+:host .highlights > ion-row h5 {
+  margin-top: 8px;
+  color: var(--gray-dark);
+}
+:host .acts {
+  background: var(--chrome-yellow);
+  padding-top: 46px;
+  padding-bottom: 64px;
+}
+:host .acts ion-item {
+  --background: white;
+  --padding-start: 27px;
+  --padding-bottom: 32px;
+  --padding-top: 32px;
+  margin-bottom: 16px;
+}
+:host .acts ion-item > ion-row {
+  flex-direction: column;
+  width: 25%;
+  height: 100%;
+  padding-right: 60px;
+}
+:host .acts ion-item > ion-row h2 {
+  color: var(--gray-dark);
+}
+:host .acts ion-item > ion-row h3, :host .acts ion-item > ion-row p {
+  margin: 0;
+}
+:host .acts ion-item > ion-row .comment {
+  font-size: 12px;
+  line-height: 16.34px;
+}
+:host footer {
+  padding-top: 64px;
+  padding-bottom: 84px;
+}
+:host footer .tip {
+  background: var(--very-light-gray);
+  padding: 16px;
+  align-items: center;
+}
+:host footer .tip img {
+  margin-right: 5px;
+}
+:host footer .tip span {
+  font-style: italic;
+}
+:host footer .tip a {
+  margin-left: 8px;
+  color: var(--sizzling-red);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+:host footer h5:first-child {
+  color: var(--gray-dark);
+}
+:host footer h5:nth-child(2) {
+  color: var(--gray-light);
+}
+
+/*# sourceMappingURL=gigital-ui.page.css.map */

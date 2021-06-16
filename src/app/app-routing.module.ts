@@ -42,6 +42,10 @@ const routes: Routes = [
     path: 'gigital',
     loadChildren: () => import('./test-tasks/gigital/gigital.module').then( m => m.GigitalPageModule)
   },
+  {
+    path: 'gigital-ui',
+    loadChildren: () => import('./test-tasks/gigital-ui/gigital-ui.module').then( m => m.GigitalUiPageModule)
+  },
 
 
 

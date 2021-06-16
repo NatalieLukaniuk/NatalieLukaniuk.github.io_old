@@ -1,0 +1,176 @@
+:host{
+    --very-light-gray: #FAFAFA;
+    --gray-light: #485460;
+    --gray-dark: #1E272E;
+    --sizzling-red: #F53B57;
+    --chrome-yellow: #FFA801;
+    --ion-font-family: 'Open Sans', sans-serif;
+    --ion-text-color: var(--gray-light);
+    font-size: 16px;
+    h1{
+        font-size: 48px;
+        color: var(--gray-dark);
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+    }
+    h2{
+        font-size: 34px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+    }
+    h3{
+        font-size: 14px;
+        text-transform: uppercase;
+        line-height: 19.07px;
+    }
+    h4{
+        font-size: 10px;
+        color: var(--sizzling-red);
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    h5{
+        font-size: 24px;
+        line-height: 29.26px;
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+    }
+    p{
+        line-height: 27.24px;
+    }
+    .highlighted{
+        color: var(--sizzling-red);
+    }
+    .bold{
+        font-weight: 600;
+    }
+    header, section, footer{
+        padding-right: 8.33vw;
+        padding-left: 8.33vw;
+    }
+    header{
+        padding-top: 32px;
+        .logo{
+            position: relative;
+            img:last-child{
+                position: absolute;
+                left: 28%;
+                top: 24%;
+            }
+        }
+        ion-chip{
+            --background: var(--sizzling-red);
+            --color: white;
+            font-size: 10px;
+            height: fit-content;
+            text-transform: uppercase;
+        }
+        h3{
+            color: var(--chrome-yellow);
+        }
+        & > ion-row:first-child{
+            align-items: center;
+        }
+    }
+    .information{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 25px;
+        & > ion-row{
+            flex-direction: column;
+            &:first-child{
+                width: 59.5%;
+            }
+        }
+        .details{
+            flex-direction: column;
+            background: var(--very-light-gray);
+            width: 31.7%;
+            padding: 13px 32px;
+            justify-content: space-evenly;
+            & > ion-row{
+                flex-direction: column;
+                h4, p{
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .highlights{
+        display: flex;
+        padding-top: 32px;
+        background: var(--very-light-gray);
+        padding-bottom: 32px;
+        & > ion-row{
+            flex-direction: column;
+            margin-right: 46px;
+            h3{
+                color: var(--sizzling-red);
+                margin: 0;
+            }
+            h5{
+                margin-top: 8px;
+                color: var(--gray-dark);
+            }
+        }
+    }
+    .acts{
+        background: var(--chrome-yellow);
+        padding-top: 46px;
+        padding-bottom: 64px;
+        ion-item{
+            --background: white;
+            --padding-start: 27px;
+            --padding-bottom: 32px;
+            --padding-top: 32px;
+            margin-bottom: 16px;
+            & > ion-row{
+                flex-direction: column;
+                width: 25%;
+                height: 100%;
+                padding-right: 60px;
+                h2{
+                    color: var(--gray-dark);
+                }
+                h3, p {
+                    margin: 0;
+                }
+                .comment{
+                    font-size: 12px;
+                    line-height: 16.34px;
+                }
+            }
+        }
+    }
+    footer{
+        padding-top: 64px;
+        padding-bottom: 84px;
+        .tip{
+            background: var(--very-light-gray);
+            padding: 16px;
+            align-items: center;
+            img{
+                margin-right: 5px;
+            }
+            span{
+                font-style: italic;
+            }
+            a{
+                margin-left: 8px;
+                color: var(--sizzling-red);
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+        }
+        h5{
+            &:first-child{
+                color: var(--gray-dark);
+            }
+            &:nth-child(2){
+                color: var(--gray-light);
+            }
+        }
+
+    }
+}
