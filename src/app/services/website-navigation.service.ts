@@ -31,7 +31,7 @@ export class WebsiteNavigationService {
         },
         {
           title : 'To-do list',
-          url   : '/to-do-list-app',
+          url   : '/to-do-app',
           icon  : 'reader-outline'
         },
       ],

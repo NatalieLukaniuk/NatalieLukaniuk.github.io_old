@@ -39,8 +39,8 @@
             </ion-row>
             <ion-row class="right-pane my-scroll">
                 <ion-row class="intro" *ngIf="intViewportWidth > 880 || containers.allTabs">
-                    <p>Hello and welcome to my website. I am a junior frontend developer currently open to long-term
-                        offers and new challenges. To learn more about my experience and skills, please browse the tabs below.</p>
+                    <p>Hello and welcome to my website. I am a junior frontend developer who loves coding and facing new
+                        challenges. To learn more about my experience and skills, please browse the tabs below.</p>
                 </ion-row>
                 <ion-row class="experience" *ngIf="containers.allTabs || containers.experienceDetails">
                     <ion-item (click)="toggleContainer('experienceDetails')">
@@ -163,6 +163,28 @@
                         <ion-icon *ngIf="intViewportWidth <= 880 && containers.softSkillsDetails" name="chevron-back-outline" slot="start"></ion-icon>
                     </ion-item>
                     <app-opening-container [topic]="'softSkills'" *ngIf="containers.softSkillsDetails"></app-opening-container>
+                </ion-row>
+                <ion-row class="working-on" *ngIf="containers.allTabs || containers.currentlyWorkingOn">
+                    <ion-item (click)="toggleContainer('currentlyWorkingOn')">
+                        <h3>What I'm currently working on</h3>
+                        <ion-icon *ngIf="!containers.currentlyWorkingOn" name="chevron-forward-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth > 880 && containers.currentlyWorkingOn" name="chevron-down-outline" slot="end"></ion-icon>
+                        <ion-icon *ngIf="intViewportWidth <= 880 && containers.currentlyWorkingOn" name="chevron-back-outline" slot="start"></ion-icon>
+                    </ion-item>
+                    <ion-row *ngIf="containers.currentlyWorkingOn" class="opening-container">
+                        <p>
+                            I am currently working on the improvement of my to-do app pet project.
+                        </p>
+                        <p>Progress can be traced at github: <a
+                            href="https://github.com/NatalieLukaniuk/NatalieLukaniuk.github.io/tree/main/src/app/to-do-app"
+                            target="_blank">project repo</a>
+                        </p>
+                        <p>Result can be seen <a href="https://natalielukaniuk.github.io/to-do-app" target="_blank">here</a>.
+                            Some functionality doesn't work yet. However, you can test adding a task,
+                            some manipulations with existing tasks, etc. already. UI is also to be improved, for now only
+                            the absolute minimum is implemented so that it looks more or less ok.</p>
+                    </ion-row>
+
                 </ion-row>
                 <ion-row class="learning" *ngIf="containers.allTabs || containers.learningDetails">
                     <ion-item (click)="toggleContainer('learningDetails')">

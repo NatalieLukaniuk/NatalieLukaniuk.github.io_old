@@ -13,8 +13,8 @@
   margin: 0 auto;
   background: white;
   justify-content: space-between;
-  color: var(--ion-color-secondary-contrast);
-  box-shadow: #abeac2 0 0 4px 3px;
+  color: var(--ion-color-tertiary-contrast);
+  box-shadow: #929292 0 0 4px 3px;
   height: 85vh;
   overflow: hidden;
 }
@@ -23,7 +23,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: var(--ion-color-secondary);
+  background: var(--ion-color-tertiary);
   position: sticky;
   top: 0;
   flex-wrap: nowrap;
@@ -155,7 +155,7 @@
 }
 :host ion-content main .wrapper .right-pane .portfolio .opening-container ion-list ion-label > a {
   font-weight: 700;
-  color: var(--ion-color-secondary-contrast);
+  color: var(--ion-color-tertiary-contrast);
   text-transform: capitalize;
 }
 :host ion-content main .wrapper .right-pane .portfolio .opening-container ion-list ion-label a {

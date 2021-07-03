@@ -14,7 +14,8 @@ export class MainPage implements OnInit {
     toolsDetails: false,
     softSkillsDetails: false,
     learningDetails: false,
-    portfolio: false
+    portfolio: false,
+      currentlyWorkingOn: false
   };
 
   constructor() {
