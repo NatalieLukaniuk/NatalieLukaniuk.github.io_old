@@ -1,0 +1,10 @@
+ion-list {
+  background: var(--ion-color-secondary-shade);
+  border-right: var(--ion-color-primary) 3px solid;
+  height: 100%;
+}
+ion-list ion-item {
+  --background: var(--ion-color-light-shade);
+}
+
+/*# sourceMappingURL=dashboard.component.css.map */

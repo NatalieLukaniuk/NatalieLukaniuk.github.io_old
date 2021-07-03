@@ -1,0 +1,34 @@
+<ion-header class="ion-no-border" translucent="true" id="header">
+    <app-header [useContainer]="true" [color]="color">
+    </app-header>
+</ion-header>
+
+<ion-content [color]="color">
+<main>
+    <section class="dashboard" *ngIf="viewportWidth >= 1000">
+        <app-dashboard [categories]="categories" [currentTab]="currentTab" (tabChanged)="handleTabChange($event)"></app-dashboard>
+    </section>
+    <section class="header" *ngIf="viewportWidth < 1000">
+        <ion-button class="tab-switching-btn" (click)="openDashboard()">{{currentTab}}</ion-button>
+        <ion-button (click)="openMenu($event)">
+            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+        </ion-button>
+    </section>
+    <section class="presentation-area">
+        <ion-row class="title-area" *ngIf="viewportWidth >= 1000">
+            <h1>{{currentTab}}</h1>
+            <ion-button class="menu-btn" (click)="openMenu($event)">
+                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+            </ion-button>
+        </ion-row>
+        <app-task
+            *ngFor="let task of tasksToDisplay; index as i;"
+            [task]="task"
+        (isCheckedChanged)="handleIsChecked(i, $event)"></app-task>
+        <ion-button fill="clear" (click)="addTask()">
+            <ion-icon name="add-outline"></ion-icon>
+            Add task
+        </ion-button>
+    </section>
+</main>
+</ion-content>

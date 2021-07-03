@@ -1,0 +1,8 @@
+<ion-list>
+    <ion-item (click)="changeTab('Tasks to complete')">Tasks to complete</ion-item>
+    <ion-item (click)="changeTab('With due date')">With due date</ion-item>
+    <ion-item (click)="changeTab('Important')">Important</ion-item>
+    <ion-item *ngFor="let category of categories" (click)="changeTab(category)">{{category}}</ion-item>
+    <ion-item (click)="changeTab('Completed')">Completed</ion-item>
+    <ion-item (click)="changeTab('All tasks')">All tasks</ion-item>
+</ion-list>

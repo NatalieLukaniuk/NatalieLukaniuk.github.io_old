@@ -1,0 +1,38 @@
+    .details{
+        flex-grow: 2;
+        flex-direction: column;
+        ion-chip{
+            width: fit-content;
+            font-size: 0.6rem;
+            border-radius: 8px;
+            padding: 8px;
+            height: auto;
+        }
+    }
+    ion-checkbox{
+        //align-self: flex-start;
+    }
+    h1{
+        font-size: 1.1rem;
+        margin-top: 0;
+        margin-bottom: 4px;
+    }
+    h2{
+        font-size: 0.7rem;
+        margin-top: 0;
+        color: var(--ion-color-tertiary-shade);
+        margin-bottom: 0;
+    }
+    ion-item{
+        --background: var(--ion-color-light);
+        --padding-top: 0.5rem;
+        --padding-bottom: 0.5rem;
+    }
+
+@media (min-width: 1000px){
+    ion-item{
+        --background: var(--ion-color-secondary);
+    }
+}
+
+

@@ -1,0 +1,11 @@
+<ion-item>
+        <ion-checkbox slot="start" [(ngModel)]="task.isChecked" (ngModelChange)="handleChecked($event)"></ion-checkbox>
+    <ion-row class="details">
+        <h1><ion-icon *ngIf="task.isCompleted" name="checkmark-sharp"></ion-icon>{{task.name}}</h1>
+        <h2 *ngIf="task.dueDate && viewportWidth < 600">{{task.dueDate | date}}</h2>
+        <ion-row><ion-chip *ngFor="let category of task.categories">{{category}}</ion-chip></ion-row>
+    </ion-row>
+    <h2 *ngIf="viewportWidth >= 600" [ngStyle]="!task.dueDate ? {'visibility': 'hidden'} : {'visibility': 'visible'}">{{task.dueDate | date}}</h2>
+        <ion-icon slot="end" *ngIf="task.isImportant" name="star"></ion-icon>
+    <ion-icon slot="end" *ngIf="!task.isImportant && viewportWidth >= 600" name="star-outline"></ion-icon>
+</ion-item>

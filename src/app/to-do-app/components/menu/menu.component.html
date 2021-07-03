@@ -1,0 +1,51 @@
+<ion-list>
+    <ion-item
+        *ngIf="currentTab === 'Important'"
+        id="markNotImportant"
+        (click)="handleClick($event)">
+        Remove from important
+    </ion-item>
+
+    <ion-item
+        *ngIf="currentTab !== 'Important'
+        && currentTab !== 'Completed'
+        && currentTab !== 'Tasks to complete'
+        && currentTab !== 'With due date'"
+        [id]="currentTab"
+        (click)="handleClick($event)">
+        Remove from this category
+    </ion-item>
+
+    <ion-item
+        *ngIf="selectedTasks.length > importantTasks.length && currentTab !== 'Important'"
+        id="markImportant"
+        (click)="handleClick($event)">
+        Mark as important
+    </ion-item>
+
+    <ion-item
+        id="markCompleted"
+        (click)="handleClick($event)">
+        Mark as completed
+    </ion-item>
+
+    <ion-item
+        *ngIf="selectedTasks.length > tasksWithDueDate.length"
+        id="setDueDate"
+        (click)="handleClick($event)">
+        Set due date
+    </ion-item>
+
+    <ion-item
+        *ngIf="selectedTasks.length == tasksWithDueDate.length"
+        id="changeDueDate"
+        (click)="handleClick($event)">
+        Change due date
+    </ion-item>
+
+    <ion-item
+        id="deleteTasks"
+        (click)="handleClick($event)">
+        Delete selected tasks
+    </ion-item>
+</ion-list>

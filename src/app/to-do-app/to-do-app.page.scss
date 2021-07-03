@@ -1,0 +1,42 @@
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    .tab-switching-btn{
+        width: 74%;
+    }
+}
+.presentation-area{
+    padding-top: 1rem;
+}
+
+@media (min-width: 1000px){
+    main{
+        display: flex;
+        min-height: 80vh;
+        .dashboard{
+            width: 25%;
+        }
+        .presentation-area{
+            width: 75%;
+            padding-top: 0;
+            background: var(--ion-color-light-shade);
+            .title-area{
+                min-height: 30vh;
+                justify-content: center;
+                align-content: center;
+                position: relative;
+                background: var(--ion-color-secondary-shade);
+                border-bottom: var(--ion-color-primary) 3px solid;
+                h1{
+                    font-size: 2rem;
+                    text-transform: uppercase;
+                }
+                .menu-btn{
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                }
+            }
+        }
+    }
+}

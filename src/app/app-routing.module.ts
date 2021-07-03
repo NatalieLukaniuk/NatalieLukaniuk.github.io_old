@@ -46,6 +46,14 @@ const routes: Routes = [
     path: 'gigital-ui',
     loadChildren: () => import('./test-tasks/gigital-ui/gigital-ui.module').then( m => m.GigitalUiPageModule)
   },
+  {
+    path: 'organizer',
+    loadChildren: () => import('./organizer/organizer.module').then( m => m.OrganizerPageModule)
+  },
+  {
+    path: 'to-do-app',
+    loadChildren: () => import('./to-do-app/to-do-app.module').then( m => m.ToDoAppPageModule)
+  },
 
 
 

@@ -1,0 +1,29 @@
+<form class="wrapper">
+    <h1>Add new task</h1>
+    <ion-item>
+        <ion-label position="stacked">What do you need to complete?</ion-label>
+<!--        TODO: make the field mandatory, implement check whether it's not empty-->
+        <ion-input [(ngModel)]="taskName" name="taskName"></ion-input>
+    </ion-item>
+    <ion-item (click)="toggleIsImportant()">
+        <ion-icon *ngIf="!isImportant" slot="start" name="star-outline"></ion-icon>
+        <ion-icon *ngIf="isImportant" slot="start" name="star"></ion-icon>
+        <ion-label>mark task as important</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Select from existing categories:</ion-label>
+        <ion-row>
+            <ion-chip *ngFor="let category of categories">{{category}}</ion-chip>
+        </ion-row>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Or enter a new one:</ion-label>
+        <ion-input name="newCategory"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Set due date:</ion-label>
+<!--        TODO: add date picker-->
+        <ion-icon name="calendar-outline"></ion-icon>
+    </ion-item>
+    <ion-button (click)="submit()">Add task</ion-button>
+</form>
