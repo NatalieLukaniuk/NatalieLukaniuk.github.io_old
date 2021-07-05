@@ -1,4 +1,14 @@
 .wrapper{
     flex-direction: column;
     padding: 1rem;
+    ion-checkbox{
+        display: contents;
+        &::part(container){
+            display: none;
+        }
+    }
+    .error{
+        font-size: 10px;
+        color: var(--ion-color-danger);
+    }
 }

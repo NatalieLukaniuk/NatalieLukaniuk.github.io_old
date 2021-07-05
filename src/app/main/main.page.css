@@ -11,7 +11,7 @@
   display: flex;
   max-width: 56.82rem;
   margin: 0 auto;
-  background: white;
+  background: var(--background);
   justify-content: space-between;
   color: var(--ion-color-tertiary-contrast);
   box-shadow: #929292 0 0 4px 3px;
@@ -72,6 +72,8 @@
 :host ion-content main .wrapper .left-pane .social svg-icon {
   height: auto;
   width: 1.6rem;
+  color: var(--ion-color-primary);
+  fill: var(--ion-color-primary);
 }
 :host ion-content main .wrapper .left-pane .social ion-label {
   width: 0;
@@ -116,6 +118,7 @@
 :host ion-content main .wrapper .right-pane .opening-container {
   position: relative;
   align-content: baseline;
+  padding: 1rem;
 }
 :host ion-content main .wrapper .right-pane .opening-container .hoverable-container {
   width: auto;
@@ -188,12 +191,16 @@
   opacity: 1;
 }
 @media (max-width: 880px) {
+  :host ion-content::part(scroll) {
+    overflow-y: scroll;
+  }
   :host ion-content main {
+    height: auto;
     align-items: flex-start;
   }
   :host ion-content main .wrapper {
     flex-direction: column;
-    height: calc(100vh - 78px);
+    height: auto;
     overflow: auto;
     justify-content: flex-start;
   }
@@ -202,6 +209,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     position: static;
+    background: var(--ion-color-secondary);
   }
   :host ion-content main .wrapper .left-pane > ion-row {
     border-bottom: none;
@@ -220,11 +228,6 @@
   }
   :host ion-content main .wrapper .right-pane .opening-container .hoverable-container ion-chip {
     padding: 30px 20px;
-  }
-}
-@media (max-width: 768px) {
-  :host ion-content main .wrapper {
-    height: calc(100vh - 74px);
   }
 }
 @media (max-width: 525px) {

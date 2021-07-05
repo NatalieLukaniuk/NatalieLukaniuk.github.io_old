@@ -90,6 +90,11 @@ export class ToDoAppPage implements OnInit, OnChanges {
                 }
             } else if (prop === 'setDueDate' || prop === 'changeDueDate'){
                 console.log('change date');
+            } else if (prop === 'deleteTasks') {
+                for (const task of this.selectedTasks){
+                    const i = this.allTasks.indexOf(task);
+                    this.allTasks.splice(i, 1);
+                }
             } else {
                 for (const task of this.selectedTasks){
                     const i = this.allTasks.indexOf(task);
@@ -161,15 +166,29 @@ export class ToDoAppPage implements OnInit, OnChanges {
 
     handleAddNewTask(data){
         console.log(data.data);
+        const categoriesArray = Object.entries(data.data.categories);
+        console.log(categoriesArray);
+        const taskCategories = [];
+        for (const item of categoriesArray){
+            if (item[1] === 'false' || item[1] === ''){
+                console.log('false of empty');
+            } else if (item[1] === true) {
+                taskCategories.push(item[0]);
+            } else {
+                taskCategories.push(item[1]);
+            }
+        }
+        console.log(taskCategories);
         this.allTasks.push({
-            name: data.data.taskName,
-            isImportant: data.data.isImportant,
+            name: data.data.name,
+            dueDate: data.data.dueDate,
+            isImportant: data.data.isImportant || false,
             isCompleted: false,
+            categories: taskCategories,
             isChecked: false,
-            categories: [],
-            dueDate: null
         });
         this.updateTasksToDisplay(this.currentTab);
+        this.getCategories();
     }
 
     async openDashboard(){

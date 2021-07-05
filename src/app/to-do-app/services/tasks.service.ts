@@ -9,7 +9,7 @@ export class TasksService {
     mockTasks: Task[] = [
         {
             name: 'Refactor code',
-            dueDate: 1999999999,
+            dueDate: '2021-06-05T13:21:40.959+03:00',
             isImportant: false,
             isCompleted: false,
             isChecked: false,

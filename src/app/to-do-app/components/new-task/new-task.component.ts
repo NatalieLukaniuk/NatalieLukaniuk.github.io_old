@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {ModalController} from '@ionic/angular';
+import {Task} from '../../models/task.interface';
 
 @Component({
   selector: 'app-new-task',
@@ -9,19 +10,28 @@ import {ModalController} from '@ionic/angular';
 export class NewTaskComponent implements OnInit {
 @Input()
 categories: string[];
-taskName: string;
-isImportant = false;
+@ViewChild('form', {static: false})
+form: any;
+@ViewChild('taskName', {static: false})
+taskNm: any;
+// task: Task;
 
   constructor(public modalController: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+      console.log(this.form);
+  }
 
     toggleIsImportant(){
-      this.isImportant = !this.isImportant;
+      this.form.value.isImportant = !this.form.value.isImportant;
+    }
+
+    check(){
+      console.log(this.taskNm);
     }
 
     submit(){
-      this.modalController.dismiss({taskName: this.taskName, isImportant: this.isImportant});
+      this.modalController.dismiss(this.form.value);
     }
 
 }

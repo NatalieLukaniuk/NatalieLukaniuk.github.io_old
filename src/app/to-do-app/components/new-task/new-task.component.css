@@ -2,5 +2,15 @@
   flex-direction: column;
   padding: 1rem;
 }
+.wrapper ion-checkbox {
+  display: contents;
+}
+.wrapper ion-checkbox::part(container) {
+  display: none;
+}
+.wrapper .error {
+  font-size: 10px;
+  color: var(--ion-color-danger);
+}
 
 /*# sourceMappingURL=new-task.component.css.map */

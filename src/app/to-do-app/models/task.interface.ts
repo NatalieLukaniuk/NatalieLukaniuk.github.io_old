@@ -1,6 +1,6 @@
 export interface Task {
     name: string;
-    dueDate: number | null;
+    dueDate: string | null;
     isImportant: boolean;
     isCompleted: boolean;
     categories: string[];
