@@ -27,6 +27,14 @@ const routes: Routes = [
   {
     path: 'parallax5',
     loadChildren: () => import('./parallax5/parallax5.module').then( m => m.Parallax5PageModule)
+  },
+  {
+    path: 'pipes',
+    loadChildren: () => import('./pipes/pipes.module').then( m => m.PipesPageModule)
+  },
+  {
+    path: 'apis',
+    loadChildren: () => import('./apis/apis.module').then( m => m.ApisPageModule)
   }
 ];
 

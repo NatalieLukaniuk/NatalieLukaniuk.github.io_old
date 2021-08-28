@@ -43,12 +43,12 @@
   bottom: 0;
   transition: all 300ms ease-in-out;
 }
-:host ion-toolbar ion-buttons ion-button:hover span:after {
+:host ion-toolbar ion-buttons ion-button:hover span:after, :host ion-toolbar ion-buttons ion-button.active-button span:after {
   right: 100%;
   width: 100%;
 }
 :host ion-toolbar ion-buttons ion-button.active-button {
-  --background: var(--ion-color-light);
+  font-weight: 600;
 }
 @media (min-width: 900px) {
   :host ion-buttons ion-button {

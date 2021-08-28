@@ -13,8 +13,10 @@
             name="name"
             #taskName="ngModel"></ion-input>
 <!--        {{taskName.errors | json}}-->
-        <p *ngIf="taskName.touched && taskName.errors && taskName.errors.required"  class="error">This field cannot be empty</p>
-        <p *ngIf="taskName.errors && taskName.errors.minlength" class="error">The task description is too short</p>
+        <ion-row *ngIf="taskName.errors && taskName.touched">
+            <p *ngIf="taskName.errors.required"  class="error">This field cannot be empty</p>
+            <p *ngIf="taskName.errors.minlength" class="error">The task description is too short</p>
+        </ion-row>
     </ion-item>
     <ion-item>
         <ion-checkbox [ngModel]="form.value.isImportant" name="isImportant">
@@ -35,7 +37,13 @@
         <ion-input type="text" ngModel name="newCategory"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-datetime ngModel name="dueDate" displayFormat="DD MMMM YYYY" placeholder="Set due date"></ion-datetime>
+        <ion-datetime
+            ngModel
+            name="dueDate"
+            displayFormat="DD MMMM YYYY"
+            [min]="today"
+            max="2100"
+            placeholder="Set due date"></ion-datetime>
         <ion-icon slot="start" name="calendar-outline"></ion-icon>
     </ion-item>
     <ion-button (click)="check()">check</ion-button>

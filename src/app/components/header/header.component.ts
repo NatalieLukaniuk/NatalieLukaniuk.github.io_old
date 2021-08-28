@@ -22,9 +22,6 @@ headerColor: string;
   ngOnInit() {
       this.headerColor = this.color;
   }
-  goTo(url){
-  this.router.navigate([url]);
-}
   async openSubmenu(button, ev){
     const popover = await this.popoverController.create({
       component: SubmenuPopoverComponent,

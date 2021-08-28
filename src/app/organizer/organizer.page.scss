@@ -1,0 +1,11 @@
+:host{
+    --ion-color-primary: #067A85;
+    --accent-color: #8f4700;
+    --ion-text-color: #fff;
+    background: var(--ion-color-primary);
+    ion-content{
+        section{
+            padding: 2vw;
+        }
+    }
+}

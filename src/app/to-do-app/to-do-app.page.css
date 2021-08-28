@@ -1,9 +1,10 @@
 .header {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-content: space-evenly;
 }
 .header .tab-switching-btn {
-  width: 74%;
+  flex-grow: 2;
 }
 
 .presentation-area {
@@ -17,6 +18,11 @@
   }
   main .dashboard {
     width: 25%;
+  }
+  main .button-group {
+    position: absolute;
+    right: 10px;
+    top: 10px;
   }
   main .presentation-area {
     width: 75%;

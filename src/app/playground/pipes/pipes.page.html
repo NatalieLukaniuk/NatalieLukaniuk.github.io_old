@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>pipes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h1>{{test | date: 'shortTime'}}</h1>
+    <h1>{{test2 | currency:'EUR':'Euros '}}</h1>
+    <h1>{{test3 | slice:1:100}}</h1>
+    <label> tada
+        <input type="text" #username>
+        <button (click)="log(username.nodeName)">button</button>
+    </label>
+</ion-content>

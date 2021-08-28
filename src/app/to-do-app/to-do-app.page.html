@@ -9,13 +9,17 @@
         <app-dashboard [categories]="categories" [currentTab]="currentTab" (tabChanged)="handleTabChange($event)"></app-dashboard>
     </section>
     <section class="header" *ngIf="viewportWidth < 1000">
-        <ion-button class="tab-switching-btn" (click)="openDashboard()">{{currentTab}}</ion-button>
-        <ion-button (click)="openMenu($event)">
-            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-        </ion-button>
+        <ng-container *ngTemplateOutlet="saveAndLoadButtons"></ng-container>
+        <ion-row class="button-group">
+            <ion-button class="tab-switching-btn" (click)="openDashboard()">{{currentTab}}</ion-button>
+            <ion-button (click)="openMenu($event)">
+                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+            </ion-button>
+        </ion-row>
     </section>
     <section class="presentation-area">
         <ion-row class="title-area" *ngIf="viewportWidth >= 1000">
+            <ng-container *ngTemplateOutlet="saveAndLoadButtons"></ng-container>
             <h1>{{currentTab}}</h1>
             <ion-button class="menu-btn" (click)="openMenu($event)">
                 <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
@@ -25,10 +29,19 @@
             *ngFor="let task of tasksToDisplay; index as i;"
             [task]="task"
         (isCheckedChanged)="handleIsChecked(i, $event)"></app-task>
-        <ion-button fill="clear" (click)="addTask()">
+        <ion-button fill="clear" class="full-width" (click)="addTask()">
             <ion-icon name="add-outline"></ion-icon>
             Add task
         </ion-button>
+
     </section>
+
 </main>
 </ion-content>
+
+<ng-template #saveAndLoadButtons>
+    <ion-row class="button-group">
+        <ion-button [disabled]="!listHasChanged" (click)="openSaveListPopover()">Save my list</ion-button>
+        <ion-button (click)="openLoadListPopover()">Load my saved list</ion-button>
+    </ion-row>
+</ng-template>

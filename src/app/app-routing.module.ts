@@ -38,7 +38,8 @@ const routes: Routes = [
   {
     path: 'main',
     loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
-  },  {
+  },
+  {
     path: 'gigital',
     loadChildren: () => import('./test-tasks/gigital/gigital.module').then( m => m.GigitalPageModule)
   },
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'to-do-app',
     loadChildren: () => import('./to-do-app/to-do-app.module').then( m => m.ToDoAppPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
 
 

@@ -1,0 +1,9 @@
+<form #loadListForm="ngForm" class="ion-padding" (ngSubmit)="handleSubmit(loadListForm.value)">
+<select ngModel name="selected">
+    <option *ngFor="let item of listsArray" [value]="item[0]">
+        {{item[0]}}
+    </option>
+</select>
+    <ion-row>{{loadListForm.value | json}}</ion-row>
+<ion-button ngModel type="submit">Load list</ion-button>
+</form>

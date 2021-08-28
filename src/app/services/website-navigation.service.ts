@@ -13,7 +13,7 @@ export class WebsiteNavigationService {
     },
     {
       title : 'Cheatsheets',
-      url   : 'useful-information',
+      url   : '/useful-information',
       icon  : 'book-outline',
     },
     {
@@ -40,7 +40,7 @@ export class WebsiteNavigationService {
     },
     {
       title : 'Playground',
-      url   : 'playground',
+      url   : '/playground',
       icon  : 'color-palette-outline',
     },
   ];

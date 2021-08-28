@@ -14,10 +14,13 @@ selectedTasks: Array<any>;
 
 importantTasks: Array<any> = [];
 tasksWithDueDate: Array<any> = [];
+today: string;
 
   constructor(public popoverController: PopoverController) { }
 
   ngOnInit() {
+      this.today = new Date().toISOString();
+      console.log(this.today);
       this.getImportant();
       this.getTasksWithDueDate();
       console.log(this.selectedTasks);
@@ -32,7 +35,8 @@ tasksWithDueDate: Array<any> = [];
   }
 
     handleClick($event){
-      this.popoverController.dismiss($event);
+        // console.log($event);
+        this.popoverController.dismiss($event);
     }
 
     // TODO: for completed tab add option to mark tasks as not completed

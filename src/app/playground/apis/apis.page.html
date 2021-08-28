@@ -1,0 +1,15 @@
+<ion-header class="ion-no-border" translucent="true" color="tertiary">
+    <app-header [useContainer]="true" [color]=color>
+    </app-header>
+</ion-header>
+<ion-content [fullscreen]="true" [color]=color>
+    <ion-row>
+        <h1>USD to UAH converter</h1>
+        <p>Current rate: {{rateUah}}</p>
+        <p>Rate last updated: {{lastUpdate | date: 'medium'}}</p>
+    </ion-row>
+    <ion-row>
+        <h1>Date Object</h1>
+        <p>{{date}}</p>
+    </ion-row>
+</ion-content>

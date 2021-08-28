@@ -30,17 +30,15 @@
     </ion-item>
 
     <ion-item
-        *ngIf="selectedTasks.length > tasksWithDueDate.length"
-        id="setDueDate"
-        (click)="handleClick($event)">
-        Set due date
-    </ion-item>
-
-    <ion-item
-        *ngIf="selectedTasks.length == tasksWithDueDate.length"
-        id="changeDueDate"
-        (click)="handleClick($event)">
-        Change due date
+        id="setDueDate">
+        <ion-datetime
+            (ionChange)="handleClick($event)"
+            ngModel
+            name="dueDate"
+            displayFormat="DD MMMM YYYY"
+            [min]="today"
+            max="2100"
+            [placeholder]="(selectedTasks.length > tasksWithDueDate.length) ? 'Set due date' : 'Change due date'"></ion-datetime>
     </ion-item>
 
     <ion-item

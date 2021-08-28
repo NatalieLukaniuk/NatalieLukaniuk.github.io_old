@@ -14,12 +14,15 @@ categories: string[];
 form: any;
 @ViewChild('taskName', {static: false})
 taskNm: any;
+
+today: string;
 // task: Task;
 
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {
       console.log(this.form);
+      this.today = new Date().toISOString();
   }
 
     toggleIsImportant(){

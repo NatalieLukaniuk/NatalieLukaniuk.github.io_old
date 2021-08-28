@@ -3,5 +3,6 @@
     (click)="close()"
     *ngFor="let button of children"
     [routerLink]="button.url"
+    routerLinkActive="active-button"
     >{{button.title}}</ion-item>
 </ion-list>

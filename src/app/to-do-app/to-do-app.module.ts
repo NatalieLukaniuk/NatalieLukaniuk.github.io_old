@@ -8,11 +8,13 @@ import { ToDoAppPageRoutingModule } from './to-do-app-routing.module';
 
 import { ToDoAppPage } from './to-do-app.page';
 import {AppSharedModule} from '../app-shared.module';
-import {TasksService} from './services/tasks.service';
 import {TaskComponent} from './components/task/task.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {MenuComponent} from './components/menu/menu.component';
 import {NewTaskComponent} from './components/new-task/new-task.component';
+import {ApiService} from './services/api.service';
+import {SaveListComponent} from './components/save-list/save-list.component';
+import {LoadListComponent} from './components/load-list/load-list.component';
 
 
 @NgModule({
@@ -23,8 +25,17 @@ import {NewTaskComponent} from './components/new-task/new-task.component';
     ToDoAppPageRoutingModule,
       AppSharedModule,
   ],
-  declarations: [ToDoAppPage, TaskComponent, DashboardComponent, MenuComponent, NewTaskComponent],
+  declarations: [
+      ToDoAppPage,
+      TaskComponent,
+      DashboardComponent,
+      MenuComponent,
+      NewTaskComponent,
+      SaveListComponent,
+      LoadListComponent
+  ],
     providers: [
-      TasksService]
+    ApiService
+    ]
 })
 export class ToDoAppPageModule {}

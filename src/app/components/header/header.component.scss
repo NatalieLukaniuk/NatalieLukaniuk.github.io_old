@@ -45,15 +45,14 @@
             bottom: 0;
             transition: all 300ms ease-in-out;
         }
-        &:hover{
+        &:hover, &.active-button{
           span:after{
             right: 100%;
             width: 100%;
           }
-          //border-bottom: var(--ion-color-primary) 1px solid;
         }
         &.active-button{
-          --background: var(--ion-color-light);//doens't work
+            font-weight: 600;
         }
       }
     }
@@ -63,8 +62,6 @@
     ion-buttons{
       ion-button{
         margin-left: 1rem;
-        //--padding-start: 1rem;
-        //--padding-end: 1rem;
       }
     }
   }

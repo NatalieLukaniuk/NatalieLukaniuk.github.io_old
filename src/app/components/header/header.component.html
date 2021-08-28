@@ -49,7 +49,7 @@
         <ion-col *ngFor="let button of this.nav.navigation">
           <ion-row *ngIf="button.url">
             <ion-button
-              (click)="goTo(button.url)"
+                [routerLink]="button.url"
               fill="clear"
               routerDirection="forward"
               routerLinkActive="active-button">

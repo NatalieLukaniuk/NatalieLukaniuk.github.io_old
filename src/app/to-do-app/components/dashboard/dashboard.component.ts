@@ -1,6 +1,5 @@
 import {Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import {TasksService} from '../../services/tasks.service';
-import {ModalController} from "@ionic/angular";
+import {ModalController} from '@ionic/angular';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,8 +18,7 @@ modal: boolean;
 
 @Output() tabChanged = new EventEmitter<any>();
 
-  constructor(private tasksService: TasksService,
-              public modalController: ModalController) { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {}
 

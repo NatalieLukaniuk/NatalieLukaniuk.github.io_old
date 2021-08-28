@@ -1,0 +1,5 @@
+<ion-row>
+    <ion-icon name="caret-back-outline" (click)="go(-1)"></ion-icon>
+    <span>{{dateService.date |async | moment}}</span>
+    <ion-icon name="caret-forward-outline" (click)="go(1)"></ion-icon>
+</ion-row>

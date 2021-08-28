@@ -1,0 +1,18 @@
+<table>
+    <thead>
+    <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let week of calendar">
+        <td *ngFor="let day of week.days"></td>
+    </tr>
+    </tbody>
+</table>

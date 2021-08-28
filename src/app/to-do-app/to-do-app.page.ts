@@ -1,10 +1,20 @@
 import {Component, OnChanges, OnInit } from '@angular/core';
 import {Task} from './models/task.interface';
-import {TasksService} from './services/tasks.service';
 import {ModalController, PopoverController} from '@ionic/angular';
 import {MenuComponent} from './components/menu/menu.component';
 import {NewTaskComponent} from './components/new-task/new-task.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {ApiService} from './services/api.service';
+import {SaveListComponent} from './components/save-list/save-list.component';
+import {LoadListComponent} from './components/load-list/load-list.component';
+
+type listFromApi = {
+    list: Task[];
+};
+
+// interface Error {
+//     status?: number;
+// }
 
 @Component({
     selector: 'app-to-do-app',
@@ -19,10 +29,12 @@ export class ToDoAppPage implements OnInit, OnChanges {
     currentTab = 'Tasks to complete';
     categories: string[];
     viewportWidth = window.innerWidth;
+    listHasChanged: boolean;
+    existingLists: any;
 
-    constructor(private tasksService: TasksService,
-                public popoverController: PopoverController,
-                public modalController: ModalController) {
+    constructor(public popoverController: PopoverController,
+                public modalController: ModalController,
+                private storage: ApiService) {
     }
 
     ngOnChanges(){
@@ -31,9 +43,12 @@ export class ToDoAppPage implements OnInit, OnChanges {
     }
 
   ngOnInit() {
-      this.allTasks = this.tasksService.mockTasks;
-      this.tasksToDisplay = this.allTasks.filter(task => !task.isCompleted);
-      this.getCategories();
+      this.loadSavedList('natalie');
+      this.storage.getAllBaskets().subscribe(
+          res => {
+              this.existingLists = res;
+          }
+      );
   }
     getCategories(){
       this.categories = [];
@@ -68,40 +83,50 @@ export class ToDoAppPage implements OnInit, OnChanges {
     }
 
     handleMenuAction(data){
+        // TODO: needs refactoring: too complicated and inconsistent
+        console.log(data.data);
         if (!data.data) {
-            console.log(data);
+            console.log(data, 'no data property');
             return;
         } else {
-            const prop = data.data.target.id;
-            if (prop === 'markNotImportant'){
+            if (!data.data.target.id){
                 for (const task of this.selectedTasks){
                     const i = this.allTasks.indexOf(task);
-                    this.allTasks[i].isImportant = false;
-                }
-            } else if (prop === 'markImportant'){
-                for (const task of this.selectedTasks){
-                    const i = this.allTasks.indexOf(task);
-                    this.allTasks[i].isImportant = true;
-                }
-            } else if (prop === 'markCompleted'){
-                for (const task of this.selectedTasks){
-                    const i = this.allTasks.indexOf(task);
-                    this.allTasks[i].isCompleted = true;
-                }
-            } else if (prop === 'setDueDate' || prop === 'changeDueDate'){
-                console.log('change date');
-            } else if (prop === 'deleteTasks') {
-                for (const task of this.selectedTasks){
-                    const i = this.allTasks.indexOf(task);
-                    this.allTasks.splice(i, 1);
+                    this.allTasks[i].dueDate = data.data.detail.value;
                 }
             } else {
-                for (const task of this.selectedTasks){
-                    const i = this.allTasks.indexOf(task);
-                    const categoryIndex = this.allTasks[i].categories.indexOf(prop);
-                    this.allTasks[i].categories.splice(categoryIndex, 1);
+                const prop = data.data.target.id;
+                if (prop === 'markNotImportant'){
+                    for (const task of this.selectedTasks){
+                        const i = this.allTasks.indexOf(task);
+                        this.allTasks[i].isImportant = false;
+                    }
+                } else if (prop === 'markImportant'){
+                    for (const task of this.selectedTasks){
+                        const i = this.allTasks.indexOf(task);
+                        this.allTasks[i].isImportant = true;
+                    }
+                } else if (prop === 'markCompleted'){
+                    for (const task of this.selectedTasks){
+                        const i = this.allTasks.indexOf(task);
+                        this.allTasks[i].isCompleted = true;
+                    }
+                } else if (prop === 'deleteTasks') {
+                    for (const task of this.selectedTasks){
+                        const i = this.allTasks.indexOf(task);
+                        this.allTasks.splice(i, 1);
+                    }
+                    this.getCategories();
+                } else {
+                    for (const task of this.selectedTasks){
+                        const i = this.allTasks.indexOf(task);
+                        const categoryIndex = this.allTasks[i].categories.indexOf(prop);
+                        this.allTasks[i].categories.splice(categoryIndex, 1);
+                    }
+                    this.getCategories();
                 }
             }
+            this.listHasChanged = true;
         }
 
         this.selectedTasks = [];
@@ -189,6 +214,7 @@ export class ToDoAppPage implements OnInit, OnChanges {
         });
         this.updateTasksToDisplay(this.currentTab);
         this.getCategories();
+        this.listHasChanged = true;
     }
 
     async openDashboard(){
@@ -223,6 +249,61 @@ export class ToDoAppPage implements OnInit, OnChanges {
                 this.selectedTasks.push(task);
             }
         }
+    }
+
+    async openSaveListPopover(){
+        const popover = await this.popoverController.create({
+            component: SaveListComponent,
+            cssClass: 'to-do-app-save-list-popover',
+            translucent: true,
+        });
+
+        popover.onDidDismiss()
+            .then(data => this.handleSaveList(data));
+
+        return await popover.present();
+    }
+
+    handleSaveList(data){
+        console.log(data.data);
+        const dataToStore = JSON.stringify({list: this.allTasks});
+        this.storage.handleSaveList(data.data, dataToStore);
+        this.listHasChanged = false;
+    }
+
+    loadSavedList(name){
+        this.storage.getBasket(name)
+            .subscribe((data: listFromApi) => {
+                console.log(data);
+                this.allTasks = data.list;
+                this.updateTasksToDisplay(this.currentTab);
+                this.getCategories();
+                console.log(this.allTasks);
+                this.listHasChanged = false;
+            });
+    }
+
+    async openLoadListPopover(){
+        console.log(this.existingLists);
+        const popover = await this.popoverController.create({
+            component: LoadListComponent,
+            cssClass: 'to-do-app-load-list-popover',
+            translucent: true,
+            componentProps: {
+                lists: this.existingLists,
+            },
+        });
+
+        popover.onDidDismiss()
+            .then(data => this.handleLoadList(data));
+
+        return await popover.present();
+    }
+
+    handleLoadList(data){
+        this.storage.getBasket(data.data).subscribe(
+            res => console.log(res)
+        );
     }
 
 }

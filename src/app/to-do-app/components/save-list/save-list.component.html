@@ -1,0 +1,27 @@
+<form #saveListForm="ngForm" (ngSubmit)="saveList()">
+    <ion-item>
+        <ion-label position="stacked">
+            Enter list name
+        </ion-label>
+        <ion-input ngModel type="text" name="listName"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">
+            Protect with a password
+        </ion-label>
+        <ion-checkbox ngModel="false" slot="start" name="isPrivate"></ion-checkbox>
+    </ion-item>
+    <ion-item *ngIf="saveListForm.value.isPrivate === true">
+        <ion-label position="stacked">
+            Enter password
+        </ion-label>
+        <ion-input ngModel type="password" name="password"></ion-input>
+    </ion-item>
+    <ion-button type="submit">
+        Save list
+    </ion-button>
+    <ion-row>
+        {{saveListForm.value | json}}
+    </ion-row>
+
+</form>

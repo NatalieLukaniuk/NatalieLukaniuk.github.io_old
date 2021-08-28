@@ -245,6 +245,10 @@ ion-button::part(native) {
   box-shadow: 2px 1px 4px 2px rgba(173, 216, 189, 0.5);
 }
 
+.to-do-app-save-list-popover, .to-do-app-load-list-popover {
+  --width: 500px;
+}
+
 @media (max-width: 900px) {
   .outset {
     box-shadow: none;
