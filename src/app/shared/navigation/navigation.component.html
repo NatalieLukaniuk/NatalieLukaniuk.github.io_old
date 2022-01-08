@@ -1,0 +1,9 @@
+<nav class="app-navigation">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let route of nav">
+        <a [routerLink]="route.path" routerLinkActive="active">{{
+          route.name
+        }}</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </nav>

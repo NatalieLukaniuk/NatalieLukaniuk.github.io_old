@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  padding: 0 0 0 70px;
+  height: calc(100% - 116px);
+  justify-content: space-between;
+  max-height: calc(100% - 116px);
+  overflow-y: hidden;
+  & > div {
+    width: 45%;
+  }
+  .nav-pane {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hello-text{
+      margin-bottom: 60px;
+  }
+  .content-pane{
+    height: 100%;
+    overflow-y: auto;
+  }
+}

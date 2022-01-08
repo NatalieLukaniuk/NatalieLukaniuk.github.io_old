@@ -1,0 +1,10 @@
+.app-navigation {
+    a {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      color: var(--primary);
+      &.active {
+        font-weight: 700;
+      }
+    }
+  }
