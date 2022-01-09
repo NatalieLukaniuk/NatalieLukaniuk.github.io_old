@@ -5,3 +5,10 @@
     height: 116px;
     align-items: center;
 }
+
+@media (max-width: 600px) {
+    .header-wrapper{
+        padding: 0 20px;
+        height: 70px;
+    }
+}

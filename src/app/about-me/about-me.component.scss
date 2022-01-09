@@ -1,11 +1,22 @@
-.about-me-wrapper{
-    height: 100%;
-    display: flex;
-    padding-right: 30px;
-
+.about-me-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
 }
-img{
-    width: 90%;
-    margin: auto;
-    max-width: 75vh;
+img {
+  width: 90%;
+  margin: auto;
+  max-width: 75vh;
+}
+
+@media (max-width: 600px) {
+  .about-me-wrapper {
+    padding-right: 0;
+  }
+  img {
+    width: 100%;
+    aspect-ratio: 2/1.5;
+    object-fit: cover;
+  }
 }

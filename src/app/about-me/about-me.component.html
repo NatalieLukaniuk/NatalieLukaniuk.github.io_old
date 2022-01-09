@@ -1,3 +1,5 @@
 <div class="about-me-wrapper">
+    <app-hello *ngIf="isMobileView$ | async"></app-hello>
     <img src="../../assets/images/user.jpg">
+    <!-- <app-navigation *ngIf="isMobileView$ | async"></app-navigation> -->
 </div>

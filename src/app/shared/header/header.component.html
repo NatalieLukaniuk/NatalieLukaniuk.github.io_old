@@ -1,6 +1,11 @@
 <div class="header-wrapper">
     <h1>Natalie Lukaniuk. Frontend Developer</h1>
-    <button mat-icon-button><mat-icon svgIcon="menu"></mat-icon></button>
+    <button mat-icon-button *ngIf="isMobileView$ | async" [matMenuTriggerFor]="menu">
+        <mat-icon svgIcon="menu"></mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <app-navigation></app-navigation>
+      </mat-menu>
     
 </div>
 

@@ -1,15 +1,15 @@
 <app-header></app-header>
-<div class="main">
+<div class="main" *ngIf="!(isMobileView$ | async)">
   <div class="nav-pane">
-    <p class="hello-text">
-      Hello and welcome to my website. I am a frontend developer who loves coding and facing new challenges. 
-      To learn more about my experience and skills, please browse the tabs below.
-    </p>
+    <app-hello class="hello-text"></app-hello>
     <app-navigation></app-navigation>
   </div>
   <div class="content-pane">
     <router-outlet></router-outlet>
   </div>
-  
 </div>
 
+<div class="main-mobile-view" *ngIf="isMobileView$ | async">
+  <router-outlet></router-outlet>
+  <app-navigation *ngIf="currentPath === '/about'"></app-navigation>
+</div>

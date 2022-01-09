@@ -9,10 +9,12 @@ export class NavigationComponent implements OnInit {
 
   nav = [
     {name: 'Work Experience', path: 'experience'},
-    {name: 'Technology stack', path: 'stack'},
-    {name: 'Tools I’ve worked with', path: 'tools'},
-    {name: 'Soft Skills', path: 'softSkills'},
-    {name: 'Contacts', path: 'contacts'}
+    // {name: 'Technology stack', path: 'stack'},
+    // {name: 'Tools I’ve worked with', path: 'tools'},
+    // {name: 'Soft Skills', path: 'softSkills'},
+    {name: 'About Me', path: 'about'},
+    // {name: 'Contacts', path: 'contacts'},
+
   ]
 
   constructor() { }
